@@ -21,13 +21,13 @@ public class HelpMenuView {
     public HelpMenuView() {
         this.promptMessage = "Please Select an option";
         this.menu = "\n"
-                + "\n--------------------------"
+                + "\n-----------------------------------"
                 + "\n| Help Menu"
-                + "\n--------------------------"
+                + "\n-----------------------------------"
                 + "\nG - What is the goal of this game?"
                 + "\nM - How to move"
                 + "\nQ - Quit help menu"
-                + "\n -------------------------";
+                + "\n ----------------------------------";
         
     }
     
