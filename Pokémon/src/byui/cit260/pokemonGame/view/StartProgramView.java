@@ -124,7 +124,7 @@ public class StartProgramView {
         
         //display a custom welcome message
         System.out.println("\n======================================================"
-                            +"\n Welcome to the world of Pokémon" + player.getName()
+                            +"\n Welcome to the world of Pokémon " + player.getName()
                             +"\n Go catch 'em all!"
                             +"\n======================================================");
         // Create MainMenuView object
