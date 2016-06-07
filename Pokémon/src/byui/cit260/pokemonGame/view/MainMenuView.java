@@ -6,8 +6,6 @@
 package byui.cit260.pokemonGame.view;
 
 import byui.cit260.pokemonGame.control.GameControl;
-import byui.cit260.pokemonGame.model.GameMenuView;
-import byui.cit260.pokemonGame.model.HelpMenuView;
 import java.util.Scanner;
 import pokémon.Pokémon;
 
