@@ -6,6 +6,7 @@
 package byui.cit260.pokemonGame.control;
 
 import byui.cit260.pokemonGame.model.Player;
+import byui.cit260.pokemonGame.view.GameMenuView;
 import pokémon.Pokémon;
 
 
@@ -29,7 +30,10 @@ public class GameControl {
     }
 
     public static void createNewGame(Player player) {
-        System.out.println("\n*** createNewGame stub function called ***");
+        GameControl.createNewGame(Pokémon.getPlayer());
+        
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayGameMenuView();
     }
 
     public static void loadExistingGame(Player player) {
