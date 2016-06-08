@@ -34,7 +34,7 @@ public class PokemonListMenuView {
     }
     
 
-    public void displayMapMenuView() {
+    public void displayPokemonListMenuView() {
         
         boolean done = false; //set flag to not done
         do {

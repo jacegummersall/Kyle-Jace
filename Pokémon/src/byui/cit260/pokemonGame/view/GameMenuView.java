@@ -104,7 +104,10 @@ public class GameMenuView {
 }
 
     private void displayMap() {
-        System.out.println("*** displayMap function called ***");
+         
+        MapMenuView mapMenu = new MapMenuView();
+        
+        mapMenu.displayMapMenuView(); 
     }
 
     private void displayMove() {
@@ -112,7 +115,10 @@ public class GameMenuView {
     }
 
     private void displayPokemonList() {
-        System.out.println("*** displayPokemonList function called ***");
+          
+        PokemonListMenuView pokemonListMenu = new PokemonListMenuView();
+        
+        pokemonListMenu.displayPokemonListMenuView(); 
     }
 
     private void displayExplore() {
