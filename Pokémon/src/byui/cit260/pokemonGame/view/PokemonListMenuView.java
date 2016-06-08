@@ -129,7 +129,8 @@ public class PokemonListMenuView {
     }
 
     private void returnToGameMenu() {
-        System.out.println("\n*** returnToGameMenu stub function called ***");
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayGameMenuView();
     }
 
 }
