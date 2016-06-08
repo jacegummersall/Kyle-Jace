@@ -16,7 +16,7 @@ public class GameMenuView {
         private String menu;
         private String promptMessage;
     
-    public void GameMenuView() {
+    public GameMenuView() {
         
         this.promptMessage = "Please Select an option";
         this.menu = "\n"
@@ -111,7 +111,9 @@ public class GameMenuView {
     }
 
     private void displayItemList() {
-        System.out.println("*** displayItemList function called ***");
+        ItemListView itemMenu = new ItemListView();
+        
+        itemMenu.displayItemListView();
     }
 
     private void displayPokemonList() {
