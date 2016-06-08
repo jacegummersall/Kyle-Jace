@@ -60,7 +60,7 @@ public class MapMenuView {
             value = keyboard.nextLine(); // get next line typed on keyboard
             value = value.trim(); // trim off leading and trailing blanks
             
-            if (value.length() < 3) { // value is blank
+            if (value.length() < 1) { // value is blank
                 System.out.println("\nInvalid value: value cannot be blank");
                 continue;
             }
@@ -121,6 +121,8 @@ public class MapMenuView {
     }
 
     private void returnToGameMenu() {
-        System.out.println("\n*** returnToGameMenu stub function called ***");
+        
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayGameMenuView();
     }
 }
