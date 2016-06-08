@@ -30,10 +30,8 @@ public class GameControl {
     }
 
     public static void createNewGame(Player player) {
-        GameControl.createNewGame(Pokémon.getPlayer());
         
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayGameMenuView();
+        System.out.println("\n*** createNewGame stub function called ***");
     }
 
     public static void loadExistingGame(Player player) {

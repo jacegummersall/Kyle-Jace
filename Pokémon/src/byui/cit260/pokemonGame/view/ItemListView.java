@@ -16,7 +16,7 @@ public class ItemListView {
         private String menu;
         private String promptMessage;
         
-        public void displayMenu() {
+        public ItemListView() {
         
         this.promptMessage = "Please Select an option";
         this.menu = "\n"
@@ -34,7 +34,7 @@ public class ItemListView {
         
     }
     
-    public void displayGameMenuView() {
+    public void displayItemListView() {
         
         boolean done = false; //set flag to not done
         do {
