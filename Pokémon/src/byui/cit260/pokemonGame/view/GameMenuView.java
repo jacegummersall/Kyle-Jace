@@ -16,7 +16,7 @@ public class GameMenuView {
         private String menu;
         private String promptMessage;
     
-    public void displayMenu() {
+    public void GameMenuView() {
         
         this.promptMessage = "Please Select an option";
         this.menu = "\n"
@@ -78,19 +78,19 @@ public class GameMenuView {
             case "V": // Display game map
                 this.displayMap();
                 break;
-            case "L": //Display moving instructions
-                this.displayMove();
+            case "L": //Display list of items
+                this.displayItemList();
                 break;
-            case "P": //Display moving instructions
+            case "P": //Display list of Pokémon
                 this.displayPokemonList();
                 break;
-            case "E": //Display moving instructions
+            case "E": //Display exploration results
                 this.displayExplore();
                 break;
-            case "S": //Display moving instructions
+            case "S": //Display game saved
                 this.displaySave();
                 break;
-            case "H": //Display moving instructions
+            case "H": //Display game instructions menu
                 this.displayHelpMenu();
                 break;
             default:
@@ -107,8 +107,8 @@ public class GameMenuView {
         System.out.println("*** displayMap function called ***");
     }
 
-    private void displayMove() {
-        System.out.println("*** displayMove function called ***");
+    private void displayItemList() {
+        System.out.println("*** displayItemList function called ***");
     }
 
     private void displayPokemonList() {
