@@ -96,7 +96,7 @@ public class MainMenuView {
         GameControl.createNewGame(Pokémon.getPlayer());
         
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        gameMenu.displayGameMenuView();
     }
 
     private void loadExistingGame() {
@@ -104,7 +104,7 @@ public class MainMenuView {
         GameControl.loadExistingGame(Pokémon.getPlayer());
         
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        gameMenu.displayGameMenuView();
     }
 
     private void displayHelpMenu() {
