@@ -67,6 +67,10 @@ public class GameMenuView {
                 System.out.println("\nInvalid value: value cannot be blank");
                 continue;
             }
+            else if (value.length() > 1) {
+                System.out.println("/nInvalid value: Cannot be more than one character");
+                continue;
+            }
             break; //end the loop
         }
         return value; //return the value entered
