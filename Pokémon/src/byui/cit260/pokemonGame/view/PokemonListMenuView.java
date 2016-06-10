@@ -65,6 +65,10 @@ public class PokemonListMenuView {
                 System.out.println("\nInvalid value: value cannot be blank");
                 continue;
             }
+            else if (value.length() > 2) {// value is too long
+                System.out.println("\nInvalid value: only select one value");
+                continue;
+            }
             break; //end the loop
         }
         return value; //return the value entered
