@@ -39,7 +39,7 @@ public class PokeballControlTest {
         
         //call function
         Random random = new Random();
-        boolean captureSucess = pokemonCurrentHP + ( 1 * random.nextInt(5)) < pokemonFullHP/2;
+        boolean captureSuccess = pokemonCurrentHP + ( 1 * random.nextInt(5)) < pokemonFullHP/2;
         
         String result = instance.calcPokeball(pokemonCurrentHP, pokemonFullHP);
         assertEquals(expResult, result);
@@ -56,7 +56,7 @@ public class PokeballControlTest {
         expResult = "Pokémon has escaped, he is too strong";
         
         //call function
-        captureSucess = pokemonCurrentHP + ( 1 * random.nextInt(5)) < pokemonFullHP/2;
+        captureSuccess = pokemonCurrentHP + ( 1 * random.nextInt(5)) < pokemonFullHP/2;
         
         result = instance.calcPokeball(pokemonCurrentHP, pokemonFullHP);
         assertEquals(expResult, result);
@@ -73,7 +73,7 @@ public class PokeballControlTest {
         expResult = "ERROR";
         
         //call function
-        captureSucess = pokemonCurrentHP + ( 1 * random.nextInt(5)) < pokemonFullHP/2;
+        captureSuccess = pokemonCurrentHP + ( 1 * random.nextInt(5)) < pokemonFullHP/2;
         
         result = instance.calcPokeball(pokemonCurrentHP, pokemonFullHP);
         assertEquals(expResult, result);
@@ -90,7 +90,7 @@ public class PokeballControlTest {
         expResult = "Pokémon has escaped, he is too strong";
         
         //call function
-        captureSucess = pokemonCurrentHP + ( 1 * random.nextInt(5)) < pokemonFullHP/2;
+        captureSuccess = pokemonCurrentHP + ( 1 * random.nextInt(5)) < pokemonFullHP/2;
         
         result = instance.calcPokeball(pokemonCurrentHP, pokemonFullHP);
         assertEquals(expResult, result);
@@ -107,7 +107,7 @@ public class PokeballControlTest {
         expResult = "Pokémon has fainted";
         
         //call function
-        captureSucess = pokemonCurrentHP + ( 1 * random.nextInt(5)) < pokemonFullHP/2;
+        captureSuccess = pokemonCurrentHP + ( 1 * random.nextInt(5)) < pokemonFullHP/2;
         
         result = instance.calcPokeball(pokemonCurrentHP, pokemonFullHP);
         assertEquals(expResult, result); 
