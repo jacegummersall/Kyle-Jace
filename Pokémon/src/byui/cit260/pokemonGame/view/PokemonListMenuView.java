@@ -11,14 +11,12 @@ import java.util.Scanner;
  *
  * @author jacegummersall
  */
-public class PokemonListMenuView {
+public class PokemonListMenuView extends View{
     
-    private String pokemonmenu;
-    private String promptMessage;
+    
     
     public PokemonListMenuView() {
-        this.promptMessage = "Select a Pokemon for battle!";
-        this.pokemonmenu = "\n"
+        super("\n"
                 + "\n--------------------------"
                 + "\n|   Pokemon Menu"
                 + "\n--------------------------"
@@ -29,56 +27,18 @@ public class PokemonListMenuView {
                 + "\nG - Gyarados"
                 + "\nM - MewTwo"
                 + "\nB - Back"
-                + "\n -------------------------";
+                + "\n -------------------------");
         
     }
     
 
-    public void displayPokemonListMenuView() {
-        
-        boolean done = false; //set flag to not done
-        do {
-            //prompt for and get player's name
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q")) //user wants to quit
-                return; //exit the game
-            
-            //do the requested action and display the next view
-            done = this.doAction(menuOption);
-        } while (!done);
-    }
+    
 
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-        String value = ""; // value to be returned
-        boolean valid = false; // initialize to not valid
+    public boolean doAction(String value) {
         
-        while (!valid) { //loop while an invalid value is entered
-            System.out.println("\n" + this.pokemonmenu);
-            System.out.println("\n" + this.promptMessage);
-            
-            
-            value = keyboard.nextLine(); // get next line typed on keyboard
-            value = value.trim(); // trim off leading and trailing blanks
-            
-            if (value.length() < 1) { // value is blank
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
-            }
-            else if (value.length() > 2) {// value is too long
-                System.out.println("\nInvalid value: only select one value");
-                continue;
-            }
-            break; //end the loop
-        }
-        return value; //return the value entered
-    }
-
-    private boolean doAction(String choice) {
+        value = value.toUpperCase(); //convert choice to upper case
         
-        choice = choice.toUpperCase(); //convert choice to upper case
-        
-        switch (choice) {
+        switch (value) {
             case "P": // select pikachu
                 this.choosePikachu();
                 break;

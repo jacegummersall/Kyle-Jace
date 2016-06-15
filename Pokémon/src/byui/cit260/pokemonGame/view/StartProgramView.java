@@ -13,13 +13,14 @@ import java.util.Scanner;
  *
  * @author Thunder
  */
-public class StartProgramView {
+public class StartProgramView extends View{
     
-    private String promptMessage;
+    
+            
     
     public StartProgramView() {
         // promptMessage = "Please enter your name."
-        this.promptMessage = "\nPlease enter your name: ";
+        super("\nPlease enter your name: ");
         
         this.displayBanner();
         // display the banner when view is created
@@ -64,40 +65,9 @@ public class StartProgramView {
         );
     }
 
-    public void displayStartProgramView() {
-        boolean done = false; //set flag to not done
-        do {
-            //prompt for and get player's name
-            String playersName = this.getPlayersName();
-            if (playersName.toUpperCase().equals("Q")) //user wants to quit
-                return; //exit the game
-            
-            //do the requested action and display the next view
-            done = this.doAction(playersName);
-        } while (!done);
-    }
+    
 
-    private String getPlayersName() {
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-        String value = ""; // value to be returned
-        boolean valid = false; // initialize to not valid
-        
-        while (!valid) { //loop while an invalid value is entered
-            System.out.println("\n" + this.promptMessage);
-            
-            value = keyboard.nextLine(); // get next line typed on keyboard
-            value = value.trim(); // trim off leading and trailing blanks
-            
-            if (value.length() < 1) { // value is blank
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
-            }
-            break; //end the loop
-        }
-        return value; //return the value entered
-    }
-
-    private boolean doAction(String playersName) {
+    public boolean doAction(String playersName) {
         
         if (playersName.length() < 2) {
             System.out.println("\nInvalid player's name: "

@@ -112,7 +112,7 @@ public class GameMenuView {
 
         MapMenuView mapMenu = new MapMenuView();
 
-        mapMenu.displayMapMenuView();
+        mapMenu.display();
     }
 
     private void displayItemList() {
@@ -125,7 +125,7 @@ public class GameMenuView {
 
         PokemonListMenuView pokemonListMenu = new PokemonListMenuView();
 
-        pokemonListMenu.displayPokemonListMenuView();
+        pokemonListMenu.display();
     }
 
     private void displayExplore() {
