@@ -56,7 +56,7 @@ public class MainMenuView extends View{
         GameControl.createNewGame(Pokémon.getPlayer());
         
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayGameMenuView();
+        gameMenu.display();
     }
 
     private void loadExistingGame() {
@@ -64,14 +64,14 @@ public class MainMenuView extends View{
         GameControl.loadExistingGame(Pokémon.getPlayer());
         
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayGameMenuView();
+        gameMenu.display();
     }
 
     private void displayHelpMenu() {
         
         HelpMenuView helpMenu = new HelpMenuView();
         
-        helpMenu.displayHelpMenuView();    
+        helpMenu.display();    
     }
     
     

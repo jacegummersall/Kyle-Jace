@@ -134,7 +134,7 @@ public class PokemonListMenuView {
 
     private void returnToGameMenu() {
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayGameMenuView();
+        gameMenu.display();
     }
 
 }

@@ -11,17 +11,12 @@ import java.util.Scanner;
  *
  * @author Thunder
  */
-public class GameMenuView {
+public class GameMenuView extends View{
 
-    
-
-    private String gameMenu;
-    private String promptMessage;
 
     public GameMenuView() {
 
-        this.promptMessage = "Please Select an option";
-        this.gameMenu = "\n"
+        super   ("\n"
                 + "\n--------------------------"
                 + "\n| Game Menu"
                 + "\n--------------------------"
@@ -32,55 +27,16 @@ public class GameMenuView {
                 + "\nS - Save Game"
                 + "\nH - Help"
                 + "\nQ - Quit"
-                + "\n -------------------------";
+                + "\n -------------------------");
     }
     
-   
-    public void displayGameMenuView() {
+  
 
-        boolean done = false; //set flag to not done
-        do {
-            //prompt for and get player's name
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q")) //user wants to quit
-            {
-                return; //exit the game
-            }
-            //do the requested action and display the next view
-            done = this.doAction(menuOption);
-        } while (!done);
-    }
+    public boolean doAction(String value) {
 
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-        String value = ""; // value to be returned
-        boolean valid = false; // initialize to not valid
+        value = value.toUpperCase(); //convert choice to upper case
 
-        while (!valid) { //loop while an invalid value is entered
-            System.out.println("\n" + this.gameMenu);
-            System.out.println("\n" + this.promptMessage);
-
-            value = keyboard.nextLine(); // get next line typed on keyboard
-            value = value.trim(); // trim off leading and trailing blanks
-
-            if (value.length() < 1) { // value is blank
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
-            }
-            else if (value.length() > 1) {
-                System.out.println("/nInvalid value: Cannot be more than one character");
-                continue;
-            }
-            break; //end the loop
-        }
-        return value; //return the value entered
-    }
-
-    private boolean doAction(String choice) {
-
-        choice = choice.toUpperCase(); //convert choice to upper case
-
-        switch (choice) {
+        switch (value) {
             case "V": // Display game map
                 this.displayMap();
                 break;
@@ -118,7 +74,7 @@ public class GameMenuView {
     private void displayItemList() {
         ItemListView itemMenu = new ItemListView();
         
-        itemMenu.displayItemListView();
+        itemMenu.display();
     }
 
     private void displayPokemonList() {
