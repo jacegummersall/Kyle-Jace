@@ -87,6 +87,6 @@ public class MapMenuView extends View{
     private void returnToGameMenu() {
         
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayGameMenuView();
+        gameMenu.display();
     }
 }
