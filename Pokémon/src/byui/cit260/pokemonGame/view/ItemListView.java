@@ -40,7 +40,10 @@ public class ItemListView extends View{
                 break;
             case "P": //Display moving instructions
                 this.displayPokemonList();
-                break;           
+                break;
+            default:
+                System.out.println("\n*** Invalid Selection *** Try again!");
+                break;
         }
         return false;
     }
