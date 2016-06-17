@@ -57,6 +57,8 @@ public class GameMenuView extends View{
                 break;
             case "B": //Test battle menu
                 this.displayBattleMenu();
+            case "F": //Display game instructions menu
+                this.displayBossView();
                 break;
             default:
                 System.out.println("\n*** Invalid Selection *** Try again!");
@@ -96,7 +98,16 @@ public class GameMenuView extends View{
     }
 
     private void displayHelpMenu() {
-        System.out.println("*** displayHelpMenu function called ***");
+        
+        HelpMenuView HelpMenu = new HelpMenuView();
+
+        HelpMenu.display();    }
+
+    private void displayBossView() {
+       
+        BossView BossView = new BossView();
+
+        BossView.display();
     }
     
     private void displayBattleMenu() {
