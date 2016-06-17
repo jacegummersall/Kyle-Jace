@@ -25,7 +25,7 @@ public class ItemListView extends View{
                 + "\n# of Master Balls - 0"
                 + "\nU - Use Item"
                 + "\nP - View Pokémon"
-                + "\nB - Back"
+                + "\nQ - Quit menu"
                 + "\n -------------------------");
         
     }
@@ -40,7 +40,8 @@ public class ItemListView extends View{
                 break;
             case "P": //Display moving instructions
                 this.displayPokemonList();
-                break;           
+                break;  
+            
         }
         return false;
     }
