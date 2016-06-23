@@ -23,6 +23,7 @@ public class Character implements Serializable{
     private String name;
     private Point location;
     private String description;
+    
 
     public Character() {
     }

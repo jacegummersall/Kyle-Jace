@@ -16,6 +16,7 @@ public class Game implements Serializable {
     //class instance variable
     private double startTime;
     private double endTime;
+    
 
     public double getStartTime() {
         return startTime;
