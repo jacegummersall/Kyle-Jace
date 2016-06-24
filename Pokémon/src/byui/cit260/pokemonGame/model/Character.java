@@ -27,6 +27,13 @@ public class Character implements Serializable{
 
     public Character() {
     }
+
+    public Character(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
+    
+    
     
     public String getName() {
         return name;

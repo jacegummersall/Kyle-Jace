@@ -6,8 +6,13 @@
 package byui.cit260.pokemonGame.model;
 
 import java.io.Serializable;
+import pokémon.Pokémon;
+
 
 /**
+ *
+ * @author Thunder
+ *//**
  *
  * @author Thunder
  */
@@ -17,7 +22,8 @@ public class Game implements Serializable {
     private double startTime;
     private double endTime;
     
-
+    public Character[] characters;
+    
     public double getStartTime() {
         return startTime;
     }
@@ -34,6 +40,14 @@ public class Game implements Serializable {
         this.endTime = endTime;
     }
 
+    public Character[] getCharacters() {
+        return characters;
+    }
+
+    public void setCharacters(Character[] characters) {
+        this.characters = characters;
+    }  
+    
     public Game() {
     }
 

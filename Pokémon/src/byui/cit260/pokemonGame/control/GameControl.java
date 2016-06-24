@@ -8,7 +8,7 @@ package byui.cit260.pokemonGame.control;
 import byui.cit260.pokemonGame.model.Player;
 import byui.cit260.pokemonGame.view.GameMenuView;
 import pokémon.Pokémon;
-
+import byui.cit260.pokemonGame.model.Character;
 
 /**
  *
@@ -37,6 +37,20 @@ public class GameControl {
 
     public static void loadExistingGame(Player player) {
         System.out.println("\n*** loadExistingGame stub function called ***");
+    }
+    
+        
+    private Character[] createCharacterList(){
+        
+        Character[] characters = new Character[ListConstants.NUMBER_OF_CHARACTERS];
+        
+        Character gamePlayer = new Character(Pokémon.getPlayer().getName(),"Pokémon Trainer");
+        characters[ListConstants.mainCharacterIndex] = gamePlayer;
+        
+        Character lance = new Character("Lance","Pokemon Champion");
+        characters[ListConstants.finalBoss] = lance;
+        
+        return characters;
     }
     
 }
