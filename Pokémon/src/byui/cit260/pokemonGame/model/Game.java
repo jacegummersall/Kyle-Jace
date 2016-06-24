@@ -6,6 +6,7 @@
 package byui.cit260.pokemonGame.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import pokémon.Pokémon;
 
 
@@ -21,7 +22,13 @@ public class Game implements Serializable {
     //class instance variable
     private double startTime;
     private double endTime; 
-    public Character[] characters;
+   
+    private Player player;
+    private Character[] characters;
+    private ArrayList<Item> items = new ArrayList<>();
+    private ArrayList<Pokemon> pokemons = new ArrayList<>();
+    private Map map;   
+   
     
     public double getStartTime() {
         return startTime;
@@ -46,6 +53,40 @@ public class Game implements Serializable {
     public void setCharacters(Character[] characters) {
         this.characters = characters;
     }  
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public ArrayList<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(ArrayList<Item> items) {
+        this.items = items;
+    }
+
+    public ArrayList<Pokemon> getPokemons() {
+        return pokemons;
+    }
+
+    public void setPokemons(ArrayList<Pokemon> pokemons) {
+        this.pokemons = pokemons;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+    
+    
     
     public Game() {
     }

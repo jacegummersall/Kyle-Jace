@@ -9,6 +9,11 @@ import byui.cit260.pokemonGame.model.Player;
 import byui.cit260.pokemonGame.view.GameMenuView;
 import pokémon.Pokémon;
 import byui.cit260.pokemonGame.model.Character;
+import byui.cit260.pokemonGame.model.Game;
+import byui.cit260.pokemonGame.model.Item;
+import byui.cit260.pokemonGame.model.Map;
+import byui.cit260.pokemonGame.model.Pokemon;
+import java.util.ArrayList;
 
 /**
  *
@@ -30,9 +35,23 @@ public class GameControl {
     }
 
     public static void createNewGame(Player player) {
-        System.out.println("\n*** newGame stub function called ***");
+
+        Game game = new Game();
+        Pokémon.setCurrentGame(game);
         
-        System.out.println("\n*** createNewGame stub function called ***");
+        game.setPlayer(player);
+        
+        Character[] characters = GameControl.createCharacterList();
+        game.setCharacters(characters);
+        
+        ArrayList<Item> items = GameControl.createNewItemList();
+        game.setItems(items);
+        
+        ArrayList<Pokemon> pokemons = GameControl.addPokemon();
+        game.setPokemons(pokemons);
+        
+        Map map = MapControl.createMap();
+        game.setMap(map);
     }
 
     public static void loadExistingGame(Player player) {
@@ -40,7 +59,7 @@ public class GameControl {
     }
     
         
-    private Character[] createCharacterList(){
+    private static Character[] createCharacterList(){
         
         Character[] characters = new Character[ListConstants.NUMBER_OF_CHARACTERS];
         
@@ -52,5 +71,34 @@ public class GameControl {
         
         return characters;
     }
+
+    private static ArrayList<Item> createNewItemList() {
+
+        ArrayList<Item> items = new ArrayList<>();
+        
+        items.add(new Item("Potion",7));
+        items.add(new Item("Super Potion",5));
+        items.add(new Item("Pokeball",6));
+        items.add(new Item("Masterball",4));
+        
+        return items;
+    }
+
+    private static ArrayList<Pokemon> addPokemon() {
+        
+        //Create the arraylist
+        ArrayList<Pokemon> pokemons = new ArrayList<>();
+        
+        //adding pokemon to the list
+        Pokemon Pikachu = new Pokemon("Pikachu", 40, 25, 50);
+        pokemons.add(Pikachu);
+        pokemons.add(new Pokemon("Rattata", 30, 20, 40));
+        pokemons.add(new Pokemon("Charizard", 50, 30, 70));
+        pokemons.add(new Pokemon("Spearow", 35, 15, 50));
+        pokemons.add(new Pokemon("Gyarados", 60, 20, 70));
+        pokemons.add(new Pokemon("Mewtwo", 70, 30, 100));
+        
+        return pokemons;    }
     
+   
 }

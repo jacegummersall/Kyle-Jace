@@ -1,0 +1,148 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package byui.cit260.pokemonGame.control;
+
+import byui.cit260.pokemonGame.model.Location;
+import byui.cit260.pokemonGame.model.Map;
+import byui.cit260.pokemonGame.model.Scene;
+import byui.cit260.pokemonGame.model.SceneType;
+
+/**
+ *
+ * @author jacegummersall
+ */
+public class MapControl {
+
+    public static Map createMap() {
+        
+        Map map = new Map (10,5);
+        
+        Scene[] scenes = createScenes();
+        
+        assignScenesToLocations(map, scenes);
+        
+        return map;
+
+    }
+
+    private static Scene[] createScenes() {
+
+        Scene[] scenes = new Scene[SceneType.values().length];
+        
+        Scene startingScene = new Scene();
+        startingScene.setDescription(
+                "Your uncle Professor Oak has helped you start your journey"
+              + "by providing you with a speacial pokémon named Pikachu"
+              + "it is your job to train and take care of him, search the map, find pokeballs, potions,"
+              + "and capture more Pokémon in preparation for your final battle against Lance."
+        );
+        startingScene.setMapSymbol(" ST ");
+        scenes[SceneType.start.ordinal()] = startingScene;
+        
+        Scene finishScene = new Scene();
+        finishScene.setDescription(
+                "Congratulations!!! You have defeated Lance and are now the best Pokémon"
+              + "trainer in the world!");
+        finishScene.setMapSymbol(" FN ");
+        scenes[SceneType.finalScene.ordinal()] = finishScene;
+
+        Scene pokeballScene = new Scene();
+        pokeballScene.setDescription(
+                "You have found 1 pokéball!");
+        finishScene.setMapSymbol(" PB ");
+        scenes[SceneType.pokeball.ordinal()] = pokeballScene;
+        
+        Scene masterballScene = new Scene();
+        pokeballScene.setDescription(
+                "You have found 1 masterball!");
+        finishScene.setMapSymbol(" MB ");
+        scenes[SceneType.pokeball.ordinal()] = pokeballScene;
+        
+        Scene potionScene = new Scene();
+        potionScene.setDescription(
+                "You have found 1 potion!");
+        potionScene.setMapSymbol(" PO ");
+        scenes[SceneType.potion.ordinal()] = potionScene;
+        
+        Scene superPotionScene = new Scene();
+        superPotionScene.setDescription(
+                "You have found 1 super potion!");
+        potionScene.setMapSymbol(" SP ");
+        scenes[SceneType.superPotion.ordinal()] = superPotionScene;
+        
+        Scene emptyScene = new Scene();
+        emptyScene.setDescription(
+                "nothing here continue on your journey");
+        potionScene.setMapSymbol(" ET ");
+        scenes[SceneType.emptyScene.ordinal()] = emptyScene;
+        
+        Scene battleScene = new Scene();
+        battleScene.setDescription(
+                "You're entering a battle!!!");
+        potionScene.setMapSymbol(" BA ");
+        scenes[SceneType.battleScene.ordinal()] = battleScene;
+        
+        return scenes;
+    }
+
+    private static void assignScenesToLocations(Map map, Scene[] scenes) {
+
+            Location[][] locations = map.getLocations();
+            
+            locations[0][0].setScene(scenes[SceneType.masterball.ordinal()]);
+            locations[0][1].setScene(scenes[SceneType.emptyScene.ordinal()]);
+            locations[0][2].setScene(scenes[SceneType.emptyScene.ordinal()]);
+            locations[0][3].setScene(scenes[SceneType.pokeball.ordinal()]);
+            locations[0][4].setScene(scenes[SceneType.emptyScene.ordinal()]);
+            locations[0][5].setScene(scenes[SceneType.masterball.ordinal()]);
+            locations[0][6].setScene(scenes[SceneType.emptyScene.ordinal()]);
+            locations[0][7].setScene(scenes[SceneType.superPotion.ordinal()]);
+            locations[0][8].setScene(scenes[SceneType.emptyScene.ordinal()]);
+            locations[0][9].setScene(scenes[SceneType.battleScene.ordinal()]);
+            locations[1][0].setScene(scenes[SceneType.superPotion.ordinal()]);
+            locations[1][1].setScene(scenes[SceneType.potion.ordinal()]);
+            locations[1][2].setScene(scenes[SceneType.emptyScene.ordinal()]);
+            locations[1][3].setScene(scenes[SceneType.battleScene.ordinal()]);
+            locations[1][4].setScene(scenes[SceneType.emptyScene.ordinal()]);
+            locations[1][5].setScene(scenes[SceneType.emptyScene.ordinal()]);
+            locations[1][6].setScene(scenes[SceneType.emptyScene.ordinal()]);
+            locations[1][7].setScene(scenes[SceneType.potion.ordinal()]);
+            locations[1][8].setScene(scenes[SceneType.emptyScene.ordinal()]);
+            locations[1][9].setScene(scenes[SceneType.emptyScene.ordinal()]);
+            locations[2][0].setScene(scenes[SceneType.emptyScene.ordinal()]);
+            locations[2][1].setScene(scenes[SceneType.emptyScene.ordinal()]);
+            locations[2][2].setScene(scenes[SceneType.pokeball.ordinal()]);
+            locations[2][3].setScene(scenes[SceneType.start.ordinal()]);
+            locations[2][4].setScene(scenes[SceneType.pokeball.ordinal()]);
+            locations[2][5].setScene(scenes[SceneType.emptyScene.ordinal()]);
+            locations[2][6].setScene(scenes[SceneType.potion.ordinal()]);
+            locations[2][7].setScene(scenes[SceneType.emptyScene.ordinal()]);
+            locations[2][8].setScene(scenes[SceneType.pokeball.ordinal()]);
+            locations[2][9].setScene(scenes[SceneType.superPotion.ordinal()]);
+            locations[3][0].setScene(scenes[SceneType.potion.ordinal()]);
+            locations[3][1].setScene(scenes[SceneType.emptyScene.ordinal()]);
+            locations[3][2].setScene(scenes[SceneType.emptyScene.ordinal()]);
+            locations[3][3].setScene(scenes[SceneType.pokeball.ordinal()]);
+            locations[3][4].setScene(scenes[SceneType.emptyScene.ordinal()]);
+            locations[3][5].setScene(scenes[SceneType.battleScene.ordinal()]);
+            locations[3][6].setScene(scenes[SceneType.emptyScene.ordinal()]);
+            locations[3][7].setScene(scenes[SceneType.pokeball.ordinal()]);
+            locations[3][8].setScene(scenes[SceneType.emptyScene.ordinal()]);
+            locations[3][9].setScene(scenes[SceneType.emptyScene.ordinal()]);
+            locations[4][0].setScene(scenes[SceneType.battleScene.ordinal()]);
+            locations[4][1].setScene(scenes[SceneType.potion.ordinal()]);
+            locations[4][2].setScene(scenes[SceneType.superPotion.ordinal()]);
+            locations[4][3].setScene(scenes[SceneType.emptyScene.ordinal()]);
+            locations[4][4].setScene(scenes[SceneType.potion.ordinal()]);
+            locations[4][5].setScene(scenes[SceneType.potion.ordinal()]);
+            locations[4][6].setScene(scenes[SceneType.emptyScene.ordinal()]);
+            locations[4][7].setScene(scenes[SceneType.superPotion.ordinal()]);
+            locations[4][8].setScene(scenes[SceneType.battleScene.ordinal()]);
+            locations[4][9].setScene(scenes[SceneType.finalScene.ordinal()]);
+            
+            
+    }
+    }

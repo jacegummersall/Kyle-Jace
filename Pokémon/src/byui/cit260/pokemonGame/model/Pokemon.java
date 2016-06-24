@@ -22,6 +22,10 @@ public class Pokemon implements Serializable{
     public Pokemon() {
     }
 
+    public Pokemon(String pikachu, int i, int i0, int i1) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public String getPokemonName() {
         return pokemonName;
     }

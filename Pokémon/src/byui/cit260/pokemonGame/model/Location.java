@@ -17,6 +17,8 @@ public class Location implements Serializable{
     private double row;
     private double column;
     private String visited;
+    private Scene scene;
+    private Character [] characters;
 
     public Location() {
     }
@@ -45,6 +47,24 @@ public class Location implements Serializable{
         this.visited = visited;
     }
 
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+
+    public Character[] getCharacters() {
+        return characters;
+    }
+
+    public void setCharacters(Character[] characters) {
+        this.characters = characters;
+    }
+
+    
+    
     @Override
     public int hashCode() {
         int hash = 5;
@@ -81,6 +101,10 @@ public class Location implements Serializable{
     @Override
     public String toString() {
         return "Location{" + "row=" + row + ", column=" + column + ", visited=" + visited + '}';
+    }
+
+    void setVisited(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     
