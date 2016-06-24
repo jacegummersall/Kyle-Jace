@@ -20,8 +20,7 @@ public class Game implements Serializable {
     
     //class instance variable
     private double startTime;
-    private double endTime;
-    
+    private double endTime; 
     public Character[] characters;
     
     public double getStartTime() {
