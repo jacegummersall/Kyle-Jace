@@ -19,6 +19,11 @@ public class Item implements Serializable{
 
     public Item() {
     }
+
+    public Item(String inventoryType, double inventoryQuantity) {
+        this.inventoryType = inventoryType;
+        this.inventoryQuantity = inventoryQuantity;
+    } 
     
     public String getInventoryType() {
         return inventoryType;

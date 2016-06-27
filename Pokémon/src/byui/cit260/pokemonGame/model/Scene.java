@@ -18,6 +18,7 @@ public class Scene implements Serializable{
     
     private String description;
     private double travelTime;
+    private String mapSymbol;
 
     public Scene() {
     }
@@ -38,6 +39,15 @@ public class Scene implements Serializable{
         this.travelTime = travelTime;
     }
 
+    public String getMapSymbol() {
+        return mapSymbol;
+    }
+
+    public void setMapSymbol(String mapSymbol) {
+        this.mapSymbol = mapSymbol;
+    }
+
+    
     @Override
     public int hashCode() {
         int hash = 7;

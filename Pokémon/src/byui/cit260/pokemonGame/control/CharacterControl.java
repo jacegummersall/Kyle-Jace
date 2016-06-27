@@ -6,6 +6,7 @@
 package byui.cit260.pokemonGame.control;
 
 import byui.cit260.pokemonGame.model.Pokemon;
+import byui.cit260.pokemonGame.model.Item;
 import java.util.ArrayList;
 
 /**
@@ -13,6 +14,13 @@ import java.util.ArrayList;
  * @author jacegummersall
  */
 public class CharacterControl {
+
+    public ArrayList<Item> removeUsedItemList(){
+        
+        System.out.println("*** called removeUsedItemList stub function***");
+        return null;
+}
+    
     
     public ArrayList<Pokemon> addPokemon() {
         
