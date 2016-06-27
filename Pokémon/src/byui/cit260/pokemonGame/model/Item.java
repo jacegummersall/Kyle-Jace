@@ -6,6 +6,7 @@
 package byui.cit260.pokemonGame.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -16,6 +17,7 @@ public class Item implements Serializable{
     
     private String inventoryType;
     private double inventoryQuantity;
+    private ArrayList<Item> totalitems;
 
     public Item() {
     }
@@ -24,6 +26,14 @@ public class Item implements Serializable{
         this.inventoryType = inventoryType;
         this.inventoryQuantity = inventoryQuantity;
     } 
+
+    public ArrayList<Item> getTotalitems() {
+        return totalitems;
+    }
+
+    public void setTotalitems(ArrayList<Item> totalitems) {
+        this.totalitems = totalitems;
+    }
     
     public String getInventoryType() {
         return inventoryType;

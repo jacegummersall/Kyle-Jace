@@ -14,8 +14,8 @@ import java.util.Objects;
  */
 public class Location implements Serializable{
     
-    private double row;
-    private double column;
+    private int row;
+    private int column;
     private String visited;
     private Scene scene;
     private Character [] characters;
@@ -27,7 +27,7 @@ public class Location implements Serializable{
         return row;
     }
 
-    public void setRow(double row) {
+    public void setRow(int row) {
         this.row = row;
     }
 
@@ -35,7 +35,7 @@ public class Location implements Serializable{
         return column;
     }
 
-    public void setColumn(double column) {
+    public void setColumn(int column) {
         this.column = column;
     }
 

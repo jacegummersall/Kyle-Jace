@@ -5,7 +5,15 @@
  */
 package byui.cit260.pokemonGame.view;
 
+import byui.cit260.pokemonGame.model.Game;
+import byui.cit260.pokemonGame.model.Item;
+import byui.cit260.pokemonGame.model.Location;
+import byui.cit260.pokemonGame.model.Map;
+import byui.cit260.pokemonGame.model.Pokemon;
+import byui.cit260.pokemonGame.model.Scene;
+import java.util.ArrayList;
 import java.util.Scanner;
+import pokémon.Pokémon;
 
 /**
  *
@@ -41,7 +49,7 @@ public class GameMenuView extends View{
                 this.displayMap();
                 break;
             case "L": //Display list of items
-                this.displayItemList();
+                this.displayItemReport();
                 break;
             case "P": //Display list of Pokémon
                 this.displayPokemonList();
@@ -71,15 +79,47 @@ public class GameMenuView extends View{
 
     private void displayMap() {
 
-        MapMenuView mapMenu = new MapMenuView();
-
-        mapMenu.display();
+        Game game = Pokémon.getCurrentGame();
+        Map map = new Map();
+        map = game.getMap();
+        
+        Location[][] locations = map.getLocations();
+                
+        System.out.println("      Map of The World of Pokémon      ");
+        System.out.println("1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10");
+        for (Location[] row : locations){
+            System.out.println("------------------------------------------");
+            System.out.println("1   2   3   4   5   6   7   8   9   10");
+            
+            for (Location[] column : locations){
+                System.out.println(" | ");
+                System.out.println (locations[row][column].getScene().getMapSymbol());
+                System.out.println("|");
+            }
+            System.out.println("--------------------------------------");
+        }
     }
 
-    private void displayItemList() {
-        ItemListView itemMenu = new ItemListView();
+    private void displayItemReport() {
+        StringBuilder line;
         
-        itemMenu.display();
+        Game game = Pokémon.getCurrentGame();
+        ArrayList<Item> items = game.getItems();
+        
+        System.out.println("\n List of Items");
+        line = new StringBuilder ("                         ");
+        line.insert(0, "TYPE");
+        line.insert(20, "INSTOCK");
+        System.out.println(line.toString());
+        
+        for (Item item : items) {
+            
+        line = new StringBuilder ("                         ");
+        line.insert(0, item.getInventoryType());
+        line.insert(23, item.getInventoryQuantity());
+        System.out.println(line.toString());
+        }
+        
     }
 
     private void displayPokemonList() {
