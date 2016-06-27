@@ -14,8 +14,8 @@ import java.io.Serializable;
 public class Map implements Serializable {
     
     //class instance variable
-    private double rowCount;
-    private double columnCount;
+    private int rowCount;
+    private int columnCount;
     private Location[][] locations;
 
     public Map(int rowCount, int columnCount) {
@@ -46,7 +46,7 @@ public class Map implements Serializable {
         return rowCount;
     }
 
-    public void setRowCount(double rowCount) {
+    public void setRowCount(int rowCount) {
         this.rowCount = rowCount;
     }
 
@@ -54,7 +54,7 @@ public class Map implements Serializable {
         return columnCount;
     }
 
-    public void setColumnCount(double columnCount) {
+    public void setColumnCount(int columnCount) {
         this.columnCount = columnCount;
     }
 
