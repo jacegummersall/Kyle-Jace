@@ -79,7 +79,8 @@ public class GameMenuView extends View{
 
     private void displayMap() {
 
-        Game game = Pokémon.getCurrentGame();
+        Game game = new Game();
+        game = Pokémon.getCurrentGame();
         Map map = new Map();
         map = game.getMap();
         
@@ -87,19 +88,30 @@ public class GameMenuView extends View{
                 
         System.out.println("      Map of The World of Pokémon      ");
         System.out.println("1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10");
-        for (Location[] row : locations){
+        /*for (Location[] row : locations){
             System.out.println("------------------------------------------");
             System.out.println("1   2   3   4   5   6   7   8   9   10");
             
             for (Location[] column : locations){
                 System.out.println(" | ");
-                System.out.println (locations[row][column].getScene().getMapSymbol());
+                System.out.println(locations[row][column].getScene().getMapSymbol());
                 System.out.println("|");
             }
             System.out.println("--------------------------------------");
+        }*/
+        
+        for (int row = 0; row<5; row++){
+            System.out.println("------------------------------------------");
+            System.out.println("1   2   3   4   5   6   7   8   9   10");
+            
+//            for (int column = 0; column<10; column++){
+//                System.out.println(" | ");
+//                System.out.println(locations[row][column].getScene().getMapSymbol());
+//                System.out.println("|");
+//            }
+            System.out.println("--------------------------------------");
         }
     }
-
     private void displayItemReport() {
         StringBuilder line;
         

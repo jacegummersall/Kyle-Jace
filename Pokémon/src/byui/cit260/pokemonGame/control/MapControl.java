@@ -18,7 +18,7 @@ public class MapControl {
 
     public static Map createMap() {
         
-        Map map = new Map (10,5);
+        Map map = new Map (5,10);
         
         Scene[] scenes = createScenes();
         
