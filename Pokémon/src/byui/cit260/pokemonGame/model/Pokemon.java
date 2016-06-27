@@ -22,6 +22,13 @@ public class Pokemon implements Serializable{
     public Pokemon() {
     }
 
+    public Pokemon(String pokemonName, double strength, double defense, double healthPoints) {
+        this.pokemonName = pokemonName;
+        this.strength = strength;
+        this.defense = defense;
+        this.healthPoints = healthPoints;
+    }
+
     public String getPokemonName() {
         return pokemonName;
     }

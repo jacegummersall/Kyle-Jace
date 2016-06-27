@@ -40,7 +40,7 @@ public class GameControl {
     }
     
         
-    private Character[] createCharacterList(){
+    private static Character[] createCharacterList(){
         
         Character[] characters = new Character[ListConstants.NUMBER_OF_CHARACTERS];
         
