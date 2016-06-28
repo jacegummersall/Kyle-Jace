@@ -102,7 +102,7 @@ public class GameMenuView extends View{
         
         for (int row = 0; row<5; row++){
             System.out.println("------------------------------------------");
-            System.out.println("1   2   3   4   5   6   7   8   9   10");
+            System.out.println(locations.length);
             
 //            for (int column = 0; column<10; column++){
 //                System.out.println(" | ");
@@ -121,7 +121,7 @@ public class GameMenuView extends View{
         System.out.println("\n List of Items");
         line = new StringBuilder ("                         ");
         line.insert(0, "TYPE");
-        line.insert(20, "INSTOCK");
+        line.insert(20, "QUANTITY");
         System.out.println(line.toString());
         
         for (Item item : items) {
