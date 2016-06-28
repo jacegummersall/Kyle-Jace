@@ -86,29 +86,25 @@ public class GameMenuView extends View{
         
         Location[][] locations = map.getLocations();
                 
-        System.out.println("      Map of The World of Pokémon      ");
-        System.out.println("1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10");
-        /*for (Location[] row : locations){
-            System.out.println("------------------------------------------");
-            System.out.println("1   2   3   4   5   6   7   8   9   10");
-            
-            for (Location[] column : locations){
-                System.out.println(" | ");
-                System.out.println(locations[row][column].getScene().getMapSymbol());
-                System.out.println("|");
-            }
-            System.out.println("--------------------------------------");
-        }*/
-        
+        System.out.println("                          Map of The World of Pokémon                       ");
+        System.out.println(" |  1  | |  2  | |  3  | |  4  | |  5  | |  6  | |  7  | |  8  | |  9  | |  10 |");
+
         for (int row = 0; row<5; row++){
-            System.out.println("------------------------------------------");
-            System.out.println(locations.length);
-//            for (int column = 0; column<10; column++){
-//                System.out.println(" | ");
-//                System.out.println(locations[row][column].getScene().getMapSymbol());
-//                System.out.println("|");
-//            }
-            System.out.println("--------------------------------------");
+            System.out.println("---------------------------------------------------------------------------------");
+            
+            for (int column = 0; column<10; column++){
+                System.out.print(" | ");
+                //System.out.print(locations[row][column].getScene().getMapSymbol());
+                if (locations[row][column].getVisited() == true){
+                    System.out.print(locations[row][column].getScene().getMapSymbol());
+                }
+                else{
+                        System.out.print(" ?? ");
+                        }
+                
+                System.out.print("|");
+            }
+            System.out.println(" ");
         }
     }
     private void displayItemReport() {

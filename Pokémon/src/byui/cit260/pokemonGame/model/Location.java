@@ -16,7 +16,7 @@ public class Location implements Serializable{
     
     private int row;
     private int column;
-    private String visited;
+    private boolean visited;
     private Scene scene;
     private Character [] characters;
 
@@ -39,11 +39,11 @@ public class Location implements Serializable{
         this.column = column;
     }
 
-    public String getVisited() {
+    public boolean getVisited() {
         return visited;
     }
 
-    public void setVisited(String visited) {
+    public void setVisited(boolean visited) {
         this.visited = visited;
     }
 
@@ -103,9 +103,6 @@ public class Location implements Serializable{
         return "Location{" + "row=" + row + ", column=" + column + ", visited=" + visited + '}';
     }
 
-    void setVisited(boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
     
     
