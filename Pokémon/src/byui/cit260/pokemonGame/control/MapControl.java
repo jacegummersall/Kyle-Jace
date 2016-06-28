@@ -52,13 +52,13 @@ public class MapControl {
         Scene pokeballScene = new Scene();
         pokeballScene.setDescription(
                 "You have found 1 pokéball!");
-        finishScene.setMapSymbol(" PB ");
+        pokeballScene.setMapSymbol(" PB ");
         scenes[SceneType.pokeball.ordinal()] = pokeballScene;
         
         Scene masterballScene = new Scene();
         pokeballScene.setDescription(
                 "You have found 1 masterball!");
-        finishScene.setMapSymbol(" MB ");
+        masterballScene.setMapSymbol(" MB ");
         scenes[SceneType.masterball.ordinal()] = masterballScene;
         
         Scene potionScene = new Scene();
@@ -70,19 +70,19 @@ public class MapControl {
         Scene superPotionScene = new Scene();
         superPotionScene.setDescription(
                 "You have found 1 super potion!");
-        potionScene.setMapSymbol(" SP ");
+        superPotionScene.setMapSymbol(" SP ");
         scenes[SceneType.superPotion.ordinal()] = superPotionScene;
         
         Scene emptyScene = new Scene();
         emptyScene.setDescription(
                 "nothing here continue on your journey");
-        potionScene.setMapSymbol(" ET ");
+        emptyScene.setMapSymbol(" ET ");
         scenes[SceneType.emptyScene.ordinal()] = emptyScene;
         
         Scene battleScene = new Scene();
         battleScene.setDescription(
                 "You're entering a battle!!!");
-        potionScene.setMapSymbol(" BA ");
+        battleScene.setMapSymbol(" BA ");
         scenes[SceneType.battleScene.ordinal()] = battleScene;
         
         return scenes;
