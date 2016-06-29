@@ -16,23 +16,23 @@ import java.util.Objects;
 public class Item implements Serializable{
     
     private String inventoryType;
-    private double inventoryQuantity;
-    private ArrayList<Item> totalitems;
+    private static int inventoryQuantity;
+    private ArrayList<Item> totalItems;
 
     public Item() {
     }
 
-    public Item(String inventoryType, double inventoryQuantity) {
+    public Item(String inventoryType, int inventoryQuantity) {
         this.inventoryType = inventoryType;
         this.inventoryQuantity = inventoryQuantity;
     } 
 
-    public ArrayList<Item> getTotalitems() {
-        return totalitems;
+    public ArrayList<Item> getTotalItems() {
+        return totalItems;
     }
 
-    public void setTotalitems(ArrayList<Item> totalitems) {
-        this.totalitems = totalitems;
+    public void setTotalItems(ArrayList<Item> totalitems) {
+        this.totalItems = totalitems;
     }
     
     public String getInventoryType() {
@@ -43,11 +43,11 @@ public class Item implements Serializable{
         this.inventoryType = inventoryType;
     }
 
-    public double getInventoryQuantity() {
+    public static int getInventoryQuantity() {
         return inventoryQuantity;
     }
 
-    public void setInventoryQuantity(double inventoryQuantity) {
+    public void setInventoryQuantity(int inventoryQuantity) {
         this.inventoryQuantity = inventoryQuantity;
     }
 
