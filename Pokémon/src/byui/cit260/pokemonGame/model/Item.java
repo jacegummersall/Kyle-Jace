@@ -16,8 +16,7 @@ import java.util.Objects;
 public class Item implements Serializable{
     
     private String inventoryType;
-    private static int inventoryQuantity;
-    private ArrayList<Item> totalItems;
+    private int inventoryQuantity;
 
     public Item() {
     }
@@ -26,14 +25,6 @@ public class Item implements Serializable{
         this.inventoryType = inventoryType;
         this.inventoryQuantity = inventoryQuantity;
     } 
-
-    public ArrayList<Item> getTotalItems() {
-        return totalItems;
-    }
-
-    public void setTotalItems(ArrayList<Item> totalitems) {
-        this.totalItems = totalitems;
-    }
     
     public String getInventoryType() {
         return inventoryType;
@@ -43,7 +34,7 @@ public class Item implements Serializable{
         this.inventoryType = inventoryType;
     }
 
-    public static int getInventoryQuantity() {
+    public int getInventoryQuantity() {
         return inventoryQuantity;
     }
 

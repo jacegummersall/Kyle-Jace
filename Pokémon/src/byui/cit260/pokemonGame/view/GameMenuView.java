@@ -111,6 +111,9 @@ public class GameMenuView extends View{
             }
             System.out.println(" ");
         }
+        MapMenuView mapMenu = new MapMenuView();
+        
+        mapMenu.display();
     }
     private void displayItemReport() {
         StringBuilder line;
@@ -132,6 +135,9 @@ public class GameMenuView extends View{
         System.out.println(line.toString());
         }
         
+        ItemListView itemList = new ItemListView();
+        
+        itemList.display(); 
     }
 
     private void displayPokemonList() {
@@ -170,6 +176,13 @@ public class GameMenuView extends View{
 
     private void displayTotalItems() {
       
-        System.out.println(Item.getInventoryQuantity());   
+        Game game = Pokémon.getCurrentGame();
+        ArrayList<Item> items = game.getItems();
+        
+        // call control function to get the total of all items
+        int totalNumberOfItems = GameControl.totalItems(items);
+        
+        // print out the total of all items
+        System.out.println(totalNumberOfItems);
     }
 }
