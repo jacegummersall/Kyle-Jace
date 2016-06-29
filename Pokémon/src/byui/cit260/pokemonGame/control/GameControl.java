@@ -83,6 +83,22 @@ public class GameControl {
         
         return items;
     }
+    
+    public static int totalItems(ArrayList<Item> items){
+        
+        Item itemss = new Item();
+        
+        int total = 0;
+        for (Item item : items) { 
+            int quantity = (int) item.getInventoryQuantity();
+            total = total + quantity;
+        }
+        itemss.setInventoryQuantity(total);
+       
+        return total;
+    }
+            
+    
 
     private static ArrayList<Pokemon> addPokemon() {
         
