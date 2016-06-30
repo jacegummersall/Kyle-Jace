@@ -28,13 +28,13 @@ public class CharacterControl {
         ArrayList<Pokemon> pokemons = new ArrayList<>();
         
         //adding pokemon to the list
-        Pokemon Pikachu = new Pokemon("Pikachu", 40, 25, 50);
+        Pokemon Pikachu = new Pokemon("Pikachu", 40, 25, 50, 1);
         pokemons.add(Pikachu);
-        pokemons.add(new Pokemon("Rattata", 30, 20, 40));
-        pokemons.add(new Pokemon("Charizard", 50, 30, 70));
-        pokemons.add(new Pokemon("Spearow", 35, 15, 50));
-        pokemons.add(new Pokemon("Gyarados", 60, 20, 70));
-        pokemons.add(new Pokemon("Mewtwo", 70, 30, 100));
+        pokemons.add(new Pokemon("Rattata", 30, 20, 40, 1));
+        pokemons.add(new Pokemon("Charizard", 50, 30, 70, 1));
+        pokemons.add(new Pokemon("Spearow", 35, 15, 50, 1));
+        pokemons.add(new Pokemon("Gyarados", 60, 20, 70, 1));
+        pokemons.add(new Pokemon("Mewtwo", 70, 30, 100, 1));
         
         return pokemons;
         
