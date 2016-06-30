@@ -5,6 +5,7 @@
  */
 package byui.cit260.pokemonGame.view;
 
+import byui.cit260.pokemonGame.control.GameControl;
 import byui.cit260.pokemonGame.model.Game;
 import byui.cit260.pokemonGame.model.Item;
 import byui.cit260.pokemonGame.model.Location;
@@ -30,6 +31,7 @@ public class GameMenuView extends View{
                 + "\n--------------------------"
                 + "\nV - View Map"
                 + "\nL - List of items in bag"
+                + "\nD - Display total items on map"
                 + "\nP - Pokémon"
                 + "\nE - Explore Square"
                 + "\nS - Save Game"
@@ -50,6 +52,9 @@ public class GameMenuView extends View{
                 break;
             case "L": //Display list of items
                 this.displayItemReport();
+                break;
+            case "D": //Display list of items
+                this.displayTotalItems();
                 break;
             case "P": //Display list of Pokémon
                 this.displayPokemonList();
@@ -106,6 +111,9 @@ public class GameMenuView extends View{
             }
             System.out.println(" ");
         }
+        MapMenuView mapMenu = new MapMenuView();
+        
+        mapMenu.display();
     }
     private void displayItemReport() {
         StringBuilder line;
@@ -127,6 +135,9 @@ public class GameMenuView extends View{
         System.out.println(line.toString());
         }
         
+        ItemListView itemList = new ItemListView();
+        
+        itemList.display(); 
     }
 
     private void displayPokemonList() {
@@ -161,5 +172,17 @@ public class GameMenuView extends View{
     BattleMenuView battleMenu = new BattleMenuView();
         
         battleMenu.display();
+    }
+
+    private void displayTotalItems() {
+      
+        Game game = Pokémon.getCurrentGame();
+        ArrayList<Item> items = game.getItems();
+        
+        // call control function to get the total of all items
+        int totalNumberOfItems = GameControl.totalItems(items);
+        
+        // print out the total of all items
+        System.out.println(totalNumberOfItems);
     }
 }
