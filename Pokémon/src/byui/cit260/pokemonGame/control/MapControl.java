@@ -56,7 +56,7 @@ public class MapControl {
         scenes[SceneType.pokeball.ordinal()] = pokeballScene;
         
         Scene masterballScene = new Scene();
-        pokeballScene.setDescription(
+        masterballScene.setDescription(
                 "You have found 1 masterball!");
         masterballScene.setMapSymbol(" MB ");
         scenes[SceneType.masterball.ordinal()] = masterballScene;

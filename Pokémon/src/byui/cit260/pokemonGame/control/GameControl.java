@@ -100,5 +100,13 @@ public class GameControl {
         
         return pokemons;    }
     
+    public int countPokemon(ArrayList<Pokemon> pokemons) {
+        
+        int total = 0;
+        for ()
+    }
+    
+    
+    
    
 }
