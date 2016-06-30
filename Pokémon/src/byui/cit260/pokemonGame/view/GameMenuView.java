@@ -32,6 +32,7 @@ public class GameMenuView extends View{
                 + "\nV - View Map"
                 + "\nL - List of items in bag"
                 + "\nD - Display total items on map"
+                + "\nC - Count total Pokémon"
                 + "\nP - Pokémon"
                 + "\nE - Explore Square"
                 + "\nS - Save Game"
@@ -55,6 +56,9 @@ public class GameMenuView extends View{
                 break;
             case "D": //Display list of items
                 this.displayTotalItems();
+                break;
+            case "C": //Display total pokemon
+                this.displayTotalPokemon();
                 break;
             case "P": //Display list of Pokémon
                 this.displayPokemonList();
@@ -185,4 +189,18 @@ public class GameMenuView extends View{
         // print out the total of all items
         System.out.println(totalNumberOfItems);
     }
+
+    private void displayTotalPokemon() {
+        
+        Game game = Pokémon.getCurrentGame();
+        ArrayList<Pokemon> pokemons = game.getPokemons();
+        
+        int totalNumberOfPokemon = GameControl.countPokemon(pokemons);
+        
+        System.out.println(totalNumberOfPokemon);
+        
+    }
+        
+        
+    
 }
