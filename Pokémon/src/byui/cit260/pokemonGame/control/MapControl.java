@@ -9,6 +9,10 @@ import byui.cit260.pokemonGame.model.Location;
 import byui.cit260.pokemonGame.model.Map;
 import byui.cit260.pokemonGame.model.Scene;
 import byui.cit260.pokemonGame.model.SceneType;
+import citbyui.cit260.pokemonGame.exceptions.MapControlException;
+import java.awt.Point;
+import pokémon.Pokémon;
+import byui.cit260.pokemonGame.model.Character;
 
 /**
  *
@@ -141,8 +145,45 @@ public class MapControl {
             locations[4][6].setScene(scenes[SceneType.emptyScene.ordinal()]);
             locations[4][7].setScene(scenes[SceneType.superPotion.ordinal()]);
             locations[4][8].setScene(scenes[SceneType.battleScene.ordinal()]);
-            locations[4][9].setScene(scenes[SceneType.finalScene.ordinal()]);
-            
-            
+            locations[4][9].setScene(scenes[SceneType.finalScene.ordinal()]); 
     }
+    
+    public static void moveCharacterToLocation(Character character, String direction)
+                                            throws MapControlException{
+                                               
+         Map map = Pokémon.getCurrentGame().getMap();
+        
+         if (character == null){
+             throw new MapControlException("Invalid Character");
+         };
+         
+         Point location = character.getLocation();
+         if (location.x <0 || location.x > 9|| location.y < 0 || location.y > 5){
+             throw new MapControlException("Invalid location");
+         };
+         
+         if (direction == null || !direction.equals("North") && 
+                                  !direction.equals("South") &&
+                                  !direction.equals("East") &&
+                                  !direction.equals("West"));{
+             throw new MapControlException("Can not move actor to location "
+                                            + location.x + ", " + location.y
+                                            + " because that location does not"
+                                            + " exist on the map.");
+         }
+                                  
+         if(direction.equals("North")){
+             currentRow--;    
+        }
+    }
+    
+    public static void moveCharactersToStartingLocation(Map map, Character[] characters)
+                                                throws MapControlException{
+        
+            for (Character character : characters){
+                Point location= character.getLocation();
+                MapControl.moveCharactersToStartingLocation(map, characters);   
+            }
+    }
+    
     }
