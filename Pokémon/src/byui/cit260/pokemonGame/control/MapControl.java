@@ -171,10 +171,7 @@ public class MapControl {
                                             + " because that location does not"
                                             + " exist on the map.");
          }
-                                  
-         if(direction.equals("North")){
-             currentRow--;    
-        }
+
     }
     
     public static void moveCharactersToStartingLocation(Map map, Character[] characters)
