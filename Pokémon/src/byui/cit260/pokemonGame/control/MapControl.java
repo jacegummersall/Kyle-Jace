@@ -20,14 +20,14 @@ import byui.cit260.pokemonGame.model.Character;
  */
 public class MapControl {
 
-    public static Map createMap() {
+    public static Map createMap() throws MapControlException {
         
         Map map = new Map (5,10);
         
         Scene[] scenes = createScenes();
         
         assignScenesToLocations(map, scenes);
-        
+       
         return map;
 
     }
@@ -92,9 +92,14 @@ public class MapControl {
         return scenes;
     }
 
-    private static void assignScenesToLocations(Map map, Scene[] scenes) {
+    private static void assignScenesToLocations(Map map, Scene[] scenes)
+                                    throws MapControlException{
 
             Location[][] locations = map.getLocations();
+            
+            if (locations == null) {
+                throw new MapControlException("LOCATIONS IS NULL YOU DUMMY");
+            }
             
             locations[0][0].setScene(scenes[SceneType.masterball.ordinal()]);
             locations[0][1].setScene(scenes[SceneType.emptyScene.ordinal()]);
@@ -155,12 +160,12 @@ public class MapControl {
         
          if (character == null){
              throw new MapControlException("Invalid Character");
-         };
+         }
          
          Point location = character.getLocation();
          if (location.x <0 || location.x > 9|| location.y < 0 || location.y > 5){
              throw new MapControlException("Invalid location");
-         };
+         }
          
          if (direction == null || !direction.equals("North") && 
                                   !direction.equals("South") &&
@@ -171,7 +176,10 @@ public class MapControl {
                                             + " because that location does not"
                                             + " exist on the map.");
          }
-
+                                  
+//         if(direction.equals("North")){
+//             currentRow--;    
+//        }
     }
     
     public static void moveCharactersToStartingLocation(Map map, Character[] characters)

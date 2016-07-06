@@ -54,4 +54,27 @@ public class HelpMenuView extends View{
         System.out.println("\n*** displayMove function called ***");
     }
     
+    public Double getDoubleNumber() {
+        Double number = null;
+        
+        while (number == null) {
+            String value = this.getInput();
+            value = value.trim().toUpperCase();
+            
+            if (value.equals("Q"))
+                break;
+            
+        try {
+        // parse and converte number from text to a double
+        number = Double.parseDouble(value);
+        }
+        catch (NumberFormatException nf) {
+            
+            System.out.println ("\nYou must enter a valid number."
+                            + " Try again or enter Q to quit.");
+            }
+        }
+        
+        return number;
+    }
 }

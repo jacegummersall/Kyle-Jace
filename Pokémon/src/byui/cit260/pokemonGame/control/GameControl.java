@@ -13,6 +13,7 @@ import byui.cit260.pokemonGame.model.Game;
 import byui.cit260.pokemonGame.model.Item;
 import byui.cit260.pokemonGame.model.Map;
 import byui.cit260.pokemonGame.model.Pokemon;
+import citbyui.cit260.pokemonGame.exceptions.MapControlException;
 import java.util.ArrayList;
 
 /**
@@ -34,7 +35,7 @@ public class GameControl {
         return player;
     }
 
-    public static void createNewGame(Player player) {
+    public static void createNewGame(Player player) throws MapControlException {
 
         Game game = new Game();
         Pokémon.setCurrentGame(game);

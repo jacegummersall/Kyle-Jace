@@ -6,6 +6,8 @@
 package byui.cit260.pokemonGame.view;
 
 import byui.cit260.pokemonGame.control.GameControl;
+import byui.cit260.pokemonGame.control.MapControl;
+import citbyui.cit260.pokemonGame.exceptions.MapControlException;
 import java.util.Scanner;
 import pokémon.Pokémon;
 
@@ -52,11 +54,18 @@ public class MainMenuView extends View{
     }
 
     private void startNewGame() {
+        try {
+            GameControl.createNewGame(Pokémon.getPlayer());
+        } catch (MapControlException me) {
+            System.out.println(me.getMessage());
+        }
         
-        GameControl.createNewGame(Pokémon.getPlayer());
         
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
+        
+        
+        
     }
 
     private void loadExistingGame() {
