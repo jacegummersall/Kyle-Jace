@@ -30,12 +30,12 @@ public class Pokémon {
         StartProgramView startProgramView = new StartProgramView();
         
         try {
-        startProgramView.display();
+        startProgramView.displayStartProgramView();
         }
         catch (Throwable te){
             System.out.println(te.getMessage());
             te.printStackTrace();
-            startProgramView.display();
+            startProgramView.displayStartProgramView();
         }
         
         
