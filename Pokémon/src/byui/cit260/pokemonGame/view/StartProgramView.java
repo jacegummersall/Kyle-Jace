@@ -8,7 +8,11 @@ package byui.cit260.pokemonGame.view;
 import byui.cit260.pokemonGame.control.GameControl;
 import byui.cit260.pokemonGame.model.Player;
 import citbyui.cit260.pokemonGame.exceptions.GameControlException;
+import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import pokémon.Pokémon;
 
 /**
  *
@@ -17,11 +21,11 @@ import java.util.Scanner;
 public class StartProgramView extends View{
     
     
-    private String promptMessage;
+    
     
     public StartProgramView() {
         // promptMessage = "Please enter your name."
-        this.promptMessage = ("\nPlease enter your name: ");
+        super ("\nPlease enter your name: ");
         
         this.displayBanner();
         // display the banner when view is created
@@ -29,19 +33,7 @@ public class StartProgramView extends View{
         
     }
     
-    public void displayStartProgramView(){
-        
-        boolean done = false; //set flag to not done
-        do {
-            //prompt for and get player's name
-            String playersName = this.getPlayerName();
-            if (playersName.toUpperCase().equals("Q")) //user wants to quit
-                return; //exit the game
-            
-            //do the requested action and display the next view
-            done = this.doAction(playersName);
-        } while (!done);
-    }
+    
     
     private void displayBanner() {
         System.out.println(
@@ -100,38 +92,15 @@ public class StartProgramView extends View{
             System.out.println(ge.getMessage());
         }
         
-        if (player == null) {//if unsuccessful
-            System.out.println("\nError creating the player.");
-            return false;
-            
-        }
+        
         //display next view
-        this.displayNextView(player);
+        this.displayNextView(Pokémon.getPlayer());
         return true;
         
         
     }
     
-    private String getPlayerName(){
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-        String value = ""; // value to be returned
-        boolean valid = false; // initialize to not valid
-        
-        while (!valid) { //loop while an invalid value is entered
-            System.out.println("\n" + this.promptMessage);
-            
-            
-            value = keyboard.nextLine(); // get next line typed on keyboard
-            value = value.trim(); // trim off leading and trailing blanks
-            
-            if (value.length() < 1) { // value is blank
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
-            }
-            break; //end the loop
-        }
-        return value; //return the value entered
-    }
+    
 
     private void displayNextView(Player player) {
         
@@ -152,7 +121,7 @@ public class StartProgramView extends View{
     }
  
         public void getHours(){
-        System.out.println("\nHow many hours do you think it will take you to win the game?:");
+        this.displayMessage = "\nHow many hours do you think it will take you to win the game?:";
         
         int selection = getInt();
     }
