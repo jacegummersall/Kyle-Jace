@@ -5,6 +5,7 @@
  */
 package byui.cit260.pokemonGame.control;
 
+import citbyui.cit260.pokemonGame.exceptions.PokeballControlException;
 import java.util.Random;
 
 /**
@@ -13,35 +14,36 @@ import java.util.Random;
  */
 public class PokeballControl {
 
-    public String calcPokeball(int pokemonCurrentHP, int pokemonFullHP) {
+    public String calcPokeball(int pokemonCurrentHP, int pokemonFullHP) 
+                                    throws PokeballControlException{
 
         if (pokemonCurrentHP > 98) {
-            return "Pokémon has escaped, he is too strong";
+            throw new PokeballControlException("Pokémon has escaped, he is too strong");
         }
 
         if (pokemonCurrentHP < 1) {
-            return "Pokémon has fainted";
+            throw new PokeballControlException("Pokémon has fainted");
         }
 
         if (pokemonFullHP < 0) {
-            return "ERROR";
+            throw new PokeballControlException("ERROR");
         }
         
         if (pokemonFullHP < 50) {
-            return "Pokémon has escaped, he is too strong";
+            throw new PokeballControlException("Pokémon has escaped, he is too strong");
         }
 
         if (pokemonFullHP > 200) {
-            return "ERROR";
+            throw new PokeballControlException("ERROR");
         }
 
         Random random = new Random();
 
         int captureSuccess = pokemonCurrentHP + (1 * random.nextInt(5));
         if (captureSuccess < pokemonFullHP / 2) {
-            return "Pokémon Captured!";
+            throw new PokeballControlException("Pokémon Captured!");
         }
-        return "Pokémon has escaped, he is too strong";
+        throw new PokeballControlException("Pokémon has escaped, he is too strong");
     }
 
 }

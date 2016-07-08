@@ -13,6 +13,7 @@ import byui.cit260.pokemonGame.model.Game;
 import byui.cit260.pokemonGame.model.Item;
 import byui.cit260.pokemonGame.model.Map;
 import byui.cit260.pokemonGame.model.Pokemon;
+import citbyui.cit260.pokemonGame.exceptions.GameControlException;
 import citbyui.cit260.pokemonGame.exceptions.MapControlException;
 import java.util.ArrayList;
 
@@ -22,10 +23,11 @@ import java.util.ArrayList;
  */
 public class GameControl {
 
-    public static Player createPlayer(String playersName) {
+    public static Player createPlayer(String playersName) 
+                                    throws GameControlException{
         
         if (playersName == null) {
-            return null;
+            throw new GameControlException("Player's name is null");
         }
         Player player = new Player();
         player.setName(playersName);

@@ -7,6 +7,7 @@ package byui.cit260.pokemonGame.view;
 
 import byui.cit260.pokemonGame.control.GameControl;
 import byui.cit260.pokemonGame.model.Player;
+import citbyui.cit260.pokemonGame.exceptions.GameControlException;
 import java.util.Scanner;
 
 /**
@@ -74,9 +75,15 @@ public class StartProgramView extends View{
                     + "The name must be greater than one character in length");
             return false;
         }
-        
+        Player player = null;
+        try {
         //call createPlayer() control function
-        Player player = GameControl.createPlayer(playersName);
+            GameControl.createPlayer(playersName);
+        }
+        
+        catch (GameControlException ge){
+            System.out.println(ge.getMessage());
+        }
         
         if (player == null) {//if unsuccessful
             System.out.println("\nError creating the player.");
