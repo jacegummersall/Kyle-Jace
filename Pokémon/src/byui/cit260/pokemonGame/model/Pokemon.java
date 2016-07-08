@@ -15,20 +15,22 @@ import java.util.Objects;
 public class Pokemon implements Serializable{
     
     private String pokemonName;
-    private double strength;
-    private double defense;
-    private double healthPoints;
+    private int strength;
+    private int defense;
+    private int fullHealthPoints;
+    private int currentHealthPoints;
     private int pokemonQuantity;
 
     public Pokemon() {
     }
 
-    public Pokemon(String pokemonName, double strength, double defense, double healthPoints, int pokemonQuantity) {
+    public Pokemon(String pokemonName, int strength, int defense, int healthPoints, int pokemonQuantity) {
         this.pokemonName = pokemonName;
         this.strength = strength;
         this.defense = defense;
-        this.healthPoints = healthPoints;
+        this.fullHealthPoints = healthPoints;
         this.pokemonQuantity = pokemonQuantity;
+        this.currentHealthPoints = this.fullHealthPoints;
     }
 
     public int getPokemonQuantity() {
@@ -49,28 +51,36 @@ public class Pokemon implements Serializable{
         this.pokemonName = pokemonName;
     }
 
-    public double getStrength() {
+    public int getStrength() {
         return strength;
     }
 
-    public void setStrength(double strength) {
+    public void setStrength(int strength) {
         this.strength = strength;
     }
 
-    public double getDefense() {
+    public int getDefense() {
         return defense;
     }
 
-    public void setDefense(double defense) {
+    public void setDefense(int defense) {
         this.defense = defense;
     }
 
-    public double getHealthPoints() {
-        return healthPoints;
+    public int getFullHealthPoints() {
+        return fullHealthPoints;
     }
 
-    public void setHealthPoints(double healthPoints) {
-        this.healthPoints = healthPoints;
+    public void setFullHealthPoints(int fullHealthPoints) {
+        this.fullHealthPoints = fullHealthPoints;
+    }
+
+    public int getCurrentHealthPoints() {
+        return currentHealthPoints;
+    }
+
+    public void setCurrentHealthPoints(int currentHealthPoints) {
+        this.currentHealthPoints = currentHealthPoints;
     }
 
     @Override
@@ -79,7 +89,7 @@ public class Pokemon implements Serializable{
         hash = 97 * hash + Objects.hashCode(this.pokemonName);
         hash = 97 * hash + (int) (Double.doubleToLongBits(this.strength) ^ (Double.doubleToLongBits(this.strength) >>> 32));
         hash = 97 * hash + (int) (Double.doubleToLongBits(this.defense) ^ (Double.doubleToLongBits(this.defense) >>> 32));
-        hash = 97 * hash + (int) (Double.doubleToLongBits(this.healthPoints) ^ (Double.doubleToLongBits(this.healthPoints) >>> 32));
+        hash = 97 * hash + (int) (Double.doubleToLongBits(this.fullHealthPoints) ^ (Double.doubleToLongBits(this.fullHealthPoints) >>> 32));
         return hash;
     }
 
@@ -101,7 +111,7 @@ public class Pokemon implements Serializable{
         if (Double.doubleToLongBits(this.defense) != Double.doubleToLongBits(other.defense)) {
             return false;
         }
-        if (Double.doubleToLongBits(this.healthPoints) != Double.doubleToLongBits(other.healthPoints)) {
+        if (Double.doubleToLongBits(this.fullHealthPoints) != Double.doubleToLongBits(other.fullHealthPoints)) {
             return false;
         }
         if (!Objects.equals(this.pokemonName, other.pokemonName)) {
@@ -112,7 +122,7 @@ public class Pokemon implements Serializable{
 
     @Override
     public String toString() {
-        return "Pokemon{" + "pokemonName=" + pokemonName + ", strength=" + strength + ", defense=" + defense + ", healthPoints=" + healthPoints + '}';
+        return "Pokemon{" + "pokemonName=" + pokemonName + ", strength=" + strength + ", defense=" + defense + ", healthPoints=" + fullHealthPoints + '}';
     }
     
     

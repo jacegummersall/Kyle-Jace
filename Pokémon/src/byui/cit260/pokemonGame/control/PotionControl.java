@@ -5,6 +5,7 @@
  */
 package byui.cit260.pokemonGame.control;
 
+import citbyui.cit260.pokemonGame.exceptions.PotionControlException;
 import java.util.Random;
 
 /**
@@ -13,12 +14,14 @@ import java.util.Random;
  */
 public class PotionControl {
     
-    public int usePotion(int pokemonCurrentHP, int pokemonFullHP) {
+    public static int usePotion(int pokemonCurrentHP, int pokemonFullHP)
+                            throws PotionControlException {
+        
         if (pokemonCurrentHP >= pokemonFullHP){
-            return -1;
+            throw new PotionControlException("Your Pokémon has already fainted.");
         }
         if (pokemonCurrentHP < 1){
-            return -2;
+            throw new PotionControlException("Your Pokémon has already fainted.");
         }
         
         Random random = new Random();
