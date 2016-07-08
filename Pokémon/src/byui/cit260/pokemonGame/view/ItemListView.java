@@ -49,7 +49,10 @@ public class ItemListView extends View{
     }
 
     private void displayUseItem() {
-        System.out.println("*** displayUseItem function called ***");
+        
+        UsePotionView usePotionMenu = new UsePotionView();
+        usePotionMenu.display();
+        
     }
 
     private void displayPokemonList() {
