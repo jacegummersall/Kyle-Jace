@@ -34,6 +34,7 @@ public class GameMenuView extends View{
                 + "\nD - Display total items on map"
                 + "\nC - Count total Pokémon"
                 + "\nP - Pokémon"
+                + "\nR - Review Pokémon Stats"
                 + "\nE - Explore Square"
                 + "\nS - Save Game"
                 + "\nH - Help"
@@ -62,6 +63,9 @@ public class GameMenuView extends View{
                 break;
             case "P": //Display list of Pokémon
                 this.displayPokemonList();
+                break;
+            case "R": //Display list of Pokémon Stats
+                this.displayPokemonListReport();
                 break;
             case "E": //Display exploration results
                 this.displayExplore();
@@ -145,12 +149,39 @@ public class GameMenuView extends View{
     }
 
     private void displayPokemonList() {
-
+        
         PokemonListMenuView pokemonListMenu = new PokemonListMenuView();
 
         pokemonListMenu.display();
     }
 
+    private void displayPokemonListReport() {
+        StringBuilder line;
+        
+        Game game = Pokémon.getCurrentGame();
+        ArrayList<Pokemon> pokemons = game.getPokemons();
+        
+        System.out.println("\n List of Pokemon Location");
+        line = new StringBuilder ("                         ");
+        line.insert(0, "NAME");
+        line.insert(20, "STRENGTH");
+        line.insert(30, "DEFENSE");
+        System.out.println(line.toString());
+        
+        for (Pokemon pokemon : pokemons) {
+            
+        line = new StringBuilder ("                         ");
+        line.insert(0, pokemon.getPokemonName());
+        line.insert(23, pokemon.getStrength());
+        line.insert(33, pokemon.getDefense());
+        System.out.println(line.toString());
+        }
+        
+        PokemonListMenuView pokemonListMenu = new PokemonListMenuView();
+
+        pokemonListMenu.display(); 
+    }
+    
     private void displayExplore() {
         System.out.println("*** displayExplore function called ***");
     }
