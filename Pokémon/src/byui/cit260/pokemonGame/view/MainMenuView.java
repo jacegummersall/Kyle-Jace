@@ -69,6 +69,17 @@ public class MainMenuView extends View{
     }
 
     private void loadExistingGame() {
+        this.console.println("\n\n Enter the file path for where the game is to "
+                + "be saved.");
+        
+        String filePath = this.getInput();
+        
+        try {
+            GameControl.getSavedGame(filePath);
+        } catch (Exception ex){
+            ErrorView.display("GameMenuView", ex.getMessage());
+        } 
+    
         
         GameControl.loadExistingGame(Pokémon.getPlayer());
         
