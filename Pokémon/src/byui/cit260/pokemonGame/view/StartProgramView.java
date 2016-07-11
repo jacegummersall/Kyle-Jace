@@ -121,7 +121,7 @@ public class StartProgramView extends View{
     }
  
         public void getHours(){
-        this.displayMessage = "\nHow many hours do you think it will take you to win the game?:";
+            this.displayMessage = "\nHow many hours do you think it will take you to win the game?:";
         
         int selection = getInt();
     }
