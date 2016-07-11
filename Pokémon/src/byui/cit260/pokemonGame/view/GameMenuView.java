@@ -156,7 +156,16 @@ public class GameMenuView extends View{
     }
 
     private void displaySave() {
-        System.out.println("*** displaySave function called ***");
+        this.console.println("\n\n Enter the file path for where the game is to "
+                + "be saved.");
+        
+        String filePath = this.getInput();
+        
+        try {
+            GameControl.saveGame(Pokémon.getCurrentGame(),filePath);
+        } catch (Exception ex){
+            ErrorView.display("GameMenuView", ex.getMessage());
+        } 
     }
 
     private void displayHelpMenu() {
