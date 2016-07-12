@@ -59,6 +59,8 @@ public class GameControl {
         
         Map map = MapControl.createMap();
         game.setMap(map);
+        
+        MapControl.moveCharactersToStartingLocation(map);
     }
 
     public static void loadExistingGame(Player player) {

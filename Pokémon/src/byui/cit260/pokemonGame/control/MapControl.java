@@ -13,6 +13,8 @@ import citbyui.cit260.pokemonGame.exceptions.MapControlException;
 import java.awt.Point;
 import pokémon.Pokémon;
 import byui.cit260.pokemonGame.model.Character;
+import byui.cit260.pokemonGame.model.Player;
+import java.util.ArrayList;
 
 /**
  *
@@ -182,13 +184,22 @@ public class MapControl {
 //        }
     }
     
-    public static void moveCharactersToStartingLocation(Map map, Character[] characters)
+    public static void moveCharactersToStartingLocation(Map map)
                                                 throws MapControlException{
-        
-            for (Character character : characters){
-                Point location= character.getLocation();
-                MapControl.moveCharactersToStartingLocation(map, characters);   
-            }
+
+       Character mainCharacter = Pokémon.getCurrentGame().getCharacters()[ListConstants.mainCharacterIndex];
+       Location[][] locations = Pokémon.getCurrentGame().getMap().getLocations();
+       
+       mainCharacter.setLocation(new Point(2,3));
+       
+       // get the location at 2, 3
+       Location location = locations[2][3];
+     
+       // get the characterList in the location
+       // add the character to the array list
+       location.getCharactersInLocation().add(mainCharacter);
+       
+       location.setVisited(true);
     }
     
     }

@@ -161,7 +161,7 @@ public class GameMenuView extends View{
         Game game = Pokémon.getCurrentGame();
         ArrayList<Pokemon> pokemons = game.getPokemons();
         
-        System.out.println("\n List of Pokemon Location");
+        System.out.println("\n List of Pokemon Stats");
         line = new StringBuilder ("                         ");
         line.insert(0, "NAME");
         line.insert(20, "STRENGTH");
