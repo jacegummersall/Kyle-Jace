@@ -5,6 +5,7 @@
  */
 package byui.cit260.pokemonGame.model;
 
+import java.awt.Point;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -17,6 +18,7 @@ public class Item implements Serializable{
     
     private String inventoryType;
     private int inventoryQuantity;
+    private Point location;
 
     public Item() {
     }
@@ -42,6 +44,15 @@ public class Item implements Serializable{
         this.inventoryQuantity = inventoryQuantity;
     }
 
+    public Point getLocation() {
+        return location;
+    }
+
+    public void setLocation(Point location) {
+        this.location = location;
+    }
+
+    
     @Override
     public int hashCode() {
         int hash = 5;

@@ -14,4 +14,7 @@ public class ListConstants {
     public final static int NUMBER_OF_CHARACTERS = 2;
     public final static int mainCharacterIndex = 0;
     public final static int finalBoss = 1;
+    
+    public final static int NUMBER_OF_POKEMON = 5;
+    
 }
