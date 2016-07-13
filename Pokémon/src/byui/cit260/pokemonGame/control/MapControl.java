@@ -214,6 +214,8 @@ public class MapControl {
        // get the characterList in the location
        // add the character to the array list
        location.getCharactersInLocation().add(finalBossCharacter);
+       
+       location.setVisited(true);
     }
     
     public static void movePokemonToStartingLocation(Map map)
