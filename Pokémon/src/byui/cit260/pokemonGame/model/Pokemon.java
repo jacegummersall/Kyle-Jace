@@ -5,6 +5,7 @@
  */
 package byui.cit260.pokemonGame.model;
 
+import java.awt.Point;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -20,6 +21,8 @@ public class Pokemon implements Serializable{
     private int fullHealthPoints;
     private int currentHealthPoints;
     private int pokemonQuantity;
+    private Point location;
+
 
     public Pokemon() {
     }
@@ -82,6 +85,16 @@ public class Pokemon implements Serializable{
     public void setCurrentHealthPoints(int currentHealthPoints) {
         this.currentHealthPoints = currentHealthPoints;
     }
+
+    public Point getLocation() {
+        return location;
+    }
+
+    public void setLocation(Point location) {
+        this.location = location;
+    }
+    
+    
 
     @Override
     public int hashCode() {

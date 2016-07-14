@@ -13,7 +13,9 @@ import citbyui.cit260.pokemonGame.exceptions.MapControlException;
 import java.awt.Point;
 import pokémon.Pokémon;
 import byui.cit260.pokemonGame.model.Character;
+import byui.cit260.pokemonGame.model.Item;
 import byui.cit260.pokemonGame.model.Player;
+import byui.cit260.pokemonGame.model.Pokemon;
 import java.util.ArrayList;
 
 /**
@@ -208,6 +210,177 @@ public class MapControl {
        location.getCharactersInLocation().add(mainCharacter);
        
        location.setVisited(true);
+       
+       Character finalBossCharacter = Pokémon.getCurrentGame().getCharacters()[ListConstants.finalBoss];
+       locations = Pokémon.getCurrentGame().getMap().getLocations();
+       
+       finalBossCharacter.setLocation(new Point(4,9));
+       
+       // get the location at 4, 9
+       location = locations[4][9];
+     
+       // get the characterList in the location
+       // add the character to the array list
+       location.getCharactersInLocation().add(finalBossCharacter);
+       
+       location.setVisited(true);
+    }
+    
+    public static void movePokemonToStartingLocation(Map map)
+                                                throws MapControlException{
+
+       Pokemon rattata = Pokémon.getCurrentGame().getPokemons().get(1);
+       Location[][] locations = Pokémon.getCurrentGame().getMap().getLocations();
+       
+       rattata.setLocation(new Point(1,3));
+       
+       // get the location at 2, 3
+       Location location = locations[1][3];
+     
+       // get the characterList in the location
+       // add the character to the array list
+       location.getPokemonInLocation().get(1);
+       
+       Pokemon charizard = Pokémon.getCurrentGame().getPokemons().get(2);
+       locations = Pokémon.getCurrentGame().getMap().getLocations();
+       
+       charizard.setLocation(new Point(4,0));
+       
+       // get the location at 2, 3
+       location = locations[4][0];
+     
+       // get the characterList in the location
+       // add the character to the array list
+       location.getPokemonInLocation().get(2);
+       
+       Pokemon spearow = Pokémon.getCurrentGame().getPokemons().get(3);
+       locations = Pokémon.getCurrentGame().getMap().getLocations();
+       
+       spearow.setLocation(new Point(3,5));
+       
+       // get the location at 2, 3
+       location = locations[3][5];
+     
+       // get the characterList in the location
+       // add the character to the array list
+       location.getPokemonInLocation().get(3);
+       
+       Pokemon gyarados = Pokémon.getCurrentGame().getPokemons().get(4);
+       locations = Pokémon.getCurrentGame().getMap().getLocations();
+       
+       gyarados.setLocation(new Point(4,8));
+       
+       // get the location at 2, 3
+       location = locations[4][8];
+     
+       // get the characterList in the location
+       // add the character to the array list
+       location.getPokemonInLocation().get(4);
+
+       Pokemon mewtwo = Pokémon.getCurrentGame().getPokemons().get(5);
+       locations = Pokémon.getCurrentGame().getMap().getLocations();
+       
+       mewtwo.setLocation(new Point(0,9));
+       
+       // get the location at 2, 3
+       location = locations[0][9];
+     
+       // get the characterList in the location
+       // add the character to the array list
+       location.getPokemonInLocation().get(5);
+    }
+    
+    public static void moveItemsToStartingLocation(Map map)
+                                                throws MapControlException{
+
+       Item potion = Pokémon.getCurrentGame().getItems().get(0);
+       Location[][] locations = Pokémon.getCurrentGame().getMap().getLocations();
+       
+       potion.setLocation(new Point(3,0));
+       potion.setLocation(new Point(1,1));
+       potion.setLocation(new Point(1,4));
+       potion.setLocation(new Point(4,4));
+       potion.setLocation(new Point(4,5));
+       potion.setLocation(new Point(2,5));
+       potion.setLocation(new Point(1,7));
+       // get the location at 2, 3
+       Location location = locations[3][0];
+       location = locations[1][1];
+       location = locations[1][4];
+       location = locations[4][4];
+       location = locations[4][5];
+       location = locations[2][5];
+       location = locations[1][7];
+       
+     
+       // get the characterList in the location
+       // add the character to the array list
+       location.getItemInLocation().get(0);
+       
+       Item superPotion = Pokémon.getCurrentGame().getItems().get(1);
+       locations = Pokémon.getCurrentGame().getMap().getLocations();
+       
+       superPotion.setLocation(new Point(1,0));
+       superPotion.setLocation(new Point(4,2));
+       superPotion.setLocation(new Point(0,7));
+       superPotion.setLocation(new Point(4,7));
+       superPotion.setLocation(new Point(2,9));
+
+       // get the location at 2, 3
+       location = locations[1][0];
+       location = locations[4][2];
+       location = locations[0][7];
+       location = locations[4][7];
+       location = locations[2][9];
+
+       
+     
+       // get the characterList in the location
+       // add the character to the array list
+       location.getItemInLocation().get(1);
+       
+       Item pokeball = Pokémon.getCurrentGame().getItems().get(2);
+       locations = Pokémon.getCurrentGame().getMap().getLocations();
+       
+       pokeball.setLocation(new Point(2,2));
+       pokeball.setLocation(new Point(0,3));
+       pokeball.setLocation(new Point(3,3));
+       pokeball.setLocation(new Point(2,4));
+       pokeball.setLocation(new Point(3,7));
+       pokeball.setLocation(new Point(2,8));
+       
+       // get the location at 2, 3
+       location = locations[2][2];
+       location = locations[0][3];
+       location = locations[3][3];
+       location = locations[2][4];
+       location = locations[3][7];
+       location = locations[2][8];
+
+       
+     
+       // get the characterList in the location
+       // add the character to the array list
+       location.getItemInLocation().get(2);
+       
+       Item masterball = Pokémon.getCurrentGame().getItems().get(3);
+       locations = Pokémon.getCurrentGame().getMap().getLocations();
+       
+       masterball.setLocation(new Point(0,0));
+       masterball.setLocation(new Point(0,5));
+
+       
+       // get the location at 2, 3
+       location = locations[0][0];
+       location = locations[0][5];
+
+
+       
+     
+       // get the characterList in the location
+       // add the character to the array list
+       location.getItemInLocation().get(3);
+       
     }
     
     }

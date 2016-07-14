@@ -20,7 +20,9 @@ public class Location implements Serializable{
     private boolean visited;
     private Scene scene;
     private ArrayList<Character> charactersInLocation = new ArrayList<>();
-
+    private ArrayList<Pokemon> pokemonInLocation = new ArrayList<>();
+    private ArrayList<Item> itemInLocation = new ArrayList<>();
+    
     public Location() {
     }
 
@@ -64,6 +66,23 @@ public class Location implements Serializable{
         this.charactersInLocation = charactersInLocation;
     }
 
+    public ArrayList<Pokemon> getPokemonInLocation() {
+        return pokemonInLocation;
+    }
+
+    public void setPokemonInLocation(ArrayList<Pokemon> pokemonInLocation) {
+        this.pokemonInLocation = pokemonInLocation;
+    }
+
+    public ArrayList<Item> getItemInLocation() {
+        return itemInLocation;
+    }
+
+    public void setItemInLocation(ArrayList<Item> itemInLocation) {
+        this.itemInLocation = itemInLocation;
+    }
+    
+    
     
     
     @Override

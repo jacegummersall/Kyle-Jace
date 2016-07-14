@@ -47,11 +47,29 @@ public class HelpMenuView extends View{
 }
 
     private void displayGameGoal() {
-        System.out.println("\n*** displayGameGoal function called ***");
+        System.out.println("\nThe goal of this game is to navigate the map and "
+                        +  "\nfind potions, Pokéballs, and Pokémon in order to"
+                        +  "\nbe strong enough and ready to defeat the Pokémon"
+                        +  "\nMaster Lance. Take your time to visit as many "
+                        +  "\nspaces as possible as you search out the gym "
+                        +  "\nleader in order to win the game. Good luck in your"
+                        +  "\njourney to become the best like no one ever was!");
     }
 
     private void displayMove() {
-        System.out.println("\n*** displayMove function called ***");
+        System.out.println("\nIn order to move you will need to navigate back to"
+                        +  "\nthe Game Menu by pressing B, and then either starting"
+                        +  "\na new game by pressing N, or loading a saved game "
+                        +  "\nby pressing L and the file path where you saved it."
+                        +  "\nThen from there type in the letter V for view map."
+                        +  "\nThe Map will appear with an ST for your starting "
+                        +  "\npoint and then a bunch of  ?? for unvisited spaces."
+                        +  "\nA new menu will also appear that allows you to move"
+                        +  "\nup(M N), down (M S), left (M W), and right (M E). "
+                        +  "\nAs you move through the map be sure to check the map"
+                        +  "\nto see where you have and haven’t visited. One you"
+                        +  "\nfeel ready to battle the boss you will need to Navigate"
+                        +  "\nto the FN space where the final battle will occur. ");
     }
     
     public Double getDoubleNumber() {
