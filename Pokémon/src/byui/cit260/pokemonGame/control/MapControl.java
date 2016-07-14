@@ -157,14 +157,21 @@ public class MapControl {
     
     public static void moveCharacterToLocation(Character character, String direction)
                                             throws MapControlException{
-                                               
+                    
          Map map = Pokémon.getCurrentGame().getMap();
+         Location[][] locations = map.getLocations();
+         Point location = character.getLocation();
+         
+         if(direction.equals("North")){
+            
+                 location.y--;
+        }
         
          if (character == null){
              throw new MapControlException("Invalid Character");
          }
          
-         Point location = character.getLocation();
+         
          if (location.x <0 || location.x > 9|| location.y < 0 || location.y > 5){
              throw new MapControlException("Invalid location");
          }
@@ -178,10 +185,11 @@ public class MapControl {
                                             + " because that location does not"
                                             + " exist on the map.");
          }
+                           
+        
+        
                                   
-//         if(direction.equals("North")){
-//             currentRow--;    
-//        }
+         
     }
     
     public static void moveCharactersToStartingLocation(Map map)
