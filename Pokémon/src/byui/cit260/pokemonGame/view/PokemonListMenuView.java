@@ -5,7 +5,11 @@
  */
 package byui.cit260.pokemonGame.view;
 
+import byui.cit260.pokemonGame.model.Game;
+import byui.cit260.pokemonGame.model.Pokemon;
+import java.util.ArrayList;
 import java.util.Scanner;
+import pokémon.Pokémon;
 
 /**
  *
@@ -69,27 +73,123 @@ public class PokemonListMenuView extends View{
     }
 
     private void choosePikachu() {
-        System.out.println("\n*** choosePikachu stub function called ***");
+        StringBuilder line;
+        
+        Game game = Pokémon.getCurrentGame();
+        Pokemon pokemon = game.getPokemons().get(0);
+        
+        System.out.println("\n List of Pokemon Stats");
+        line = new StringBuilder ("                         ");
+        line.insert(0, "NAME");
+        line.insert(20, "STRENGTH");
+        line.insert(30, "DEFENSE");
+        System.out.println(line.toString());
+            
+        line = new StringBuilder ("                         ");
+        line.insert(0, pokemon.getPokemonName());
+        line.insert(23, pokemon.getStrength());
+        line.insert(33, pokemon.getDefense());
+        System.out.println(line.toString());
     }
 
     private void chooseRatatta() {
-        System.out.println("\n*** choosePikachu stub function called ***");
+               StringBuilder line;
+        
+        Game game = Pokémon.getCurrentGame();
+        Pokemon pokemon = game.getPokemons().get(1);
+        
+        System.out.println("\n List of Pokemon Stats");
+        line = new StringBuilder ("                         ");
+        line.insert(0, "NAME");
+        line.insert(20, "STRENGTH");
+        line.insert(30, "DEFENSE");
+        System.out.println(line.toString());
+            
+        line = new StringBuilder ("                         ");
+        line.insert(0, pokemon.getPokemonName());
+        line.insert(23, pokemon.getStrength());
+        line.insert(33, pokemon.getDefense());
+        System.out.println(line.toString());
     }
 
     private void chooseSpearow() {
-        System.out.println("\n*** chooseSpearow stub function called ***");
+        StringBuilder line;
+        
+        Game game = Pokémon.getCurrentGame();
+        Pokemon pokemon = game.getPokemons().get(2);
+        
+        System.out.println("\n List of Pokemon Stats");
+        line = new StringBuilder ("                         ");
+        line.insert(0, "NAME");
+        line.insert(20, "STRENGTH");
+        line.insert(30, "DEFENSE");
+        System.out.println(line.toString());
+            
+        line = new StringBuilder ("                         ");
+        line.insert(0, pokemon.getPokemonName());
+        line.insert(23, pokemon.getStrength());
+        line.insert(33, pokemon.getDefense());
+        System.out.println(line.toString());
     }
 
     private void chooseCharizard() {
-        System.out.println("\n*** chooseCharizard stub function called ***");
+        StringBuilder line;
+        
+        Game game = Pokémon.getCurrentGame();
+        Pokemon pokemon = game.getPokemons().get(3);
+        
+        System.out.println("\n List of Pokemon Stats");
+        line = new StringBuilder ("                         ");
+        line.insert(0, "NAME");
+        line.insert(20, "STRENGTH");
+        line.insert(30, "DEFENSE");
+        System.out.println(line.toString());
+            
+        line = new StringBuilder ("                         ");
+        line.insert(0, pokemon.getPokemonName());
+        line.insert(23, pokemon.getStrength());
+        line.insert(33, pokemon.getDefense());
+        System.out.println(line.toString());
     }
 
     private void chooseGyarados() {
-        System.out.println("\n*** chooseGyarados stub function called ***");
+        StringBuilder line;
+        
+        Game game = Pokémon.getCurrentGame();
+        Pokemon pokemon = game.getPokemons().get(4);
+        
+        System.out.println("\n List of Pokemon Stats");
+        line = new StringBuilder ("                         ");
+        line.insert(0, "NAME");
+        line.insert(20, "STRENGTH");
+        line.insert(30, "DEFENSE");
+        System.out.println(line.toString());
+            
+        line = new StringBuilder ("                         ");
+        line.insert(0, pokemon.getPokemonName());
+        line.insert(23, pokemon.getStrength());
+        line.insert(33, pokemon.getDefense());
+        System.out.println(line.toString());
     }
 
     private void chooseMewTwo() {
-        System.out.println("\n*** chooseMewTwo stub function called ***");
+        StringBuilder line;
+        
+        Game game = Pokémon.getCurrentGame();
+        Pokemon pokemon = game.getPokemons().get(5);
+        
+        System.out.println("\n List of Pokemon Stats");
+        line = new StringBuilder ("                         ");
+        line.insert(0, "NAME");
+        line.insert(20, "STRENGTH");
+        line.insert(30, "DEFENSE");
+        System.out.println(line.toString());
+            
+        line = new StringBuilder ("                         ");
+        line.insert(0, pokemon.getPokemonName());
+        line.insert(23, pokemon.getStrength());
+        line.insert(33, pokemon.getDefense());
+        System.out.println(line.toString());
     }
 
     private void returnToGameMenu() {

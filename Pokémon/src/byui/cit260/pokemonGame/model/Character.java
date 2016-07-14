@@ -24,7 +24,8 @@ public class Character implements Serializable{
     private String name;
     private Point location;
     private String description;
-    private ArrayList<Item> usedItems = new ArrayList<>();
+    private ArrayList<Item> itemsCollected = new ArrayList<>();
+    private ArrayList<Pokemon> pokemonCaptured = new ArrayList<>();
     
     public Character() {
     }
@@ -60,6 +61,22 @@ public class Character implements Serializable{
         this.description = description;
     }
 
+    public ArrayList<Item> getItemsCollected() {
+        return itemsCollected;
+    }
+
+    public void setItemsCollected(ArrayList<Item> itemsCollected) {
+        this.itemsCollected = itemsCollected;
+    }
+
+    public ArrayList<Pokemon> getPokemonCaptured() {
+        return pokemonCaptured;
+    }
+
+    public void setPokemonCaptured(ArrayList<Pokemon> pokemonCaptured) {
+        this.pokemonCaptured = pokemonCaptured;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 7;

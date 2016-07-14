@@ -11,10 +11,12 @@ import pokémon.Pokémon;
 import byui.cit260.pokemonGame.model.Character;
 import byui.cit260.pokemonGame.model.Game;
 import byui.cit260.pokemonGame.model.Item;
+import byui.cit260.pokemonGame.model.Location;
 import byui.cit260.pokemonGame.model.Map;
 import byui.cit260.pokemonGame.model.Pokemon;
 import citbyui.cit260.pokemonGame.exceptions.GameControlException;
 import citbyui.cit260.pokemonGame.exceptions.MapControlException;
+import java.awt.Point;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
@@ -74,6 +76,8 @@ public class GameControl {
         
         Character gamePlayer = new Character(Pokémon.getPlayer().getName(),"Pokémon Trainer");
         characters[ListConstants.mainCharacterIndex] = gamePlayer;
+        
+        Pokémon.getCurrentGame().setPlayingCharacter(gamePlayer);
         
         Character lance = new Character("Lance","Pokemon Champion");
         characters[ListConstants.finalBoss] = lance;
@@ -171,6 +175,36 @@ public class GameControl {
         Pokémon.setCurrentGame(game);
     }
     
+    public static void characterGetItem()
+                    throws GameControlException{
+        
+        Character mainCharacter = Pokémon.getCurrentGame().getPlayingCharacter();
+        
+        Point coordinates = Pokémon.getCurrentGame().getPlayingCharacter().getLocation();
+        
+        Location[][] locations = Pokémon.getCurrentGame().getMap().getLocations();
+        
+        Location location = locations[coordinates.x][coordinates.y];
+        
+        Item Item = location.getItemInLocation().get(0);
+       
+        mainCharacter.getItemsCollected().add(Item);
+    }
+    public static void characterFindPokemon()
+                    throws GameControlException{
+        
+        Character mainCharacter = Pokémon.getCurrentGame().getPlayingCharacter();
+        
+        Point coordinates = Pokémon.getCurrentGame().getPlayingCharacter().getLocation();
+        
+        Location[][] locations = Pokémon.getCurrentGame().getMap().getLocations();
+        
+        Location location = locations[coordinates.x][coordinates.y];
+        
+        Pokemon pokemon = location.getPokemonInLocation().get(0);
+       
+        mainCharacter.getPokemonCaptured().add(pokemon);
+    }
     
-   
+    
 }
