@@ -5,10 +5,15 @@
  */
 package byui.cit260.pokemonGame.view;
 
+import byui.cit260.pokemonGame.control.DamageControl;
+import byui.cit260.pokemonGame.control.GameControl;
 import pokémon.Pokémon;
 import byui.cit260.pokemonGame.model.Character;
 import byui.cit260.pokemonGame.model.Pokemon;
+import citbyui.cit260.pokemonGame.exceptions.DamageControlException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -66,53 +71,118 @@ public class AttackView extends View {
 }
 
     private void choosePikachu() {
-        Pokemon pikachu = new Pokemon();
-
-        pikachu.getCurrentHealthPoints();
-        pikachu.getDefense();
-        pikachu.getFullHealthPoints();
-        pikachu.getStrength();
+       
+        try {
+            Pokemon pikachu = Pokémon.getCurrentGame().getPokemons().get(0);
+            
+            int healthPoints = pikachu.getCurrentHealthPoints();
+            int attack = pikachu.getStrength();
+            int defense = pikachu.getDefense();
+            
+            
+            DamageControl.calcDamage(healthPoints, attack, defense);
+        } catch (DamageControlException ex) {
+            System.out.println(ex.getMessage());
+        }
+        
+        BattleMenuView battleMenu = new BattleMenuView();
+        battleMenu.display();
     }
 
     private void chooseRatatta() {
-        Pokemon ratatta = new Pokemon();
-
-        ratatta.getCurrentHealthPoints();
-        ratatta.getDefense();
-        ratatta.getFullHealthPoints();
-        ratatta.getStrength();
+   
+        try {
+            Pokemon ratatta = Pokémon.getCurrentGame().getPokemons().get(1);
+            
+            int healthPoints = ratatta.getCurrentHealthPoints();
+            int attack = ratatta.getStrength();
+            int defense = ratatta.getDefense();
+            
+            
+            DamageControl.calcDamage(healthPoints, attack, defense);
+        } catch (DamageControlException ex) {
+            System.out.println(ex.getMessage());
+        }
+        
+        BattleMenuView battleMenu = new BattleMenuView();
+        battleMenu.display();
     }
 
     private void chooseSpearow() {
-        Pokemon spearow = new Pokemon();
-
-        spearow.getCurrentHealthPoints();
-        spearow.getDefense();
-        spearow.getFullHealthPoints();
-        spearow.getStrength();    }
+   
+        try {
+            Pokemon spearow = Pokémon.getCurrentGame().getPokemons().get(2);
+            
+            int healthPoints = spearow.getCurrentHealthPoints();
+            int attack = spearow.getStrength();
+            int defense = spearow.getDefense();
+            
+            
+            DamageControl.calcDamage(healthPoints, attack, defense);
+        } catch (DamageControlException ex) {
+            System.out.println(ex.getMessage());
+        }
+        
+        BattleMenuView battleMenu = new BattleMenuView();
+        battleMenu.display();
+    }
 
     private void chooseCharizard() {
-        Pokemon charizard = new Pokemon();
-
-        charizard.getCurrentHealthPoints();
-        charizard.getDefense();
-        charizard.getFullHealthPoints();
-        charizard.getStrength();    }
+   
+        try {
+            Pokemon charizard = Pokémon.getCurrentGame().getPokemons().get(3);
+            
+            int healthPoints = charizard.getCurrentHealthPoints();
+            int attack = charizard.getStrength();
+            int defense = charizard.getDefense();
+            
+            
+            DamageControl.calcDamage(healthPoints, attack, defense);
+        } catch (DamageControlException ex) {
+            System.out.println(ex.getMessage());
+        }
+        
+        BattleMenuView battleMenu = new BattleMenuView();
+        battleMenu.display();
+    }
 
     private void chooseGyarados() {
-        Pokemon gyarados = new Pokemon();
-
-        gyarados.getCurrentHealthPoints();
-        gyarados.getDefense();
-        gyarados.getFullHealthPoints();
-        gyarados.getStrength();    }
+   
+        try {
+            Pokemon gyarados = Pokémon.getCurrentGame().getPokemons().get(4);
+            
+            int healthPoints = gyarados.getCurrentHealthPoints();
+            int attack = gyarados.getStrength();
+            int defense = gyarados.getDefense();
+            
+            
+            DamageControl.calcDamage(healthPoints, attack, defense);
+        } catch (DamageControlException ex) {
+            System.out.println(ex.getMessage());
+        }
+        
+        BattleMenuView battleMenu = new BattleMenuView();
+        battleMenu.display();
+    }
 
     private void chooseMewTwo() {
-        Pokemon mewTwo = new Pokemon();
-
-        mewTwo.getCurrentHealthPoints();
-        mewTwo.getDefense();
-        mewTwo.getFullHealthPoints();
-        mewTwo.getStrength();    }
+   
+        try {
+            Pokemon mewTwo = Pokémon.getCurrentGame().getPokemons().get(5);
+            
+            int healthPoints = mewTwo.getCurrentHealthPoints();
+            int attack = mewTwo.getStrength();
+            int defense = mewTwo.getDefense();
+            
+            
+            DamageControl.calcDamage(healthPoints, attack, defense);
+        } catch (DamageControlException ex) {
+            System.out.println(ex.getMessage());
+        }
+        
+        BattleMenuView battleMenu = new BattleMenuView();
+        battleMenu.display();
+        
+    }
 
     }

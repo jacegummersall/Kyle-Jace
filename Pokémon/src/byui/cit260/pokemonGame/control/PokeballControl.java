@@ -14,7 +14,7 @@ import java.util.Random;
  */
 public class PokeballControl {
 
-    public String calcPokeball(int pokemonCurrentHP, int pokemonFullHP) 
+    public static String calcPokeball(int pokemonCurrentHP, int pokemonFullHP) 
                                     throws PokeballControlException{
 
         if (pokemonCurrentHP > 98) {

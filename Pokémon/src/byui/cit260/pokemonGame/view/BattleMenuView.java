@@ -5,6 +5,8 @@
  */
 package byui.cit260.pokemonGame.view;
 
+import byui.cit260.pokemonGame.control.GameControl;
+import byui.cit260.pokemonGame.control.PokeballControl;
 import byui.cit260.pokemonGame.model.Game;
 import byui.cit260.pokemonGame.model.Pokemon;
 import citbyui.cit260.pokemonGame.exceptions.DamageControlException;
@@ -25,10 +27,6 @@ public class BattleMenuView extends View{
                 + "\n--------------------------"
                 + "\n| Battle Menu"
                 + "\n--------------------------"
-                + "\n"
-                + "\n 100 - Pikachu HP"
-                + "\n 60 - Spearow HP"
-                + "\n"
                 + "\nA - Attack"
                 + "\nT - Throw pokéball"
                 + "\nU - Use an item"
@@ -49,7 +47,7 @@ public class BattleMenuView extends View{
                 this.displayAttack();
                 break;
             case "T": //Display if pokémon was caught
-                this.displayPokeball();
+                this.throwPokeball();
                 break;
             case "U": //Display if pokémon was caught
                 this.displayItemList();
@@ -79,8 +77,10 @@ public class BattleMenuView extends View{
         
     }
 
-    private void displayPokeball() {
-        System.out.println("\n *** displayPokeball stub function called ***");
+    private void throwPokeball() {
+        PokeballView pokeballView = new PokeballView();
+        
+        pokeballView.display(); 
     }
 
     private void displayItemList() {
