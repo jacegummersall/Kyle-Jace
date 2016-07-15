@@ -77,12 +77,22 @@ public class PokeballView extends View{
             int currentHP = pokemon.getCurrentHealthPoints();
             int fullHP = pokemon.getFullHealthPoints();
             
-            PokeballControl.calcPokeball(currentHP, fullHP);
+            if(PokeballControl.calcPokeball(currentHP, fullHP) == "Pokémon has escaped, he is too strong" ||
+                    PokeballControl.calcPokeball(currentHP, fullHP) == "Pokémon has fainted" ){
+            MapMenuView mapMenu = new MapMenuView();
+        
+            mapMenu.display();
+                    }
+            
+            else if (PokeballControl.calcPokeball(currentHP, fullHP) == "Pokémon Captured!"){
+            mainCharacter.getPokemonCaptured().add(pokemon);
+            
+            }   
         } catch (PokeballControlException ex) {
             System.out.println(ex.getMessage());
-        }
-        
     }
+            
+}
 
     private void throwMasterball() {
         

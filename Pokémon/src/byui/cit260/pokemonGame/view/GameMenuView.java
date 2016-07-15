@@ -78,8 +78,6 @@ public class GameMenuView extends View{
             case "H": //Display game instructions menu
                 this.displayHelpMenu();
                 break;
-            case "B": //Test battle menu
-                this.displayBattleMenu();
             case "F": //Display game instructions menu
                 this.displayBossView();
                 break;

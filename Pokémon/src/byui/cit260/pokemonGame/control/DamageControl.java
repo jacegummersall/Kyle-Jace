@@ -36,6 +36,10 @@ public class DamageControl {
         
         int pokemonFinalHP = pokemonCurrentHP - (pokemonAttack + random.nextInt(5) - pokemonDefense);
         
+        if (pokemonFinalHP < 1){
+            pokemonFinalHP = 0;
+        }
+        
 	return pokemonFinalHP;
 
     

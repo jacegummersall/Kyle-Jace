@@ -9,8 +9,10 @@ import byui.cit260.pokemonGame.control.DamageControl;
 import byui.cit260.pokemonGame.control.GameControl;
 import pokémon.Pokémon;
 import byui.cit260.pokemonGame.model.Character;
+import byui.cit260.pokemonGame.model.Location;
 import byui.cit260.pokemonGame.model.Pokemon;
 import citbyui.cit260.pokemonGame.exceptions.DamageControlException;
+import java.awt.Point;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -75,16 +77,33 @@ public class AttackView extends View {
         try {
             Pokemon pikachu = Pokémon.getCurrentGame().getPokemons().get(0);
             
-            int healthPoints = pikachu.getCurrentHealthPoints();
+            Point coordinates = Pokémon.getCurrentGame().getPlayingCharacter().getLocation();
+                          
+            Location[][] locations = Pokémon.getCurrentGame().getMap().getLocations();
+            
+            Location location = locations[coordinates.x][coordinates.y];
+            
+            Pokemon pokemon = location.getPokemonInLocation().get(0);
+            int defense = pokemon.getDefense();
+            int healthPoints = pokemon.getCurrentHealthPoints();
             int attack = pikachu.getStrength();
-            int defense = pikachu.getDefense();
             
             
-            DamageControl.calcDamage(healthPoints, attack, defense);
+            int newCurrentHP = DamageControl.calcDamage(healthPoints, attack, defense);
+            pokemon.setCurrentHealthPoints(newCurrentHP);
         } catch (DamageControlException ex) {
             System.out.println(ex.getMessage());
         }
-        
+           Point coordinates = Pokémon.getCurrentGame().getPlayingCharacter().getLocation();
+                          
+            Location[][] locations = Pokémon.getCurrentGame().getMap().getLocations();
+            
+            Location location = locations[coordinates.x][coordinates.y];
+            
+            Pokemon pokemon = location.getPokemonInLocation().get(0);
+              this.console.println("\n" + pokemon.getPokemonName()
+                      + "\nHP - " + pokemon.getCurrentHealthPoints());
+              
         BattleMenuView battleMenu = new BattleMenuView();
         battleMenu.display();
     }
@@ -103,7 +122,16 @@ public class AttackView extends View {
         } catch (DamageControlException ex) {
             System.out.println(ex.getMessage());
         }
-        
+            Point coordinates = Pokémon.getCurrentGame().getPlayingCharacter().getLocation();
+                          
+            Location[][] locations = Pokémon.getCurrentGame().getMap().getLocations();
+            
+            Location location = locations[coordinates.x][coordinates.y];
+            
+            Pokemon pokemon = location.getPokemonInLocation().get(0);
+              
+              this.console.println("\n" + pokemon.getPokemonName()
+                      + "\nHP - " + pokemon.getCurrentHealthPoints());
         BattleMenuView battleMenu = new BattleMenuView();
         battleMenu.display();
     }
@@ -122,6 +150,17 @@ public class AttackView extends View {
         } catch (DamageControlException ex) {
             System.out.println(ex.getMessage());
         }
+        
+            Point coordinates = Pokémon.getCurrentGame().getPlayingCharacter().getLocation();
+                          
+            Location[][] locations = Pokémon.getCurrentGame().getMap().getLocations();
+            
+            Location location = locations[coordinates.x][coordinates.y];
+            
+            Pokemon pokemon = location.getPokemonInLocation().get(0);
+              
+              this.console.println("\n" + pokemon.getPokemonName()
+                      + "\nHP - " + pokemon.getCurrentHealthPoints());
         
         BattleMenuView battleMenu = new BattleMenuView();
         battleMenu.display();
@@ -142,6 +181,17 @@ public class AttackView extends View {
             System.out.println(ex.getMessage());
         }
         
+            Point coordinates = Pokémon.getCurrentGame().getPlayingCharacter().getLocation();
+                          
+            Location[][] locations = Pokémon.getCurrentGame().getMap().getLocations();
+            
+            Location location = locations[coordinates.x][coordinates.y];
+            
+            Pokemon pokemon = location.getPokemonInLocation().get(0);
+              
+              this.console.println("\n" + pokemon.getPokemonName()
+                      + "\nHP - " + pokemon.getCurrentHealthPoints());
+        
         BattleMenuView battleMenu = new BattleMenuView();
         battleMenu.display();
     }
@@ -161,6 +211,17 @@ public class AttackView extends View {
             System.out.println(ex.getMessage());
         }
         
+            Point coordinates = Pokémon.getCurrentGame().getPlayingCharacter().getLocation();
+                          
+            Location[][] locations = Pokémon.getCurrentGame().getMap().getLocations();
+            
+            Location location = locations[coordinates.x][coordinates.y];
+            
+            Pokemon pokemon = location.getPokemonInLocation().get(0);
+              
+              this.console.println("\n" + pokemon.getPokemonName()
+                      + "\nHP - " + pokemon.getCurrentHealthPoints());
+        
         BattleMenuView battleMenu = new BattleMenuView();
         battleMenu.display();
     }
@@ -179,6 +240,17 @@ public class AttackView extends View {
         } catch (DamageControlException ex) {
             System.out.println(ex.getMessage());
         }
+        
+            Point coordinates = Pokémon.getCurrentGame().getPlayingCharacter().getLocation();
+                          
+            Location[][] locations = Pokémon.getCurrentGame().getMap().getLocations();
+            
+            Location location = locations[coordinates.x][coordinates.y];
+            
+            Pokemon pokemon = location.getPokemonInLocation().get(0);
+              
+              this.console.println("\n" + pokemon.getPokemonName()
+                      + "\nHP - " + pokemon.getCurrentHealthPoints());
         
         BattleMenuView battleMenu = new BattleMenuView();
         battleMenu.display();
