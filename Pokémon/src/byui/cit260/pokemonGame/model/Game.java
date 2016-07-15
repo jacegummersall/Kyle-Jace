@@ -28,6 +28,7 @@ public class Game implements Serializable {
     private ArrayList<Item> items = new ArrayList<>();
     private ArrayList<Pokemon> pokemons = new ArrayList<>();
     private Map map;   
+    private Character playingCharacter;
    
     
     public double getStartTime() {
@@ -84,6 +85,14 @@ public class Game implements Serializable {
 
     public void setMap(Map map) {
         this.map = map;
+    }
+
+    public Character getPlayingCharacter() {
+        return playingCharacter;
+    }
+
+    public void setPlayingCharacter(Character playingCharacter) {
+        this.playingCharacter = playingCharacter;
     }
     
     

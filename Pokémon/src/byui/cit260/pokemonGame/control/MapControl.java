@@ -340,19 +340,15 @@ public class MapControl {
        potion.setLocation(new Point(4,5));
        potion.setLocation(new Point(2,5));
        potion.setLocation(new Point(1,7));
-       // get the location at 2, 3
-       Location location = locations[3][0];
-       location = locations[1][1];
-       location = locations[1][4];
-       location = locations[4][4];
-       location = locations[4][5];
-       location = locations[2][5];
-       location = locations[1][7];
+       // get the location at 2,3
        
-     
-       // get the characterList in the location
-       // add the character to the array list
-       location.getItemInLocation().get(0);
+       locations[3][0].getItemInLocation().add(potion);
+       locations[1][1].getItemInLocation().add(potion);;
+       locations[1][4].getItemInLocation().add(potion);;
+       locations[4][4].getItemInLocation().add(potion);;
+       locations[4][5].getItemInLocation().add(potion);;
+       locations[2][5].getItemInLocation().add(potion);;
+       locations[1][7].getItemInLocation().add(potion);;
        
        Item superPotion = Pokémon.getCurrentGame().getItems().get(1);
        locations = Pokémon.getCurrentGame().getMap().getLocations();
@@ -364,18 +360,13 @@ public class MapControl {
        superPotion.setLocation(new Point(2,9));
 
        // get the location at 2, 3
-       location = locations[1][0];
-       location = locations[4][2];
-       location = locations[0][7];
-       location = locations[4][7];
-       location = locations[2][9];
+       locations[1][0].getItemInLocation().add(superPotion);
+       locations[4][2].getItemInLocation().add(superPotion);
+       locations[0][7].getItemInLocation().add(superPotion);
+       locations[4][7].getItemInLocation().add(superPotion);
+       locations[2][9].getItemInLocation().add(superPotion);
 
-       
-     
-       // get the characterList in the location
-       // add the character to the array list
-       location.getItemInLocation().get(1);
-       
+
        Item pokeball = Pokémon.getCurrentGame().getItems().get(2);
        locations = Pokémon.getCurrentGame().getMap().getLocations();
        
@@ -387,18 +378,13 @@ public class MapControl {
        pokeball.setLocation(new Point(2,8));
        
        // get the location at 2, 3
-       location = locations[2][2];
-       location = locations[0][3];
-       location = locations[3][3];
-       location = locations[2][4];
-       location = locations[3][7];
-       location = locations[2][8];
+       locations[2][2].getItemInLocation().add(pokeball);
+       locations[0][3].getItemInLocation().add(pokeball);
+       locations[3][3].getItemInLocation().add(pokeball);
+       locations[2][4].getItemInLocation().add(pokeball);
+       locations[3][7].getItemInLocation().add(pokeball);
+       locations[2][8].getItemInLocation().add(pokeball);
 
-       
-     
-       // get the characterList in the location
-       // add the character to the array list
-       location.getItemInLocation().get(2);
        
        Item masterball = Pokémon.getCurrentGame().getItems().get(3);
        locations = Pokémon.getCurrentGame().getMap().getLocations();
@@ -408,16 +394,9 @@ public class MapControl {
 
        
        // get the location at 2, 3
-       location = locations[0][0];
-       location = locations[0][5];
+       locations[0][0].getItemInLocation().add(masterball);
+       locations[0][5].getItemInLocation().add(masterball);
 
-
-       
-     
-       // get the characterList in the location
-       // add the character to the array list
-       location.getItemInLocation().get(3);
-       
     }
     
     }
