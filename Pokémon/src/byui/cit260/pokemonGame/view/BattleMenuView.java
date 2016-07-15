@@ -41,7 +41,7 @@ public class BattleMenuView extends View{
         Game game = Pokémon.getCurrentGame();
         ArrayList<Pokemon> pokemons = game.getPokemons();
         {
-        /*try {*/
+
         switch (value) {
             case "A": // Display result of attack
                 this.displayAttack();
@@ -60,10 +60,6 @@ public class BattleMenuView extends View{
                 break;                        
         }
         }
-        /*catch (DamageControlException ex) {
-               Logger.getLogger(BattleMenuView.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }*/
         return false;
     
     

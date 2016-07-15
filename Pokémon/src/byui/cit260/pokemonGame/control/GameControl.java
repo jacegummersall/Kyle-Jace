@@ -5,6 +5,7 @@
  */
 package byui.cit260.pokemonGame.control;
 
+import static byui.cit260.pokemonGame.control.ListConstants.finalBoss;
 import byui.cit260.pokemonGame.model.Player;
 import byui.cit260.pokemonGame.view.GameMenuView;
 import pokémon.Pokémon;
@@ -199,6 +200,8 @@ public class GameControl {
         
         item.setCollectedInventoryQuantity(item.getCollectedInventoryQuantity() + 1);
         
+        location.getItemInLocation().remove(item);
+        
     }
     public static void characterFindPokemon()
                     throws GameControlException{
@@ -214,6 +217,8 @@ public class GameControl {
         Pokemon pokemon = location.getPokemonInLocation().get(0);
        
         mainCharacter.getPokemonCaptured().add(pokemon);
+        
+        location.getPokemonInLocation().remove(pokemon);
     }
     
 //function to find and return what is in the location
@@ -235,6 +240,11 @@ public class GameControl {
         else if(location.getItemInLocation().size() > 0){
             Item Item = location.getItemInLocation().get(0);
             return Item;
+        }
+        
+        else if(location.getCharactersInLocation().size() > 0){
+            Character character = location.getCharactersInLocation().get(0);
+            return character;
         }
         
         else{
