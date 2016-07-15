@@ -5,10 +5,16 @@
  */
 package byui.cit260.pokemonGame.view;
 
+import byui.cit260.pokemonGame.control.GameControl;
 import byui.cit260.pokemonGame.control.MapControl;
 import java.util.Scanner;
 import pokémon.Pokémon;
 import byui.cit260.pokemonGame.model.Character;
+import byui.cit260.pokemonGame.model.Game;
+import byui.cit260.pokemonGame.model.Item;
+import byui.cit260.pokemonGame.model.Location;
+import byui.cit260.pokemonGame.model.Map;
+import byui.cit260.pokemonGame.model.Pokemon;
 import citbyui.cit260.pokemonGame.exceptions.MapControlException;
 
 /**
@@ -77,6 +83,36 @@ public class MapMenuView extends View{
         catch (MapControlException me){
             System.out.println(me.getMessage());
         }
+        
+                Game game = new Game();
+        game = Pokémon.getCurrentGame();
+        Map map = new Map();
+        map = game.getMap();
+        
+        Location[][] locations = map.getLocations();
+                
+        System.out.println("                          Map of The World of Pokémon                       ");
+        System.out.println(" |  1  | |  2  | |  3  | |  4  | |  5  | |  6  | |  7  | |  8  | |  9  | |  10 |");
+
+        for (int row = 0; row<5; row++){
+            System.out.println("---------------------------------------------------------------------------------");
+            
+            for (int column = 0; column<10; column++){
+                System.out.print(" | ");
+                //System.out.print(locations[row][column].getScene().getMapSymbol());
+                if (locations[row][column].getVisited() == true){
+                    System.out.print(locations[row][column].getScene().getMapSymbol());
+                }
+                else{
+                        System.out.print(" ?? ");
+                        }
+                
+                System.out.print("|");
+            }
+            System.out.println(" ");
+        }
+        
+        
     }
 
     private void moveSouth() {
@@ -86,6 +122,33 @@ public class MapMenuView extends View{
         }
         catch (MapControlException me){
             System.out.println(me.getMessage());
+        }
+                Game game = new Game();
+        game = Pokémon.getCurrentGame();
+        Map map = new Map();
+        map = game.getMap();
+        
+        Location[][] locations = map.getLocations();
+                
+        System.out.println("                          Map of The World of Pokémon                       ");
+        System.out.println(" |  1  | |  2  | |  3  | |  4  | |  5  | |  6  | |  7  | |  8  | |  9  | |  10 |");
+
+        for (int row = 0; row<5; row++){
+            System.out.println("---------------------------------------------------------------------------------");
+            
+            for (int column = 0; column<10; column++){
+                System.out.print(" | ");
+                //System.out.print(locations[row][column].getScene().getMapSymbol());
+                if (locations[row][column].getVisited() == true){
+                    System.out.print(locations[row][column].getScene().getMapSymbol());
+                }
+                else{
+                        System.out.print(" ?? ");
+                        }
+                
+                System.out.print("|");
+            }
+            System.out.println(" ");
         }
     }
 
@@ -97,6 +160,35 @@ public class MapMenuView extends View{
         catch (MapControlException me){
             System.out.println(me.getMessage());
         }
+        
+                Game game = new Game();
+        game = Pokémon.getCurrentGame();
+        Map map = new Map();
+        map = game.getMap();
+        
+        Location[][] locations = map.getLocations();
+                
+        System.out.println("                          Map of The World of Pokémon                       ");
+        System.out.println(" |  1  | |  2  | |  3  | |  4  | |  5  | |  6  | |  7  | |  8  | |  9  | |  10 |");
+
+        for (int row = 0; row<5; row++){
+            System.out.println("---------------------------------------------------------------------------------");
+            
+            for (int column = 0; column<10; column++){
+                System.out.print(" | ");
+                //System.out.print(locations[row][column].getScene().getMapSymbol());
+                if (locations[row][column].getVisited() == true){
+                    System.out.print(locations[row][column].getScene().getMapSymbol());
+                }
+                else{
+                        System.out.print(" ?? ");
+                        }
+                
+                System.out.print("|");
+            }
+            System.out.println(" ");
+        }
+        
     }
 
     private void moveWest() {
@@ -107,10 +199,51 @@ public class MapMenuView extends View{
         catch (MapControlException me){
             System.out.println(me.getMessage());
         }
+        
+                Game game = new Game();
+        game = Pokémon.getCurrentGame();
+        Map map = new Map();
+        map = game.getMap();
+        
+        Location[][] locations = map.getLocations();
+                
+        System.out.println("                          Map of The World of Pokémon                       ");
+        System.out.println(" |  1  | |  2  | |  3  | |  4  | |  5  | |  6  | |  7  | |  8  | |  9  | |  10 |");
+
+        for (int row = 0; row<5; row++){
+            System.out.println("---------------------------------------------------------------------------------");
+            
+            for (int column = 0; column<10; column++){
+                System.out.print(" | ");
+                //System.out.print(locations[row][column].getScene().getMapSymbol());
+                if (locations[row][column].getVisited() == true){
+                    System.out.print(locations[row][column].getScene().getMapSymbol());
+                }
+                else{
+                        System.out.print(" ?? ");
+                        }
+                
+                System.out.print("|");
+            }
+            System.out.println(" ");
+        }
     }
 
     private void exploreSquare() {
-        System.out.println("\n*** exploreSquare stub function called ***");
+          Object objectInLocation = GameControl.getObjectInLocation();
+          
+          if(objectInLocation == null){
+              return;
+          }
+          
+          else if(objectInLocation instanceof Pokemon){
+              BattleMenuView battleMenu = new BattleMenuView();
+              battleMenu.display();
+          }
+          
+          else if(objectInLocation instanceof Item){
+              
+          }
     }
 
     private void returnToGameMenu() {
