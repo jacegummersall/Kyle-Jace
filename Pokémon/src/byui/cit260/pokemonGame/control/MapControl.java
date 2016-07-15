@@ -175,6 +175,8 @@ public class MapControl {
             newLocation.getCharactersInLocation().add(character);
             
             newLocation.setVisited(true);
+            
+            
         }
          
         if(direction.equals("M S")){
