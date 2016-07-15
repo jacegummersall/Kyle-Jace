@@ -160,33 +160,70 @@ public class MapControl {
     public static void moveCharacterToLocation(Character character, String direction)
                                             throws MapControlException{
                     
-         Map map = Pokémon.getCurrentGame().getMap();
-         Location[][] locations = map.getLocations();
-         Point location = character.getLocation();
-         
-         if(direction.equals("North")){
+        Map map = Pokémon.getCurrentGame().getMap();
+        Location[][] locations = map.getLocations();
+        Point position = character.getLocation();
+        Location oldLocation = locations[position.x][position.y];
+        ArrayList<Character> charactersInOldLocation = oldLocation.getCharactersInLocation();
+        Location newLocation; 
+        
+        
+        if(direction.equals("M N")){
+            charactersInOldLocation.remove(character);
+                position.x--;
+            newLocation = locations[position.x][position.y];
+            newLocation.getCharactersInLocation().add(character);
             
-                 location.y--;
+            newLocation.setVisited(true);
         }
+         
+        if(direction.equals("M S")){
+            charactersInOldLocation.remove(character);
+                position.x++;
+            newLocation = locations[position.x][position.y];
+            newLocation.getCharactersInLocation().add(character);
+            
+            newLocation.setVisited(true);
+        }
+        
+        if(direction.equals("M W")){
+            charactersInOldLocation.remove(character);
+                position.y--;
+            newLocation = locations[position.x][position.y];
+            newLocation.getCharactersInLocation().add(character);
+            
+            newLocation.setVisited(true);
+        }
+        
+        if(direction.equals("M E")){
+            charactersInOldLocation.remove(character);
+                position.y++;
+            newLocation = locations[position.x][position.y];
+            newLocation.getCharactersInLocation().add(character);
+            
+            newLocation.setVisited(true);
+        }
+        
         
          if (character == null){
              throw new MapControlException("Invalid Character");
          }
          
          
-         if (location.x <0 || location.x > 9|| location.y < 0 || location.y > 5){
+         if (position.x <0 || position.x > 9|| position.y < 0 || position.y > 5){
              throw new MapControlException("Invalid location");
          }
          
-         if (direction == null || !direction.equals("North") && 
-                                  !direction.equals("South") &&
-                                  !direction.equals("East") &&
-                                  !direction.equals("West"));{
+         
+ if (direction == null || (!direction.equals("M N") && 
+                                  !direction.equals("M S") &&
+                                  !direction.equals("M E") &&
+                                  !direction.equals("M W"))){
              throw new MapControlException("Can not move actor to location "
-                                            + location.x + ", " + location.y
+                                            + position.x + ", " + position.y
                                             + " because that location does not"
                                             + " exist on the map.");
-         }
+         }                               
                            
         
         
