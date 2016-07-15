@@ -72,7 +72,11 @@ public class BattleMenuView extends View{
 }
 
     private void displayAttack() {
-        System.out.println("\n *** displayAttack stub function called ***");
+        AttackView attackView = new AttackView();
+        
+        attackView.display(); 
+        
+        
     }
 
     private void displayPokeball() {

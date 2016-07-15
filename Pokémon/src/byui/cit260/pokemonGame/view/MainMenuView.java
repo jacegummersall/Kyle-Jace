@@ -79,9 +79,6 @@ public class MainMenuView extends View{
         } catch (Exception ex){
             ErrorView.display("GameMenuView", ex.getMessage());
         } 
-    
-        
-        GameControl.loadExistingGame(Pokémon.getPlayer());
         
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
