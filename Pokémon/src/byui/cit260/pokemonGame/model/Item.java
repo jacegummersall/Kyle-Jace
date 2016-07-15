@@ -18,6 +18,7 @@ public class Item implements Serializable{
     
     private String inventoryType;
     private int inventoryQuantity;
+    private int collectedInventoryQuantity = 0;
     private Point location;
 
     public Item() {
@@ -50,6 +51,14 @@ public class Item implements Serializable{
 
     public void setLocation(Point location) {
         this.location = location;
+    }
+
+    public int getCollectedInventoryQuantity() {
+        return collectedInventoryQuantity;
+    }
+
+    public void setCollectedInventoryQuantity(int collectedInventoryQuantity) {
+        this.collectedInventoryQuantity = collectedInventoryQuantity;
     }
 
     

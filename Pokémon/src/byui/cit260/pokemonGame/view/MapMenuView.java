@@ -15,7 +15,11 @@ import byui.cit260.pokemonGame.model.Item;
 import byui.cit260.pokemonGame.model.Location;
 import byui.cit260.pokemonGame.model.Map;
 import byui.cit260.pokemonGame.model.Pokemon;
+import citbyui.cit260.pokemonGame.exceptions.GameControlException;
 import citbyui.cit260.pokemonGame.exceptions.MapControlException;
+import java.awt.Point;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -237,12 +241,27 @@ public class MapMenuView extends View{
           }
           
           else if(objectInLocation instanceof Pokemon){
+            Point coordinates = Pokémon.getCurrentGame().getPlayingCharacter().getLocation();
+                          
+            Location[][] locations = Pokémon.getCurrentGame().getMap().getLocations();
+            
+            Location location = locations[coordinates.x][coordinates.y];
+            
+            Pokemon pokemon = location.getPokemonInLocation().get(0);
+              
+              this.console.println("\nYou have encountered a " + pokemon.getPokemonName() + "!!!"
+                      + "\nHP - " + pokemon.getCurrentHealthPoints());
+              
               BattleMenuView battleMenu = new BattleMenuView();
               battleMenu.display();
           }
           
           else if(objectInLocation instanceof Item){
-              
+              try {
+                  GameControl.characterGetItem();
+              } catch (GameControlException ex) {
+                  System.out.println(ex.getMessage());
+              }
           }
     }
 

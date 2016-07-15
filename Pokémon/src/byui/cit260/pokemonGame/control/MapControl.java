@@ -13,6 +13,7 @@ import citbyui.cit260.pokemonGame.exceptions.MapControlException;
 import java.awt.Point;
 import pokémon.Pokémon;
 import byui.cit260.pokemonGame.model.Character;
+import byui.cit260.pokemonGame.model.Game;
 import byui.cit260.pokemonGame.model.Item;
 import byui.cit260.pokemonGame.model.Player;
 import byui.cit260.pokemonGame.model.Pokemon;
@@ -266,6 +267,7 @@ public class MapControl {
     public static void movePokemonToStartingLocation(Map map)
                                                 throws MapControlException{
 
+
        Pokemon rattata = Pokémon.getCurrentGame().getPokemons().get(1);
        Location[][] locations = Pokémon.getCurrentGame().getMap().getLocations();
        
@@ -276,7 +278,7 @@ public class MapControl {
      
        // get the characterList in the location
        // add the character to the array list
-       location.getPokemonInLocation().get(1);
+       location.getPokemonInLocation().add(rattata);
        
        Pokemon charizard = Pokémon.getCurrentGame().getPokemons().get(2);
        locations = Pokémon.getCurrentGame().getMap().getLocations();
@@ -288,7 +290,7 @@ public class MapControl {
      
        // get the characterList in the location
        // add the character to the array list
-       location.getPokemonInLocation().get(2);
+       location.getPokemonInLocation().add(charizard);
        
        Pokemon spearow = Pokémon.getCurrentGame().getPokemons().get(3);
        locations = Pokémon.getCurrentGame().getMap().getLocations();
@@ -300,7 +302,7 @@ public class MapControl {
      
        // get the characterList in the location
        // add the character to the array list
-       location.getPokemonInLocation().get(3);
+       location.getPokemonInLocation().add(spearow);
        
        Pokemon gyarados = Pokémon.getCurrentGame().getPokemons().get(4);
        locations = Pokémon.getCurrentGame().getMap().getLocations();
@@ -312,7 +314,7 @@ public class MapControl {
      
        // get the characterList in the location
        // add the character to the array list
-       location.getPokemonInLocation().get(4);
+       location.getPokemonInLocation().add(gyarados);
 
        Pokemon mewtwo = Pokémon.getCurrentGame().getPokemons().get(5);
        locations = Pokémon.getCurrentGame().getMap().getLocations();
@@ -324,7 +326,7 @@ public class MapControl {
      
        // get the characterList in the location
        // add the character to the array list
-       location.getPokemonInLocation().get(5);
+       location.getPokemonInLocation().add(mewtwo);
     }
     
     public static void moveItemsToStartingLocation(Map map)
@@ -343,12 +345,12 @@ public class MapControl {
        // get the location at 2,3
        
        locations[3][0].getItemInLocation().add(potion);
-       locations[1][1].getItemInLocation().add(potion);;
-       locations[1][4].getItemInLocation().add(potion);;
-       locations[4][4].getItemInLocation().add(potion);;
-       locations[4][5].getItemInLocation().add(potion);;
-       locations[2][5].getItemInLocation().add(potion);;
-       locations[1][7].getItemInLocation().add(potion);;
+       locations[1][1].getItemInLocation().add(potion);
+       locations[1][4].getItemInLocation().add(potion);
+       locations[4][4].getItemInLocation().add(potion);
+       locations[4][5].getItemInLocation().add(potion);
+       locations[2][5].getItemInLocation().add(potion);
+       locations[1][7].getItemInLocation().add(potion);
        
        Item superPotion = Pokémon.getCurrentGame().getItems().get(1);
        locations = Pokémon.getCurrentGame().getMap().getLocations();
@@ -397,6 +399,17 @@ public class MapControl {
        locations[0][0].getItemInLocation().add(masterball);
        locations[0][5].getItemInLocation().add(masterball);
 
+    }
+    
+    public static void assignPikachuToPlayer(){
+      
+       Character mainCharacter = Pokémon.getCurrentGame().getPlayingCharacter();
+       
+       Pokemon pikachu = Pokémon.getCurrentGame().getPokemons().get(0);
+       
+       mainCharacter.setStartingPokemon(pikachu);
+      
+       mainCharacter.getPokemonCaptured().add(pikachu);
     }
     
     }

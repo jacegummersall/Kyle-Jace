@@ -64,6 +64,13 @@ public class GameControl {
         game.setMap(map);
         
         MapControl.moveCharactersToStartingLocation(map);
+        
+        MapControl.moveItemsToStartingLocation(map);
+        
+        MapControl.movePokemonToStartingLocation(map);
+        
+        MapControl.assignPikachuToPlayer();
+        
     }
         
     private static Character[] createCharacterList(){
@@ -182,9 +189,16 @@ public class GameControl {
         
         Location location = locations[coordinates.x][coordinates.y];
         
-        Item Item = location.getItemInLocation().get(0);
+        Item item = location.getItemInLocation().get(0);
        
-        mainCharacter.getItemsCollected().add(Item);
+        int itemIndex = mainCharacter.getItemsCollected().indexOf(item);
+        
+        if( itemIndex < 0){
+            mainCharacter.getItemsCollected().add(item);
+        }
+        
+        item.setCollectedInventoryQuantity(item.getCollectedInventoryQuantity() + 1);
+        
     }
     public static void characterFindPokemon()
                     throws GameControlException{

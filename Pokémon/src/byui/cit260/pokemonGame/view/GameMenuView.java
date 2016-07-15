@@ -129,7 +129,8 @@ public class GameMenuView extends View{
         StringBuilder line;
         
         Game game = Pokémon.getCurrentGame();
-        ArrayList<Item> items = game.getItems();
+        Character mainCharacter = game.getPlayingCharacter();
+        ArrayList<Item> items = mainCharacter.getItemsCollected();
         
         System.out.println("\n List of Items");
         line = new StringBuilder ("                         ");
@@ -141,7 +142,7 @@ public class GameMenuView extends View{
             
         line = new StringBuilder ("                         ");
         line.insert(0, item.getInventoryType());
-        line.insert(23, item.getInventoryQuantity());
+        line.insert(23, item.getCollectedInventoryQuantity());
         System.out.println(line.toString());
         }
         
@@ -161,7 +162,8 @@ public class GameMenuView extends View{
         StringBuilder line;
         
         Game game = Pokémon.getCurrentGame();
-        ArrayList<Pokemon> pokemons = game.getPokemons();
+        Character mainCharacter = game.getPlayingCharacter();
+        ArrayList<Pokemon> pokemons = mainCharacter.getPokemonCaptured();
         
         System.out.println("\n List of Pokemon Stats");
         line = new StringBuilder ("                         ");
@@ -224,8 +226,7 @@ public class GameMenuView extends View{
     private void displayTotalItems() {
       
         Game game = Pokémon.getCurrentGame();
-        Character mainCharacter = game.getPlayingCharacter();
-        ArrayList<Item> items = mainCharacter.getItemsCollected();
+        ArrayList<Item> items = game.getItems();
         
         // call control function to get the total of all items
         int totalNumberOfItems = GameControl.totalItems(items);
