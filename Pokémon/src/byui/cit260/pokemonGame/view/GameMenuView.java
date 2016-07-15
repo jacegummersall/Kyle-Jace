@@ -12,6 +12,7 @@ import byui.cit260.pokemonGame.model.Location;
 import byui.cit260.pokemonGame.model.Map;
 import byui.cit260.pokemonGame.model.Pokemon;
 import byui.cit260.pokemonGame.model.Scene;
+import byui.cit260.pokemonGame.model.Character;
 import citbyui.cit260.pokemonGame.exceptions.GameControlException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -223,7 +224,8 @@ public class GameMenuView extends View{
     private void displayTotalItems() {
       
         Game game = Pokémon.getCurrentGame();
-        ArrayList<Item> items = game.getItems();
+        Character mainCharacter = game.getPlayingCharacter();
+        ArrayList<Item> items = mainCharacter.getItemsCollected();
         
         // call control function to get the total of all items
         int totalNumberOfItems = GameControl.totalItems(items);

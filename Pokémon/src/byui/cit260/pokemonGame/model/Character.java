@@ -43,17 +43,7 @@ public class Character implements Serializable{
     public void setCharacterLocation(Location characterLocation) {
         this.location = characterLocation;
     }
-
-    public ArrayList<Item> getUsedItems() {
-        return usedItems;
-    }
-
-    public void setUsedItems(ArrayList<Item> usedItems) {
-        this.usedItems = usedItems;
-    }
-    
-    
-    
+     
     public String getName() {
         return name;
     }

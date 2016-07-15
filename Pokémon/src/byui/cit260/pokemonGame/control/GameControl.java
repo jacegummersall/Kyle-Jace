@@ -211,19 +211,20 @@ public class GameControl {
         Location[][] locations = Pokémon.getCurrentGame().getMap().getLocations();
         
         Location location = locations[coordinates.x][coordinates.y]; 
+
         
-        Pokemon pokemon = location.getPokemonInLocation().get(0);
+        if(location.getPokemonInLocation().size() > 0){
+            Pokemon pokemon = location.getPokemonInLocation().get(0);
+            return pokemon;
+        }
         
-        Item Item = location.getItemInLocation().get(0);
-        
-        if(pokemon.equals(pokemon) == true){
-            return pokemon;}
-        
-        else if(Item.equals(Item) == true){
-            return Item;}
+        else if(location.getItemInLocation().size() > 0){
+            Item Item = location.getItemInLocation().get(0);
+            return Item;
+        }
         
         else{
-            return false;
+            return null;
         }
     }
 }
