@@ -5,7 +5,11 @@
  */
 package byui.cit260.pokemonGame.view;
 
+import byui.cit260.pokemonGame.control.MapControl;
 import java.util.Scanner;
+import pokémon.Pokémon;
+import byui.cit260.pokemonGame.model.Character;
+import citbyui.cit260.pokemonGame.exceptions.MapControlException;
 
 /**
  *
@@ -65,19 +69,44 @@ public class MapMenuView extends View{
     }
 
     private void moveNorth() {
-        System.out.println("\n*** moveNorth stub function called ***");
+        
+        Character[] character = Pokémon.getCurrentGame().getCharacters();
+        try {
+        MapControl.moveCharacterToLocation(character[0], "M N");
+        }
+        catch (MapControlException me){
+            System.out.println(me.getMessage());
+        }
     }
 
     private void moveSouth() {
-        System.out.println("\n*** moveSouth stub function called ***");
+        Character[] character = Pokémon.getCurrentGame().getCharacters();
+        try {
+        MapControl.moveCharacterToLocation(character[0], "M S");
+        }
+        catch (MapControlException me){
+            System.out.println(me.getMessage());
+        }
     }
 
     private void moveEast() {
-        System.out.println("\n*** moveEast stub function called ***");
+        Character[] character = Pokémon.getCurrentGame().getCharacters();
+        try {
+        MapControl.moveCharacterToLocation(character[0], "M E");
+        }
+        catch (MapControlException me){
+            System.out.println(me.getMessage());
+        }
     }
 
     private void moveWest() {
-        System.out.println("\n*** moveWest stub function called ***");
+        Character[] character = Pokémon.getCurrentGame().getCharacters();
+        try {
+        MapControl.moveCharacterToLocation(character[0], "M W");
+        }
+        catch (MapControlException me){
+            System.out.println(me.getMessage());
+        }
     }
 
     private void exploreSquare() {

@@ -22,7 +22,8 @@ public class Character implements Serializable{
     
     //class instance variables
     private String name;
-    private Point location;
+    private Point position;
+    private Location location;
     private String description;
     private ArrayList<Item> itemsCollected = new ArrayList<>();
     private ArrayList<Pokemon> pokemonCaptured = new ArrayList<>();
@@ -33,6 +34,22 @@ public class Character implements Serializable{
     public Character(String name, String description) {
         this.name = name;
         this.description = description;
+    }
+
+    public Location getCharacterLocation() {
+        return location;
+    }
+
+    public void setCharacterLocation(Location characterLocation) {
+        this.location = characterLocation;
+    }
+
+    public ArrayList<Item> getUsedItems() {
+        return usedItems;
+    }
+
+    public void setUsedItems(ArrayList<Item> usedItems) {
+        this.usedItems = usedItems;
     }
     
     
@@ -46,11 +63,11 @@ public class Character implements Serializable{
     }
 
     public Point getLocation() {
-        return location;
+        return position;
     }
 
     public void setLocation(Point location) {
-        this.location = location;
+        this.position = location;
     }
 
     public String getDescription() {
@@ -81,7 +98,7 @@ public class Character implements Serializable{
     public int hashCode() {
         int hash = 7;
         hash = 53 * hash + Objects.hashCode(this.name);
-        hash = 53 * hash + Objects.hashCode(this.location);
+        hash = 53 * hash + Objects.hashCode(this.position);
         hash = 53 * hash + Objects.hashCode(this.description);
         return hash;
     }
@@ -104,7 +121,7 @@ public class Character implements Serializable{
         if (!Objects.equals(this.description, other.description)) {
             return false;
         }
-        if (!Objects.equals(this.location, other.location)) {
+        if (!Objects.equals(this.position, other.position)) {
             return false;
         }
         return true;
@@ -112,7 +129,7 @@ public class Character implements Serializable{
 
     @Override
     public String toString() {
-        return "Character{" + "name=" + name + ", location=" + location + ", description=" + description + '}';
+        return "Character{" + "name=" + name + ", location=" + position + ", description=" + description + '}';
     }
 
     
