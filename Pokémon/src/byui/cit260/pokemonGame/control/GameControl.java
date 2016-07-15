@@ -14,6 +14,7 @@ import byui.cit260.pokemonGame.model.Item;
 import byui.cit260.pokemonGame.model.Location;
 import byui.cit260.pokemonGame.model.Map;
 import byui.cit260.pokemonGame.model.Pokemon;
+import byui.cit260.pokemonGame.model.Scene;
 import citbyui.cit260.pokemonGame.exceptions.GameControlException;
 import citbyui.cit260.pokemonGame.exceptions.MapControlException;
 import java.awt.Point;
@@ -64,11 +65,6 @@ public class GameControl {
         
         MapControl.moveCharactersToStartingLocation(map);
     }
-
-    public static void loadExistingGame(Player player) {
-        System.out.println("\n*** loadExistingGame stub function called ***");
-    }
-    
         
     private static Character[] createCharacterList(){
         
@@ -206,5 +202,28 @@ public class GameControl {
         mainCharacter.getPokemonCaptured().add(pokemon);
     }
     
-    
+//function to find and return what is in the location
+    public static Object getObjectInLocation(){
+        Character mainCharacter = Pokémon.getCurrentGame().getPlayingCharacter();
+        
+        Point coordinates = Pokémon.getCurrentGame().getPlayingCharacter().getLocation();
+        
+        Location[][] locations = Pokémon.getCurrentGame().getMap().getLocations();
+        
+        Location location = locations[coordinates.x][coordinates.y]; 
+        
+        Pokemon pokemon = location.getPokemonInLocation().get(0);
+        
+        Item Item = location.getItemInLocation().get(0);
+        
+        if(pokemon.equals(pokemon) == true){
+            return pokemon;}
+        
+        else if(Item.equals(Item) == true){
+            return Item;}
+        
+        else{
+            return false;
+        }
+    }
 }

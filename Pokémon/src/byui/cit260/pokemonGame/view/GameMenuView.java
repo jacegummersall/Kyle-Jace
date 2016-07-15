@@ -12,6 +12,7 @@ import byui.cit260.pokemonGame.model.Location;
 import byui.cit260.pokemonGame.model.Map;
 import byui.cit260.pokemonGame.model.Pokemon;
 import byui.cit260.pokemonGame.model.Scene;
+import citbyui.cit260.pokemonGame.exceptions.GameControlException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import pokémon.Pokémon;
@@ -183,7 +184,8 @@ public class GameMenuView extends View{
     }
     
     private void displayExplore() {
-        System.out.println("*** displayExplore function called ***");
+        
+        GameControl.getObjectInLocation();
     }
 
     private void displaySave() {
