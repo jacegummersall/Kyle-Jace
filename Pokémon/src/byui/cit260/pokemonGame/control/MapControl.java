@@ -170,15 +170,25 @@ public class MapControl {
         
         
         if(direction.equals("M N")){
+            if (position.x == 0) {
+                System.out.println("You cannot go in that direction");
+                return;
+            }
             charactersInOldLocation.remove(character);
                 position.x--;
             newLocation = locations[position.x][position.y];
             newLocation.getCharactersInLocation().add(character);
             
             newLocation.setVisited(true);
+            
+            
         }
          
         if(direction.equals("M S")){
+            if (position.x == 4) {
+                System.out.println("You cannot go in that direction");
+                return;
+            }
             charactersInOldLocation.remove(character);
                 position.x++;
             newLocation = locations[position.x][position.y];
@@ -188,6 +198,10 @@ public class MapControl {
         }
         
         if(direction.equals("M W")){
+            if (position.y == 0) {
+                System.out.println("You cannot go in that direction");
+                return;
+            }
             charactersInOldLocation.remove(character);
                 position.y--;
             newLocation = locations[position.x][position.y];
@@ -197,6 +211,10 @@ public class MapControl {
         }
         
         if(direction.equals("M E")){
+            if (position.y == 9) {
+                System.out.println("You cannot go in that direction");
+                return;
+            }
             charactersInOldLocation.remove(character);
                 position.y++;
             newLocation = locations[position.x][position.y];
@@ -211,7 +229,7 @@ public class MapControl {
          }
          
          
-         if (position.x <0 || position.x > 9|| position.y < 0 || position.y > 5){
+         if (position.x < 0 || position.x > 5 || position.y < 0 || position.y > 9){
              throw new MapControlException("Invalid location");
          }
          

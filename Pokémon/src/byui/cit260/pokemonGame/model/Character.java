@@ -44,7 +44,11 @@ public class Character implements Serializable{
     public void setCharacterLocation(Location characterLocation) {
         this.location = characterLocation;
     }
-     
+
+    
+    
+    
+    
     public String getName() {
         return name;
     }

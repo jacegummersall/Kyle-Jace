@@ -17,8 +17,8 @@ public class PotionControl {
     public static int usePotion(int pokemonCurrentHP, int pokemonFullHP)
                             throws PotionControlException {
         
-        if (pokemonCurrentHP >= pokemonFullHP){
-            throw new PotionControlException("Your Pokémon has already fainted.");
+        if (pokemonCurrentHP > pokemonFullHP){
+            throw new PotionControlException("Your Pokémon has full HP.");
         }
         if (pokemonCurrentHP < 1){
             throw new PotionControlException("Your Pokémon has already fainted.");
