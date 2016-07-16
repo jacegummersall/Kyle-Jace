@@ -131,6 +131,12 @@ public class GameControl {
         pokemons.add(new Pokemon("Spearow", 35, 15, 50, 1));
         pokemons.add(new Pokemon("Gyarados", 60, 20, 70, 1));
         pokemons.add(new Pokemon("Mewtwo", 70, 30, 100, 1));
+        pokemons.add(new Pokemon("Geodude", 40, 25, 50, 1));
+        pokemons.add(new Pokemon("Dratini", 43, 27, 70, 1));
+        pokemons.add(new Pokemon("Dragonair", 46, 29, 80, 1));
+        pokemons.add(new Pokemon("Dragonite", 55, 30, 90, 1));
+
+        
         
         return pokemons;    }
     

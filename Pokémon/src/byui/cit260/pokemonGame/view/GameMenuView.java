@@ -37,7 +37,7 @@ public class GameMenuView extends View{
                 + "\nD - Display total items on map"
                 + "\nC - Count total Pokémon"
                 + "\nP - Pokémon"
-                + "\nR - Review Pokémon Stats"
+                + "\nR - Review Your Pokémon's Stats"
                 + "\nE - Explore Square"
                 + "\nS - Save Game"
                 + "\nH - Help"
@@ -171,22 +171,24 @@ public class GameMenuView extends View{
         System.out.println("\n List of Pokemon Stats");
         line = new StringBuilder ("                         ");
         line.insert(0, "NAME");
-        line.insert(20, "STRENGTH");
-        line.insert(30, "DEFENSE");
+        line.insert(15, "HP");
+        line.insert(25, "STRENGTH");
+        line.insert(35, "DEFENSE");
         System.out.println(line.toString());
         
         for (Pokemon pokemon : pokemons) {
             
         line = new StringBuilder ("                         ");
         line.insert(0, pokemon.getPokemonName());
-        line.insert(23, pokemon.getStrength());
-        line.insert(33, pokemon.getDefense());
+        line.insert(15, pokemon.getCurrentHealthPoints()); 
+        line.insert(25, pokemon.getStrength());
+        line.insert(35, pokemon.getDefense());
         System.out.println(line.toString());
         }
         
-        PokemonListMenuView pokemonListMenu = new PokemonListMenuView();
+        ReturnToGameMenu returnToGameMenu = new ReturnToGameMenu();
 
-        pokemonListMenu.display(); 
+        returnToGameMenu.display(); 
     }
     
     private void displayExplore() {

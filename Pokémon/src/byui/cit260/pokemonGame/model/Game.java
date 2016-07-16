@@ -29,6 +29,7 @@ public class Game implements Serializable {
     private ArrayList<Pokemon> pokemons = new ArrayList<>();
     private Map map;   
     private Character playingCharacter;
+    private Character finalBoss;
    
     
     public double getStartTime() {
@@ -93,6 +94,14 @@ public class Game implements Serializable {
 
     public void setPlayingCharacter(Character playingCharacter) {
         this.playingCharacter = playingCharacter;
+    }
+
+    public Character getFinalBoss() {
+        return finalBoss;
+    }
+
+    public void setFinalBoss(Character finalBoss) {
+        this.finalBoss = finalBoss;
     }
     
     

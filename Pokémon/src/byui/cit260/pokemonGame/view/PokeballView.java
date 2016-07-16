@@ -5,6 +5,7 @@
  */
 package byui.cit260.pokemonGame.view;
 
+import byui.cit260.pokemonGame.control.GameControl;
 import pokémon.Pokémon;
 import byui.cit260.pokemonGame.control.PokeballControl;
 import byui.cit260.pokemonGame.model.Character;
@@ -50,7 +51,7 @@ public class PokeballView extends View{
             case "P": // select pikachu
                 this.throwPokeball();
                 break;
-            case "R": //select Ratatta
+            case "M": //select Ratatta
                 this.throwMasterball();
                 break;
             default:
@@ -64,8 +65,6 @@ public class PokeballView extends View{
         try {
             Character mainCharacter = Pokémon.getCurrentGame().getPlayingCharacter();
             
-            Item pokeball = mainCharacter.getItemsCollected().get(0);
-            
             Point coordinates = Pokémon.getCurrentGame().getPlayingCharacter().getLocation();
             
             Location[][] locations = Pokémon.getCurrentGame().getMap().getLocations();
@@ -77,17 +76,20 @@ public class PokeballView extends View{
             int currentHP = pokemon.getCurrentHealthPoints();
             int fullHP = pokemon.getFullHealthPoints();
             
-            if(PokeballControl.calcPokeball(currentHP, fullHP) == "Pokémon has escaped, he is too strong" ||
-                    PokeballControl.calcPokeball(currentHP, fullHP) == "Pokémon has fainted" ){
+            if("Pokémon has escaped, he is too strong".equals(PokeballControl.calcPokeball(currentHP, fullHP)) ||
+                    "Pokémon has fainted".equals(PokeballControl.calcPokeball(currentHP, fullHP)) ){
             MapMenuView mapMenu = new MapMenuView();
         
             mapMenu.display();
                     }
             
-            else if (PokeballControl.calcPokeball(currentHP, fullHP) == "Pokémon Captured!"){
+            else if ("Pokémon Captured!".equals(PokeballControl.calcPokeball(currentHP, fullHP))){
             mainCharacter.getPokemonCaptured().add(pokemon);
-            
+            MapMenuView mapMenu = new MapMenuView(); 
+        
+            mapMenu.display();
             }   
+
         } catch (PokeballControlException ex) {
             System.out.println(ex.getMessage());
     }
@@ -95,6 +97,20 @@ public class PokeballView extends View{
 }
 
     private void throwMasterball() {
-        
+        Character mainCharacter = Pokémon.getCurrentGame().getPlayingCharacter();
+            
+            Point coordinates = Pokémon.getCurrentGame().getPlayingCharacter().getLocation();
+            
+            Location[][] locations = Pokémon.getCurrentGame().getMap().getLocations();
+            
+            Location location = locations[coordinates.x][coordinates.y];
+            
+            Pokemon pokemon = location.getPokemonInLocation().get(0);
+            
+            mainCharacter.getPokemonCaptured().add(pokemon);
+            
+            this.console.println("Pokémon Captured!!!");
+            
+            
     }
 }
