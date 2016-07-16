@@ -80,6 +80,9 @@ public class MapMenuView extends View{
 
     private void moveNorth() {
         
+        Character mainCharacter = Pokémon.getCurrentGame().getPlayingCharacter();
+        Point position = mainCharacter.getLocation();
+        
         Character[] character = Pokémon.getCurrentGame().getCharacters();
         try {
         MapControl.moveCharacterToLocation(character[0], "M N");
@@ -116,10 +119,16 @@ public class MapMenuView extends View{
             System.out.println(" ");
         }
         
+        System.out.println("\n\nYou are at " + (position.y+1) + "," + (position.x+1));
+        
         
     }
 
     private void moveSouth() {
+
+        Character mainCharacter = Pokémon.getCurrentGame().getPlayingCharacter();
+        Point position = mainCharacter.getLocation();
+        
         Character[] character = Pokémon.getCurrentGame().getCharacters();
         try {
         MapControl.moveCharacterToLocation(character[0], "M S");
@@ -154,9 +163,14 @@ public class MapMenuView extends View{
             }
             System.out.println(" ");
         }
+        System.out.println("\n\nYou are at " + (position.y+1) + "," + (position.x+1));
     }
 
     private void moveEast() {
+
+        Character mainCharacter = Pokémon.getCurrentGame().getPlayingCharacter();
+        Point position = mainCharacter.getLocation();
+        
         Character[] character = Pokémon.getCurrentGame().getCharacters();
         try {
         MapControl.moveCharacterToLocation(character[0], "M E");
@@ -192,10 +206,15 @@ public class MapMenuView extends View{
             }
             System.out.println(" ");
         }
+        System.out.println("\n\nYou are at " + (position.y+1) + "," + (position.x+1));
         
     }
 
     private void moveWest() {
+
+        Character mainCharacter = Pokémon.getCurrentGame().getPlayingCharacter();
+        Point position = mainCharacter.getLocation();
+        
         Character[] character = Pokémon.getCurrentGame().getCharacters();
         try {
         MapControl.moveCharacterToLocation(character[0], "M W");
@@ -231,6 +250,8 @@ public class MapMenuView extends View{
             }
             System.out.println(" ");
         }
+        
+        System.out.println("\n\nYou are at " + (position.y+1) + "," + (position.x+1));
     }
 
     private void exploreSquare() {
