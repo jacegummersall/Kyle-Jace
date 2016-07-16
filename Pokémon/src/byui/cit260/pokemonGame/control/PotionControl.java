@@ -26,9 +26,27 @@ public class PotionControl {
         
         Random random = new Random();
         
-        int usePotion = pokemonCurrentHP + 20 + random.nextInt(10);
+        int pokemonNewHP = pokemonCurrentHP + 20 + random.nextInt(10);
         
-        return usePotion;
+        return pokemonNewHP;
+    
+    }
+    
+    public static int useSuperPotion(int pokemonCurrentHP, int pokemonFullHP)
+                            throws PotionControlException {
+        
+        if (pokemonCurrentHP > pokemonFullHP){
+            throw new PotionControlException("Your Pokémon has full HP.");
+        }
+        if (pokemonCurrentHP < 1){
+            throw new PotionControlException("Your Pokémon has already fainted.");
+        }
+        
+        Random random = new Random();
+        
+        int pokemonNewHP = pokemonCurrentHP + 50 + random.nextInt(10);
+        
+        return pokemonNewHP;
     
     }
 }
