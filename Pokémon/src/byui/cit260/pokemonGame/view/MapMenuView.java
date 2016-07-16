@@ -279,7 +279,7 @@ public class MapMenuView extends View{
           
           else if(objectInLocation instanceof Item){
               try {
-             Point coordinates = Pokémon.getCurrentGame().getPlayingCharacter().getLocation();
+            Point coordinates = Pokémon.getCurrentGame().getPlayingCharacter().getLocation();
                           
             Location[][] locations = Pokémon.getCurrentGame().getMap().getLocations();
             
@@ -294,6 +294,24 @@ public class MapMenuView extends View{
                   System.out.println(ex.getMessage());
               }
           }
+          else if(objectInLocation instanceof Character){
+            try {
+            Point coordinates = Pokémon.getCurrentGame().getPlayingCharacter().getLocation();
+                          
+            Location[][] locations = Pokémon.getCurrentGame().getMap().getLocations();
+            
+            Location location = locations[coordinates.x][coordinates.y];
+            
+            Character character = location.getCharactersInLocation().get(0);
+              
+            BossView bossView = new BossView();
+            bossView.display();
+                  
+                  GameControl.characterGetItem();
+              } catch (GameControlException ex) {
+                  System.out.println(ex.getMessage());
+              }
+                    }
     }
 
     private void returnToGameMenu() {
