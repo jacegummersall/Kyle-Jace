@@ -7,6 +7,7 @@ package byui.cit260.pokemonGame.view;
 
 import byui.cit260.pokemonGame.control.PotionControl;
 import byui.cit260.pokemonGame.model.Game;
+import byui.cit260.pokemonGame.model.Item;
 import byui.cit260.pokemonGame.model.Pokemon;
 import citbyui.cit260.pokemonGame.exceptions.PotionControlException;
 import java.util.ArrayList;
@@ -21,19 +22,25 @@ import pokémon.Pokémon;
 public class UsePotionView extends View{
 
 
-    public UsePotionView() {
-        super("\n"
-                + "\n--------------------------"
-                + "\n|   Pokemon Menu"
-                + "\n--------------------------"
-                + "\nP - Pikachu"
-                + "\nR - Ratatta"
-                + "\nS - Spearow"
-                + "\nC - Charizard"
-                + "\nG - Gyarados"
-                + "\nM - MewTwo"
-                + "\nB - Back"
-                + "\n -------------------------");
+    public UsePotionView() {        
+        super("\nChoose which Item you would like to use.");
+                
+        byui.cit260.pokemonGame.model.Character mainCharacter = Pokémon.getCurrentGame().getPlayingCharacter();
+        
+        ArrayList<Item> itemList = mainCharacter.getItemsCollected();
+        
+        this.console.println("\n" 
+                + "\n--------------------------" 
+                + "\n|   Pokemon Menu  " 
+                + "\n--------------------------");
+        
+        for(Item item : itemList){
+            //get first letter of pokeons name
+            char firstLetterOfCapturedPokemon = item.getInventoryType().charAt(0);
+            // print out letter - pokemons name
+            this.console.println("\n" + firstLetterOfCapturedPokemon + " - " + item.getInventoryType());
+            
+        }
     }
 
     @Override
@@ -41,46 +48,20 @@ public class UsePotionView extends View{
        value = value.toUpperCase(); //convert choice to upper case
        
         Game game = Pokémon.getCurrentGame();
-        ArrayList<Pokemon> pokemons = game.getPokemons();
-        {
-           try {
-        switch (value) {
-            case "P": // select pikachu
-               Pokemon pikachu = pokemons.get(0);
-               PotionControl.usePotion(pikachu.getFullHealthPoints(), pikachu.getCurrentHealthPoints());
-                break;
-            case "R": //select Ratatta
-                Pokemon ratatta = pokemons.get(1);
-               PotionControl.usePotion(ratatta.getFullHealthPoints(), ratatta.getCurrentHealthPoints());
-                break;
-            case "S": //select Spearow
-               Pokemon spearow = pokemons.get(3);
-               PotionControl.usePotion(spearow.getFullHealthPoints(), spearow.getCurrentHealthPoints());
-                break;
-            case "C": //select Charizard
-               Pokemon charizard = pokemons.get(2);
-               PotionControl.usePotion(charizard.getFullHealthPoints(), charizard.getCurrentHealthPoints());
-                break;                
-            case "G": //select Gyarados
-               Pokemon gyarados = pokemons.get(4);
-               PotionControl.usePotion(gyarados.getFullHealthPoints(), gyarados.getCurrentHealthPoints());
-                break;
-            case "M": //select MewTwo
-               Pokemon mewtwo = pokemons.get(5);
-               PotionControl.usePotion(mewtwo.getFullHealthPoints(), mewtwo.getCurrentHealthPoints());
-                break;
-            case "B": //load and start and existing game
-                this.returnToGameMenu();
-                break;
-            default:
-                System.out.println("\n*** Invalid Selection *** Try again!");
-                break;                 
-           }
-          }
-           catch (PotionControlException ex) {
-               Logger.getLogger(UsePotionView.class.getName()).log(Level.SEVERE, null, ex);
-         }
-        }
+            switch (value) {
+                case "P": // select pikachu
+                    this.usePotion();
+                    break;
+                case "S": //select Spearow
+                    this.useSuperPotion();
+                    break;
+                case "B": //load and start and existing game
+                    this.returnToGameMenu();
+                    break;
+                default:
+                    System.out.println("\n*** Invalid Selection *** Try again!");
+                    break;
+            }
         return false;
     }
 
@@ -89,6 +70,16 @@ public class UsePotionView extends View{
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
         
+    }
+
+    private void usePotion() {
+        UsePotionOnPokemon usePotionOnPokemon = new UsePotionOnPokemon();
+        usePotionOnPokemon.display();
+    }
+
+    private void useSuperPotion() {
+        UsePotionOnPokemon usePotionOnPokemon = new UsePotionOnPokemon();
+        usePotionOnPokemon.display();
     }
 
     

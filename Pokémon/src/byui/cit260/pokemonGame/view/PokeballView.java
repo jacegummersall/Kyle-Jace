@@ -47,6 +47,8 @@ public class PokeballView extends View{
 
     @Override
     public boolean doAction(String value) {
+        value = value.toUpperCase();
+        
         switch (value) {
             case "P": // select pikachu
                 this.throwPokeball();
@@ -76,14 +78,19 @@ public class PokeballView extends View{
             int currentHP = pokemon.getCurrentHealthPoints();
             int fullHP = pokemon.getFullHealthPoints();
             
-            if("Pokémon has escaped, he is too strong".equals(PokeballControl.calcPokeball(currentHP, fullHP)) ||
-                    "Pokémon has fainted".equals(PokeballControl.calcPokeball(currentHP, fullHP)) ){
+            if("Pokémon has fainted".equals(PokeballControl.calcPokeball(currentHP, fullHP)) ){
+            this.console.println("Pokémon has fainted");
             MapMenuView mapMenu = new MapMenuView();
         
             mapMenu.display();
                     }
             
+            else if("Pokémon has escaped, he is too strong".equals(PokeballControl.calcPokeball(currentHP, fullHP)) ){
+            this.console.println("Pokémon has escaped, he is too strong");
+            }
+            
             else if ("Pokémon Captured!".equals(PokeballControl.calcPokeball(currentHP, fullHP))){
+            this.console.println("Pokémon Captured!");
             mainCharacter.getPokemonCaptured().add(pokemon);
             MapMenuView mapMenu = new MapMenuView(); 
         

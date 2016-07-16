@@ -46,6 +46,7 @@ public class AttackView extends View {
    
     @Override
     public boolean doAction(String value) {
+        value = value.toUpperCase();
         switch (value) {
             case "P": // select pikachu
                 this.choosePikachu();
