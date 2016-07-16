@@ -429,5 +429,17 @@ public class MapControl {
       
        mainCharacter.getPokemonCaptured().add(pikachu);
     }
+    public static void assignPokemonToLance(){
+       
+       Character finalBoss = Pokémon.getCurrentGame().getFinalBoss();
+       
+       Pokemon pokemon = Pokémon.getCurrentGame().getPokemons().get(6);
+       Pokémon.getCurrentGame().getPokemons().get(7);
+       Pokémon.getCurrentGame().getPokemons().get(8);
+       Pokémon.getCurrentGame().getPokemons().get(9);
+       
+       finalBoss.setStartingPokemon(pokemon);
+  
+    }
     
     }

@@ -44,6 +44,7 @@ public class PokeballControl {
             throw new PokeballControlException("Pokémon Captured!");
         }
         throw new PokeballControlException("Pokémon has escaped, he is too strong");
+
     }
 
 }
