@@ -114,8 +114,16 @@ public class AttackView extends View {
         try {
             Pokemon ratatta = Pokémon.getCurrentGame().getPokemons().get(1);
             
-            int healthPoints = ratatta.getCurrentHealthPoints();
-            int attack = ratatta.getStrength();
+            Point coordinates = Pokémon.getCurrentGame().getPlayingCharacter().getLocation();
+                          
+            Location[][] locations = Pokémon.getCurrentGame().getMap().getLocations();
+            
+            Location location = locations[coordinates.x][coordinates.y];
+            
+            Pokemon pokemon = location.getPokemonInLocation().get(0);
+            
+            int healthPoints = pokemon.getCurrentHealthPoints();
+            int attack = pokemon.getStrength();
             int defense = ratatta.getDefense();
             
             
@@ -141,9 +149,17 @@ public class AttackView extends View {
    
         try {
             Pokemon spearow = Pokémon.getCurrentGame().getPokemons().get(2);
+                       
+            Point coordinates = Pokémon.getCurrentGame().getPlayingCharacter().getLocation();
+                          
+            Location[][] locations = Pokémon.getCurrentGame().getMap().getLocations();
             
-            int healthPoints = spearow.getCurrentHealthPoints();
-            int attack = spearow.getStrength();
+            Location location = locations[coordinates.x][coordinates.y];
+            
+            Pokemon pokemon = location.getPokemonInLocation().get(0);
+            
+            int healthPoints = pokemon.getCurrentHealthPoints();
+            int attack = pokemon.getStrength();
             int defense = spearow.getDefense();
             
             
@@ -171,9 +187,17 @@ public class AttackView extends View {
    
         try {
             Pokemon charizard = Pokémon.getCurrentGame().getPokemons().get(3);
+                       
+            Point coordinates = Pokémon.getCurrentGame().getPlayingCharacter().getLocation();
+                          
+            Location[][] locations = Pokémon.getCurrentGame().getMap().getLocations();
             
-            int healthPoints = charizard.getCurrentHealthPoints();
-            int attack = charizard.getStrength();
+            Location location = locations[coordinates.x][coordinates.y];
+            
+            Pokemon pokemon = location.getPokemonInLocation().get(0);
+            
+            int healthPoints = pokemon.getCurrentHealthPoints();
+            int attack = pokemon.getStrength();
             int defense = charizard.getDefense();
             
             
@@ -201,9 +225,17 @@ public class AttackView extends View {
    
         try {
             Pokemon gyarados = Pokémon.getCurrentGame().getPokemons().get(4);
+                                   
+            Point coordinates = Pokémon.getCurrentGame().getPlayingCharacter().getLocation();
+                          
+            Location[][] locations = Pokémon.getCurrentGame().getMap().getLocations();
             
-            int healthPoints = gyarados.getCurrentHealthPoints();
-            int attack = gyarados.getStrength();
+            Location location = locations[coordinates.x][coordinates.y];
+            
+            Pokemon pokemon = location.getPokemonInLocation().get(0);
+                       
+            int healthPoints = pokemon.getCurrentHealthPoints();
+            int attack = pokemon.getStrength();
             int defense = gyarados.getDefense();
             
             
@@ -231,9 +263,17 @@ public class AttackView extends View {
    
         try {
             Pokemon mewTwo = Pokémon.getCurrentGame().getPokemons().get(5);
+                                  
+            Point coordinates = Pokémon.getCurrentGame().getPlayingCharacter().getLocation();
+                          
+            Location[][] locations = Pokémon.getCurrentGame().getMap().getLocations();
             
-            int healthPoints = mewTwo.getCurrentHealthPoints();
-            int attack = mewTwo.getStrength();
+            Location location = locations[coordinates.x][coordinates.y];
+            
+            Pokemon pokemon = location.getPokemonInLocation().get(0);
+                       
+            int healthPoints = pokemon.getCurrentHealthPoints();
+            int attack = pokemon.getStrength();
             int defense = mewTwo.getDefense();
             
             
