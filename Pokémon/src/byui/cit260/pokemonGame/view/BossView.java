@@ -55,12 +55,14 @@ public class BossView extends View{
     }
 
     private void displayAttack() {
-                System.out.println("\n*** display stub function displayAttack ***");    
+                BossPokemonView bossPokemonView = new BossPokemonView();
+                bossPokemonView.display();   
     }
 
     private void displayItemListView() {
                
                 ItemListView itemMenu = new ItemListView();
-                itemMenu.display();    }
+                itemMenu.display();    
+    }
 
 }
