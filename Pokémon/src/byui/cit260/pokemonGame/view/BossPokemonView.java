@@ -56,22 +56,26 @@ public class BossPokemonView extends View {
      
 
     private void chooseGeodude() {
-        AttackBossView attackBossView = new AttackBossView();
+        AttackGeodudeBossView attackBossView = new AttackGeodudeBossView();
         attackBossView.display();
         
         
     }
 
     private void chooseDratini() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        AttackDratiniBossView attackBossView = new AttackDratiniBossView();
+        attackBossView.display();
+
     }
 
     private void chooseDragonair() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        AttackDragonairBossView attackBossView = new AttackDragonairBossView();
+        attackBossView.display();
     }
 
     private void chooseDragonite() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        AttackDragoniteBossView attackBossView = new AttackDragoniteBossView();
+        attackBossView.display();
     }
     
 }

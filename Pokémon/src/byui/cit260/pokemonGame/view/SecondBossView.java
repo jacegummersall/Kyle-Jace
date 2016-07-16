@@ -12,19 +12,10 @@ import pokémon.Pokémon;
  *
  * @author jacegummersall
  */
-public class BossView extends View{
+public class SecondBossView extends View{
         
-        public void displayBossBanner() {
-        System.out.println("\n"
-                + "\nWell done, " + Pokémon.getPlayer().getName() + "!"
-                + "\nI have seen your quick rise to becoming a great pokémon"
-                + "\ntrainer and am quite impressed by your skills and love for"
-                + "\nPokémon. Unfortunately, there is no greater Pokémon master"
-                + "\nthan me, and your journey as a Pokémon trainer ends today"
-                + "\nin a battle against me!!!");
-        }
     
-        public BossView() {
+        public SecondBossView() {
         
         super("\n"
                 + "\n--------------------------"
@@ -33,7 +24,6 @@ public class BossView extends View{
                 + "\nA - Attack"
                 + "\nU - Use an Item"
                 + "\n -------------------------");
-        this.displayBossBanner();
     }
     
     @Override
