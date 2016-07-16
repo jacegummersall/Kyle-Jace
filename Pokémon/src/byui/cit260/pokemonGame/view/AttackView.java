@@ -127,7 +127,8 @@ public class AttackView extends View {
             int defense = ratatta.getDefense();
             
             
-            DamageControl.calcDamage(healthPoints, attack, defense);
+            int newCurrentHP = DamageControl.calcDamage(healthPoints, attack, defense);
+            pokemon.setCurrentHealthPoints(newCurrentHP);
         } catch (DamageControlException ex) {
             System.out.println(ex.getMessage());
         }
@@ -163,7 +164,8 @@ public class AttackView extends View {
             int defense = spearow.getDefense();
             
             
-            DamageControl.calcDamage(healthPoints, attack, defense);
+            int newCurrentHP = DamageControl.calcDamage(healthPoints, attack, defense);
+            pokemon.setCurrentHealthPoints(newCurrentHP);
         } catch (DamageControlException ex) {
             System.out.println(ex.getMessage());
         }
@@ -201,7 +203,8 @@ public class AttackView extends View {
             int defense = charizard.getDefense();
             
             
-            DamageControl.calcDamage(healthPoints, attack, defense);
+            int newCurrentHP = DamageControl.calcDamage(healthPoints, attack, defense);
+            pokemon.setCurrentHealthPoints(newCurrentHP);
         } catch (DamageControlException ex) {
             System.out.println(ex.getMessage());
         }
@@ -239,7 +242,8 @@ public class AttackView extends View {
             int defense = gyarados.getDefense();
             
             
-            DamageControl.calcDamage(healthPoints, attack, defense);
+            int newCurrentHP = DamageControl.calcDamage(healthPoints, attack, defense);
+            pokemon.setCurrentHealthPoints(newCurrentHP);
         } catch (DamageControlException ex) {
             System.out.println(ex.getMessage());
         }
@@ -277,7 +281,8 @@ public class AttackView extends View {
             int defense = mewTwo.getDefense();
             
             
-            DamageControl.calcDamage(healthPoints, attack, defense);
+            int newCurrentHP = DamageControl.calcDamage(healthPoints, attack, defense);
+            pokemon.setCurrentHealthPoints(newCurrentHP);
         } catch (DamageControlException ex) {
             System.out.println(ex.getMessage());
         }
