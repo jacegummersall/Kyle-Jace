@@ -5,7 +5,11 @@
  */
 package byui.cit260.pokemonGame.view;
 
+import byui.cit260.pokemonGame.model.Game;
+import byui.cit260.pokemonGame.model.Pokemon;
+import java.util.ArrayList;
 import java.util.Scanner;
+import pokémon.Pokémon;
 
 /**
  *
@@ -21,7 +25,7 @@ public class ItemListView extends View{
                 + "\n--------------------------"
                 + "\nU - Use Item"
                 + "\nP - View Pokémon"
-                + "\nQ - Quit menu"
+                + "\nE - Exit menu"
                 + "\n -------------------------");
         
     }
@@ -37,6 +41,9 @@ public class ItemListView extends View{
             case "P": //Display moving instructions
                 this.displayPokemonList();
                 break;
+            case "E": //Display moving instructions
+                this.displayGameMenu();
+                break;                
             default:
                 System.out.println("\n*** Invalid Selection *** Try again!");
                 break;
@@ -52,6 +59,36 @@ public class ItemListView extends View{
     }
 
     private void displayPokemonList() {
-        System.out.println("*** displayPokemonList function called ***");
+        StringBuilder line;
+        
+        Game game = Pokémon.getCurrentGame();
+        byui.cit260.pokemonGame.model.Character mainCharacter = game.getPlayingCharacter();
+        ArrayList<Pokemon> pokemons = mainCharacter.getPokemonCaptured();
+        
+        System.out.println("\n List of Pokemon Stats");
+        line = new StringBuilder ("                         ");
+        line.insert(0, "NAME");
+        line.insert(15, "HP");
+        line.insert(25, "STRENGTH");
+        line.insert(35, "DEFENSE");
+        System.out.println(line.toString());
+        
+        for (Pokemon pokemon : pokemons) {
+            
+        line = new StringBuilder ("                         ");
+        line.insert(0, pokemon.getPokemonName());
+        line.insert(15, pokemon.getCurrentHealthPoints()); 
+        line.insert(25, pokemon.getStrength());
+        line.insert(35, pokemon.getDefense());
+        System.out.println(line.toString());
+        }
+        
+        ReturnToGameMenu returnToGameMenu = new ReturnToGameMenu();
+
+        returnToGameMenu.display(); 
+    }
+    private void displayGameMenu() {
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 }

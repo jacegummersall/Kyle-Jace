@@ -20,7 +20,7 @@ public class HelpMenuView extends View{
                 + "\n--------------------------"
                 + "\nG - What is the goal of this game?"
                 + "\nM - How to move"
-                + "\nQ - Quit help menu"
+                + "\nE - Exit help menu"
                 + "\n -------------------------");
         
     }
@@ -35,6 +35,9 @@ public class HelpMenuView extends View{
                 break;
             case "M": //Display moving instructions
                 this.displayMove();
+                break;
+            case "E": //Display moving instructions
+                this.returntoMainMenu();
                 break;
             default:
                 System.out.println("\n*** Invalid Selection *** Try again!");
@@ -95,4 +98,11 @@ public class HelpMenuView extends View{
         
         return number;
     }
+
+    private void returntoMainMenu() {
+       
+       MainMenuView mainMenu = new MainMenuView();
+       mainMenu.display();
+       
+            }
 }
