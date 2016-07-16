@@ -303,7 +303,9 @@ public class MapMenuView extends View{
             Location location = locations[coordinates.x][coordinates.y];
             
             Character character = location.getCharactersInLocation().get(0);
-              
+            
+            this.console.println("\nYou found" + character "!!!");
+            
             BossView bossView = new BossView();
             bossView.display();
                   
