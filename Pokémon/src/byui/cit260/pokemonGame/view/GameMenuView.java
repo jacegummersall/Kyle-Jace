@@ -36,7 +36,6 @@ public class GameMenuView extends View{
                 + "\nL - List of items in bag"
                 + "\nD - Display total items on map"
                 + "\nC - Count total Pokémon"
-                + "\nP - Pokémon"
                 + "\nR - Review Your Pokémon's Stats"
                 + "\nE - Explore Square"
                 + "\nS - Save Game"
@@ -63,9 +62,6 @@ public class GameMenuView extends View{
                 break;
             case "C": //Display total pokemon
                 this.displayTotalPokemon();
-                break;
-            case "P": //Display list of Pokémon
-                this.displayPokemonList();
                 break;
             case "R": //Display list of Pokémon Stats
                 this.displayPokemonListReport();
