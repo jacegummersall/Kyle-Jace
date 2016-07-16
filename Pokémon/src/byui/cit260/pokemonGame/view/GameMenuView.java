@@ -14,6 +14,7 @@ import byui.cit260.pokemonGame.model.Pokemon;
 import byui.cit260.pokemonGame.model.Scene;
 import byui.cit260.pokemonGame.model.Character;
 import citbyui.cit260.pokemonGame.exceptions.GameControlException;
+import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Scanner;
 import pokémon.Pokémon;
@@ -92,6 +93,9 @@ public class GameMenuView extends View{
 
     private void displayMap() {
 
+        Character mainCharacter = Pokémon.getCurrentGame().getPlayingCharacter();
+        Point position = mainCharacter.getLocation();
+        
         Game game = new Game();
         game = Pokémon.getCurrentGame();
         Map map = new Map();
@@ -119,6 +123,7 @@ public class GameMenuView extends View{
             }
             System.out.println(" ");
         }
+        this.console.println("\n\nYou are at " + (position.y+1) + "," + (position.x+1));
         MapMenuView mapMenu = new MapMenuView();
         
         mapMenu.display();
