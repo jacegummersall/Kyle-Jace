@@ -29,7 +29,7 @@ public class PokeballControl {
             throw new PokeballControlException("ERROR");
         }
         
-        if (pokemonFullHP < 50) {
+        if (pokemonFullHP < 40) {
             throw new PokeballControlException("Pokémon has escaped, he is too strong");
         }
 
