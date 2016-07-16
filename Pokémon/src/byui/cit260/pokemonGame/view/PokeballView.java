@@ -105,7 +105,7 @@ public class PokeballView extends View{
 
     private void throwMasterball() {
         Character mainCharacter = Pokémon.getCurrentGame().getPlayingCharacter();
-            
+        
             Point coordinates = Pokémon.getCurrentGame().getPlayingCharacter().getLocation();
             
             Location[][] locations = Pokémon.getCurrentGame().getMap().getLocations();
@@ -117,6 +117,10 @@ public class PokeballView extends View{
             mainCharacter.getPokemonCaptured().add(pokemon);
             
             this.console.println("Pokémon Captured!!!");
+            
+            MapMenuView mapMenu = new MapMenuView(); 
+        
+            mapMenu.display();
             
             
     }

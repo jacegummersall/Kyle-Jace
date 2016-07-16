@@ -37,7 +37,6 @@ public class GameMenuView extends View{
                 + "\nD - Display total items on map"
                 + "\nC - Count total Pokémon"
                 + "\nR - Review Your Pokémon's Stats"
-                + "\nE - Explore Square"
                 + "\nS - Save Game"
                 + "\nH - Help"
                 + "\nQ - Quit"
@@ -65,9 +64,6 @@ public class GameMenuView extends View{
                 break;
             case "R": //Display list of Pokémon Stats
                 this.displayPokemonListReport();
-                break;
-            case "E": //Display exploration results
-                this.displayExplore();
                 break;
             case "S": //Display game saved
                 this.displaySave();
@@ -150,13 +146,6 @@ public class GameMenuView extends View{
         itemList.display(); 
     }
 
-    private void displayPokemonList() {
-        
-        PokemonListMenuView pokemonListMenu = new PokemonListMenuView();
-
-        pokemonListMenu.display();
-    }
-
     private void displayPokemonListReport() {
         StringBuilder line;
         
@@ -185,11 +174,6 @@ public class GameMenuView extends View{
         ReturnToGameMenu returnToGameMenu = new ReturnToGameMenu();
 
         returnToGameMenu.display(); 
-    }
-    
-    private void displayExplore() {
-        
-        GameControl.getObjectInLocation();
     }
 
     private void displaySave() {
