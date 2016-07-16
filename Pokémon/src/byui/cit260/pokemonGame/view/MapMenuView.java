@@ -258,6 +258,16 @@ public class MapMenuView extends View{
           
           else if(objectInLocation instanceof Item){
               try {
+             Point coordinates = Pokémon.getCurrentGame().getPlayingCharacter().getLocation();
+                          
+            Location[][] locations = Pokémon.getCurrentGame().getMap().getLocations();
+            
+            Location location = locations[coordinates.x][coordinates.y];
+            
+            Item item = location.getItemInLocation().get(0);
+              
+              this.console.println("\nYou found a " + item.getInventoryType() + "!!!");
+                  
                   GameControl.characterGetItem();
               } catch (GameControlException ex) {
                   System.out.println(ex.getMessage());
