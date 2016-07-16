@@ -294,6 +294,10 @@ public class MapMenuView extends View{
                   System.out.println(ex.getMessage());
               }
           }
+          
+          else if(objectInLocation instanceof Character){
+              
+          }
     }
 
     private void returnToGameMenu() {
