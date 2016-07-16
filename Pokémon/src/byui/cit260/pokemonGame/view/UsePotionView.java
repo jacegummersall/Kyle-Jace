@@ -78,8 +78,8 @@ public class UsePotionView extends View{
     }
 
     private void useSuperPotion() {
-        UsePotionOnPokemon usePotionOnPokemon = new UsePotionOnPokemon();
-        usePotionOnPokemon.display();
+        UseSuperPotionOnPokemon useSuperPotionOnPokemon = new UseSuperPotionOnPokemon();
+        useSuperPotionOnPokemon.display();
     }
 
     

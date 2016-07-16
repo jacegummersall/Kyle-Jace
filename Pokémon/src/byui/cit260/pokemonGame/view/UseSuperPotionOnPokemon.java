@@ -85,7 +85,7 @@ public class UseSuperPotionOnPokemon extends View{
             int fullHealthPoints = pikachu.getFullHealthPoints();
             
             
-            int newCurrentHP = PotionControl.usePotion(healthPoints, fullHealthPoints);
+            int newCurrentHP = PotionControl.useSuperPotion(healthPoints, fullHealthPoints);
             pikachu.setCurrentHealthPoints(newCurrentHP);
         } catch (PotionControlException ex) {
             System.out.println(ex.getMessage());
@@ -129,7 +129,7 @@ public class UseSuperPotionOnPokemon extends View{
             int fullHealthPoints = ratatta.getFullHealthPoints();
             
             
-            int newCurrentHP = PotionControl.usePotion(healthPoints, fullHealthPoints);
+            int newCurrentHP = PotionControl.useSuperPotion(healthPoints, fullHealthPoints);
             ratatta.setCurrentHealthPoints(newCurrentHP);
         } catch (PotionControlException ex) {
             System.out.println(ex.getMessage());
@@ -173,7 +173,7 @@ public class UseSuperPotionOnPokemon extends View{
             int fullHealthPoints = spearow.getFullHealthPoints();
             
             
-            int newCurrentHP = PotionControl.usePotion(healthPoints, fullHealthPoints);
+            int newCurrentHP = PotionControl.useSuperPotion(healthPoints, fullHealthPoints);
             spearow.setCurrentHealthPoints(newCurrentHP);
         } catch (PotionControlException ex) {
             System.out.println(ex.getMessage());
@@ -217,7 +217,7 @@ public class UseSuperPotionOnPokemon extends View{
             int fullHealthPoints = charizard.getFullHealthPoints();
             
             
-            int newCurrentHP = PotionControl.usePotion(healthPoints, fullHealthPoints);
+            int newCurrentHP = PotionControl.useSuperPotion(healthPoints, fullHealthPoints);
             charizard.setCurrentHealthPoints(newCurrentHP);
         } catch (PotionControlException ex) {
             System.out.println(ex.getMessage());
@@ -261,7 +261,7 @@ public class UseSuperPotionOnPokemon extends View{
             int fullHealthPoints = mewTwo.getFullHealthPoints();
             
             
-            int newCurrentHP = PotionControl.usePotion(healthPoints, fullHealthPoints);
+            int newCurrentHP = PotionControl.useSuperPotion(healthPoints, fullHealthPoints);
             mewTwo.setCurrentHealthPoints(newCurrentHP);
         } catch (PotionControlException ex) {
             System.out.println(ex.getMessage());
@@ -305,7 +305,7 @@ public class UseSuperPotionOnPokemon extends View{
             int fullHealthPoints = gyarados.getFullHealthPoints();
             
             
-            int newCurrentHP = PotionControl.usePotion(healthPoints, fullHealthPoints);
+            int newCurrentHP = PotionControl.useSuperPotion(healthPoints, fullHealthPoints);
             gyarados.setCurrentHealthPoints(newCurrentHP);
         } catch (PotionControlException ex) {
             System.out.println(ex.getMessage());
