@@ -78,7 +78,7 @@ public class AttackDragoniteBossView extends View {
         try {
             Pokemon pikachu = Pokémon.getCurrentGame().getPokemons().get(0);
 
-            Pokemon pokemon = Pokémon.getCurrentGame().getPokemons().get(8);
+            Pokemon pokemon = Pokémon.getCurrentGame().getPokemons().get(9);
             
             int defense = pokemon.getDefense();
             int healthPoints = pokemon.getCurrentHealthPoints();
@@ -98,7 +98,7 @@ public class AttackDragoniteBossView extends View {
             System.out.println(ex.getMessage());
         } 
             
-            Pokemon pokemon = Pokémon.getCurrentGame().getPokemons().get(8);
+            Pokemon pokemon = Pokémon.getCurrentGame().getPokemons().get(9);
             Pokemon pikachu = Pokémon.getCurrentGame().getPokemons().get(0);
               this.console.println("\n" + pokemon.getPokemonName()
                       + "\nHP - " + pokemon.getCurrentHealthPoints()
@@ -115,7 +115,7 @@ public class AttackDragoniteBossView extends View {
         try {
             Pokemon ratatta = Pokémon.getCurrentGame().getPokemons().get(1);
 
-            Pokemon pokemon = Pokémon.getCurrentGame().getPokemons().get(8);
+            Pokemon pokemon = Pokémon.getCurrentGame().getPokemons().get(9);
             
             int defense = pokemon.getDefense();
             int healthPoints = pokemon.getCurrentHealthPoints();
@@ -135,7 +135,7 @@ public class AttackDragoniteBossView extends View {
             System.out.println(ex.getMessage());
         } 
             
-            Pokemon pokemon = Pokémon.getCurrentGame().getPokemons().get(8);
+            Pokemon pokemon = Pokémon.getCurrentGame().getPokemons().get(9);
             Pokemon ratatta = Pokémon.getCurrentGame().getPokemons().get(1);
               this.console.println("\n" + pokemon.getPokemonName()
                       + "\nHP - " + pokemon.getCurrentHealthPoints()
@@ -151,7 +151,7 @@ public class AttackDragoniteBossView extends View {
         try {
             Pokemon spearow = Pokémon.getCurrentGame().getPokemons().get(2);
 
-            Pokemon pokemon = Pokémon.getCurrentGame().getPokemons().get(8);
+            Pokemon pokemon = Pokémon.getCurrentGame().getPokemons().get(9);
             
             int defense = pokemon.getDefense();
             int healthPoints = pokemon.getCurrentHealthPoints();
@@ -171,7 +171,7 @@ public class AttackDragoniteBossView extends View {
             System.out.println(ex.getMessage());
         } 
             
-            Pokemon pokemon = Pokémon.getCurrentGame().getPokemons().get(8);
+            Pokemon pokemon = Pokémon.getCurrentGame().getPokemons().get(9);
             Pokemon spearow = Pokémon.getCurrentGame().getPokemons().get(2);
               this.console.println("\n" + pokemon.getPokemonName()
                       + "\nHP - " + pokemon.getCurrentHealthPoints()
@@ -189,7 +189,7 @@ public class AttackDragoniteBossView extends View {
         try {
             Pokemon charizard = Pokémon.getCurrentGame().getPokemons().get(3);
 
-            Pokemon pokemon = Pokémon.getCurrentGame().getPokemons().get(8);
+            Pokemon pokemon = Pokémon.getCurrentGame().getPokemons().get(9);
             
             int defense = pokemon.getDefense();
             int healthPoints = pokemon.getCurrentHealthPoints();
@@ -209,7 +209,7 @@ public class AttackDragoniteBossView extends View {
             System.out.println(ex.getMessage());
         } 
             
-            Pokemon pokemon = Pokémon.getCurrentGame().getPokemons().get(8);
+            Pokemon pokemon = Pokémon.getCurrentGame().getPokemons().get(9);
             Pokemon charizard = Pokémon.getCurrentGame().getPokemons().get(3);
               this.console.println("\n" + pokemon.getPokemonName()
                       + "\nHP - " + pokemon.getCurrentHealthPoints()
@@ -227,7 +227,7 @@ public class AttackDragoniteBossView extends View {
         try {
             Pokemon gyarados = Pokémon.getCurrentGame().getPokemons().get(4);
 
-            Pokemon pokemon = Pokémon.getCurrentGame().getPokemons().get(8);
+            Pokemon pokemon = Pokémon.getCurrentGame().getPokemons().get(9);
             
             int defense = pokemon.getDefense();
             int healthPoints = pokemon.getCurrentHealthPoints();
@@ -247,7 +247,7 @@ public class AttackDragoniteBossView extends View {
             System.out.println(ex.getMessage());
         } 
             
-            Pokemon pokemon = Pokémon.getCurrentGame().getPokemons().get(8);
+            Pokemon pokemon = Pokémon.getCurrentGame().getPokemons().get(9);
             Pokemon gyarados = Pokémon.getCurrentGame().getPokemons().get(4);
               this.console.println("\n" + pokemon.getPokemonName()
                       + "\nHP - " + pokemon.getCurrentHealthPoints()
@@ -265,7 +265,7 @@ public class AttackDragoniteBossView extends View {
         try {
             Pokemon mewTwo = Pokémon.getCurrentGame().getPokemons().get(5);
 
-            Pokemon pokemon = Pokémon.getCurrentGame().getPokemons().get(8);
+            Pokemon pokemon = Pokémon.getCurrentGame().getPokemons().get(9);
             
             int defense = pokemon.getDefense();
             int healthPoints = pokemon.getCurrentHealthPoints();
@@ -285,7 +285,7 @@ public class AttackDragoniteBossView extends View {
             System.out.println(ex.getMessage());
         } 
             
-            Pokemon pokemon = Pokémon.getCurrentGame().getPokemons().get(8);
+            Pokemon pokemon = Pokémon.getCurrentGame().getPokemons().get(9);
             Pokemon mewTwo = Pokémon.getCurrentGame().getPokemons().get(5);
               this.console.println("\n" + pokemon.getPokemonName()
                       + "\nHP - " + pokemon.getCurrentHealthPoints()
