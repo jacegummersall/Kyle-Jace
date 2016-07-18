@@ -44,7 +44,7 @@ public class StartProgramView extends View{
       + "\n* be starting in your hometown of Pallet Town and will be able               *"
       + "\n* to explore the map to try and become the best there ever was.              *"
       + "\n* You will be traveling around the map to catch Pokémon and fill             *"
-      + "\n* your backpack with antidotes and potions in order to become the            *"
+      + "\n* your backpack with pokeballs and potions in order to become the            *"
       + "\n* champion of the Pokémon League. You will be preparing yourself             *"
       + "\n* to battle the most recent champion and best Pokémon Master, Lance,         *"
       + "\n* in order to win the title of Pokémon Master.                               *"

@@ -99,7 +99,7 @@ public class BossPokemonView extends View {
     Pokemon dragonair = Pokémon.getCurrentGame().getPokemons().get(8);
     int currentHP = dragonair.getCurrentHealthPoints();
     
-    if(currentHP < 1){
+    if(currentHP > 0){
         AttackDragonairBossView attackBossView = new AttackDragonairBossView();
         attackBossView.display();
     }
@@ -115,7 +115,7 @@ public class BossPokemonView extends View {
     Pokemon dragonite = Pokémon.getCurrentGame().getPokemons().get(9);
     int currentHP = dragonite.getCurrentHealthPoints();
      
-    if(currentHP < 1){
+    if(currentHP > 0){
         AttackDragoniteBossView attackBossView = new AttackDragoniteBossView();
         attackBossView.display();
     }
