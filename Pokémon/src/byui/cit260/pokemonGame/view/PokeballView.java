@@ -67,6 +67,10 @@ public class PokeballView extends View{
         try {
             Character mainCharacter = Pokémon.getCurrentGame().getPlayingCharacter();
             
+            Item pokeballs = mainCharacter.getItemsCollected().get(0);
+            
+            int pokeball = pokeballs.getInventoryQuantity();
+            
             Point coordinates = Pokémon.getCurrentGame().getPlayingCharacter().getLocation();
             
             Location[][] locations = Pokémon.getCurrentGame().getMap().getLocations();
@@ -75,11 +79,14 @@ public class PokeballView extends View{
             
             Pokemon pokemon = location.getPokemonInLocation().get(0);
             
+            if(pokeball > 0){
+            
             int currentHP = pokemon.getCurrentHealthPoints();
             int fullHP = pokemon.getFullHealthPoints();
             
             if("Pokémon has fainted".equals(PokeballControl.calcPokeball(currentHP, fullHP)) ){
             this.console.println("Pokémon has fainted");
+            Pokémon.getCurrentGame().getPlayingCharacter().getItemsCollected().remove(0);
             MapMenuView mapMenu = new MapMenuView();
         
             mapMenu.display();
@@ -87,16 +94,24 @@ public class PokeballView extends View{
             
             else if("Pokémon has escaped, he is too strong".equals(PokeballControl.calcPokeball(currentHP, fullHP)) ){
             this.console.println("Pokémon has escaped, he is too strong");
+            Pokémon.getCurrentGame().getPlayingCharacter().getItemsCollected().remove(0);
+            PokeballView pokeballView = new PokeballView();
+        
+            pokeballView.display();
             }
             
             else if ("Pokémon Captured!".equals(PokeballControl.calcPokeball(currentHP, fullHP))){
             this.console.println("Pokémon Captured!");
             mainCharacter.getPokemonCaptured().add(pokemon);
+            Pokémon.getCurrentGame().getPlayingCharacter().getItemsCollected().remove(0);
             MapMenuView mapMenu = new MapMenuView(); 
         
             mapMenu.display();
-            }   
-
+            }
+            else {
+            this.console.println("You dont have any of those to throw!");
+            } 
+          }
         } catch (PokeballControlException ex) {
             System.out.println(ex.getMessage());
     }

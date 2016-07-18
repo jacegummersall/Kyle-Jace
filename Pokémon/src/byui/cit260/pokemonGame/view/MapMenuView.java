@@ -7,6 +7,7 @@ package byui.cit260.pokemonGame.view;
 
 import byui.cit260.pokemonGame.control.GameControl;
 import byui.cit260.pokemonGame.control.MapControl;
+import byui.cit260.pokemonGame.model.Boss;
 import java.util.Scanner;
 import pokémon.Pokémon;
 import byui.cit260.pokemonGame.model.Character;
@@ -304,13 +305,24 @@ public class MapMenuView extends View{
             
             Character character = location.getCharactersInLocation().get(0);
             
-            this.console.println("\nYou found" + character "!!!");
+            //String yourName = Pokémon.getCurrentGame().getPlayingCharacter().getName();
             
+            //String bossName = Pokémon.getCurrentGame().getFinalBoss().getName();
+                    
+            //if(character.getName() == bossName){
             BossView bossView = new BossView();
             bossView.display();
                   
                   GameControl.characterGetItem();
-              } catch (GameControlException ex) {
+            //  }        
+                    
+            //else if(character.getName() == yourName){
+                
+                this.console.println("There is nothing here!");
+                
+            //}
+
+            } catch (GameControlException ex) {
                   System.out.println(ex.getMessage());
               }
                     }

@@ -85,7 +85,7 @@ public class MapControl {
         Scene emptyScene = new Scene();
         emptyScene.setDescription(
                 "nothing here continue on your journey");
-        emptyScene.setMapSymbol(" ET ");
+        emptyScene.setMapSymbol(" RC ");
         scenes[SceneType.emptyScene.ordinal()] = emptyScene;
         
         Scene battleScene = new Scene();
@@ -353,9 +353,9 @@ public class MapControl {
        Item potion = Pokémon.getCurrentGame().getItems().get(0);
        Location[][] locations = Pokémon.getCurrentGame().getMap().getLocations();
        
-       potion.setLocation(new Point(3,0));
        potion.setLocation(new Point(1,1));
        potion.setLocation(new Point(1,4));
+       potion.setLocation(new Point(3,0));
        potion.setLocation(new Point(4,4));
        potion.setLocation(new Point(4,5));
        potion.setLocation(new Point(2,5));
@@ -369,6 +369,7 @@ public class MapControl {
        locations[4][5].getItemInLocation().add(potion);
        locations[2][5].getItemInLocation().add(potion);
        locations[1][7].getItemInLocation().add(potion);
+
        
        Item superPotion = Pokémon.getCurrentGame().getItems().get(1);
        locations = Pokémon.getCurrentGame().getMap().getLocations();
@@ -441,5 +442,16 @@ public class MapControl {
        finalBoss.setStartingPokemon(pokemon);
   
     }
+    
+    /*public static void assignBossToLance(){
+        
+        Character lance = Pokémon.getCurrentGame().getFinalBoss();
+        Location[][] locations = Pokémon.getCurrentGame().getMap().getLocations();
+        
+        lance.setLocation(new Point(9,4));
+        locations[9][4].getCharactersInLocation().add(lance)
+        
+        //Character finalBoss = Pokémon.getCurrentGame().getFinalBoss().setCharacterLocation(new Point 9,4);
+    }*/
     
     }
