@@ -96,7 +96,8 @@ public class GameControl {
         items.add(new Item("Potion",7));
         items.add(new Item("Super Potion",5));
         items.add(new Item("Pokeball",6));
-        items.add(new Item("Masterball",4));
+        items.add(new Item("Masterball",2));
+        items.add(new Item("Rare Candy",23));
         
         return items;
     }

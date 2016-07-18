@@ -22,6 +22,7 @@ public class Location implements Serializable{
     private ArrayList<Character> charactersInLocation = new ArrayList<>();
     private ArrayList<Pokemon> pokemonInLocation = new ArrayList<>();
     private ArrayList<Item> itemInLocation = new ArrayList<>();
+    private Object nothing;
     
     public Location() {
     }
@@ -80,6 +81,14 @@ public class Location implements Serializable{
 
     public void setItemInLocation(ArrayList<Item> itemInLocation) {
         this.itemInLocation = itemInLocation;
+    }
+
+    public Object getNothing() {
+        return nothing;
+    }
+
+    public void setNothing(Object nothing) {
+        this.nothing = nothing;
     }
     
     
