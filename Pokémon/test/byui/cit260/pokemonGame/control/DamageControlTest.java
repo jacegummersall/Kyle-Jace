@@ -6,6 +6,7 @@
 package byui.cit260.pokemonGame.control;
 
 
+import citbyui.cit260.pokemonGame.exceptions.DamageControlException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import java.util.Random;
@@ -23,7 +24,7 @@ public class DamageControlTest {
      * Test of calcDamage method, of class DamageControl.
      */
     @Test
-    public void testCalcDamage() {
+    public void testCalcDamage() throws DamageControlException{
         
         System.out.println("calcDamage");
         
