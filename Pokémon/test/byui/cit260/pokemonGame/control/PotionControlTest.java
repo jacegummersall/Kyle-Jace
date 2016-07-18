@@ -5,6 +5,7 @@
  */
 package byui.cit260.pokemonGame.control;
 
+import citbyui.cit260.pokemonGame.exceptions.PotionControlException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -21,7 +22,7 @@ public class PotionControlTest {
      * Test of usePotion method, of class PotionControl.
      */
     @Test
-    public void testUsePotion() {
+    public void testUsePotion() throws PotionControlException{
         System.out.println("usePotion");
         
         System.out.println("\tTest case #1");

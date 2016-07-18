@@ -5,6 +5,7 @@
  */
 package byui.cit260.pokemonGame.control;
 
+import citbyui.cit260.pokemonGame.exceptions.PokeballControlException;
 import java.util.Random;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -22,7 +23,7 @@ public class PokeballControlTest {
      * Test of calcPokeball method, of class PokeballControl.
      */
     @Test
-    public void testCalcPokeball() {
+    public void testCalcPokeball() throws PokeballControlException{
         System.out.println("calcPokeball");
         
         //Test Case 1
