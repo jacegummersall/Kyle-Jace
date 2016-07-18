@@ -224,7 +224,7 @@ public class MapMenuView extends View{
             System.out.println(me.getMessage());
         }
         
-                Game game = new Game();
+        Game game = new Game();
         game = Pokémon.getCurrentGame();
         Map map = new Map();
         map = game.getMap();
