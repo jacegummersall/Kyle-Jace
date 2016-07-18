@@ -8,7 +8,7 @@ package byui.cit260.pokemonGame.model;
 import java.io.Serializable;
 import java.util.ArrayList;
 import pokémon.Pokémon;
-
+import byui.cit260.pokemonGame.model.ContactCharacters;
 
 /**
  *
@@ -30,6 +30,9 @@ public class Game implements Serializable {
     private Map map;   
     private Character playingCharacter;
     private Character finalBoss;
+    
+    private ContactCharacters contactCharacter;
+    private ContactCharacters[] contactCharacters;
    
     
     public double getStartTime() {
@@ -102,6 +105,22 @@ public class Game implements Serializable {
 
     public void setFinalBoss(Character finalBoss) {
         this.finalBoss = finalBoss;
+    }
+
+    public ContactCharacters getContactCharacter() {
+        return contactCharacter;
+    }
+
+    public void setContactCharacter(ContactCharacters contactCharacter) {
+        this.contactCharacter = contactCharacter;
+    }
+
+    public ContactCharacters[] getContactCharacters() {
+        return contactCharacters;
+    }
+
+    public void setContactCharacters(ContactCharacters[] contactCharacters) {
+        this.contactCharacters = contactCharacters;
     }
     
     

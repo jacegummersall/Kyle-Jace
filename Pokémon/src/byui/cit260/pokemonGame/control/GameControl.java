@@ -10,6 +10,7 @@ import byui.cit260.pokemonGame.model.Player;
 import byui.cit260.pokemonGame.view.GameMenuView;
 import pokémon.Pokémon;
 import byui.cit260.pokemonGame.model.Character;
+import byui.cit260.pokemonGame.model.ContactCharacters;
 import byui.cit260.pokemonGame.model.Game;
 import byui.cit260.pokemonGame.model.Item;
 import byui.cit260.pokemonGame.model.Location;
@@ -88,6 +89,8 @@ public class GameControl {
         
         return characters;
     }
+    
+
 
     private static ArrayList<Item> createNewItemList() {
 
@@ -258,4 +261,6 @@ public class GameControl {
             return null;
         }
     }
+    
+
 }

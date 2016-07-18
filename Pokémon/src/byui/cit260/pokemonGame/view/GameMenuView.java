@@ -13,6 +13,7 @@ import byui.cit260.pokemonGame.model.Map;
 import byui.cit260.pokemonGame.model.Pokemon;
 import byui.cit260.pokemonGame.model.Scene;
 import byui.cit260.pokemonGame.model.Character;
+import byui.cit260.pokemonGame.model.ContactCharacters;
 import citbyui.cit260.pokemonGame.exceptions.GameControlException;
 import java.awt.Point;
 import java.util.ArrayList;
@@ -37,6 +38,7 @@ public class GameMenuView extends View{
                 + "\nD - Display total items on map"
                 + "\nC - Count total Pokémon"
                 + "\nR - Review Your Pokémon's Stats"
+                + "\nP - Phone Contacts"
                 + "\nS - Save Game"
                 + "\nH - Help"
                 + "\nQ - Quit"
@@ -64,6 +66,9 @@ public class GameMenuView extends View{
                 break;
             case "R": //Display list of Pokémon Stats
                 this.displayPokemonListReport();
+                break;
+            case "P": //Display game saved
+                this.displayContacts();
                 break;
             case "S": //Display game saved
                 this.displaySave();
@@ -228,6 +233,17 @@ public class GameMenuView extends View{
         int totalNumberOfPokemon = GameControl.countPokemon(pokemons);
         
         System.out.println(totalNumberOfPokemon);
+        
+    }
+
+    private void displayContacts() {
+
+        ContactCharacters[] phoneContacts = ContactCharacters.values();
+        
+        for (ContactCharacters contacts : phoneContacts) {
+
+        System.out.println(contacts);
+        }
         
     }
         
