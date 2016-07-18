@@ -259,7 +259,7 @@ public class MapMenuView extends View{
           Object objectInLocation = GameControl.getObjectInLocation();
           
           if(objectInLocation == null){
-              return;
+              this.console.println("There's nothing here");
           }
           
           else if(objectInLocation instanceof Pokemon){
@@ -295,6 +295,9 @@ public class MapMenuView extends View{
                   System.out.println(ex.getMessage());
               }
           }
+          
+          
+          
           else if(objectInLocation instanceof Character){
             try {
             Point coordinates = Pokémon.getCurrentGame().getPlayingCharacter().getLocation();

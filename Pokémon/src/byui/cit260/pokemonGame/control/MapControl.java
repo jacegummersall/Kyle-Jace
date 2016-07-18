@@ -418,7 +418,70 @@ public class MapControl {
        locations[0][0].getItemInLocation().add(masterball);
        locations[0][5].getItemInLocation().add(masterball);
 
+       Item rareCandy = Pokémon.getCurrentGame().getItems().get(4);
+       locations = Pokémon.getCurrentGame().getMap().getLocations();
+       
+       rareCandy.setLocation(new Point(0,1));
+       rareCandy.setLocation(new Point(0,2));
+       rareCandy.setLocation(new Point(0,4));
+       rareCandy.setLocation(new Point(0,6));
+       rareCandy.setLocation(new Point(0,8));
+       rareCandy.setLocation(new Point(1,2));
+       rareCandy.setLocation(new Point(1,5));
+       rareCandy.setLocation(new Point(1,6));
+       rareCandy.setLocation(new Point(1,8));
+       rareCandy.setLocation(new Point(1,9));
+       rareCandy.setLocation(new Point(2,0));
+       rareCandy.setLocation(new Point(2,1));
+       rareCandy.setLocation(new Point(2,6));
+       rareCandy.setLocation(new Point(2,7));
+       rareCandy.setLocation(new Point(3,1));
+       rareCandy.setLocation(new Point(3,2));
+       rareCandy.setLocation(new Point(3,4));
+       rareCandy.setLocation(new Point(3,6));
+       rareCandy.setLocation(new Point(3,8));
+       rareCandy.setLocation(new Point(3,9));
+       rareCandy.setLocation(new Point(4,1));
+       rareCandy.setLocation(new Point(4,3));
+       rareCandy.setLocation(new Point(4,6));
+       
+       
+
+       
+       // get the location at 2, 3
+       locations[0][1].getItemInLocation().add(rareCandy);
+       locations[0][2].getItemInLocation().add(rareCandy);
+       locations[0][4].getItemInLocation().add(rareCandy);
+       locations[0][6].getItemInLocation().add(rareCandy);
+       locations[0][8].getItemInLocation().add(rareCandy);
+       locations[1][2].getItemInLocation().add(rareCandy);
+       locations[1][5].getItemInLocation().add(rareCandy);
+       locations[1][6].getItemInLocation().add(rareCandy);
+       locations[1][8].getItemInLocation().add(rareCandy);
+       locations[1][9].getItemInLocation().add(rareCandy);
+       locations[2][0].getItemInLocation().add(rareCandy);
+       locations[2][1].getItemInLocation().add(rareCandy);
+       locations[2][6].getItemInLocation().add(rareCandy);
+       locations[2][7].getItemInLocation().add(rareCandy);
+       locations[3][1].getItemInLocation().add(rareCandy);
+       locations[3][2].getItemInLocation().add(rareCandy);
+       locations[3][4].getItemInLocation().add(rareCandy);
+       locations[3][6].getItemInLocation().add(rareCandy);
+       locations[3][8].getItemInLocation().add(rareCandy);
+       locations[3][9].getItemInLocation().add(rareCandy);
+       locations[4][1].getItemInLocation().add(rareCandy);
+       locations[4][3].getItemInLocation().add(rareCandy);
+       locations[4][6].getItemInLocation().add(rareCandy);
     }
+    
+    
+//    public static void moveEmptySpacesToStartingLocation(Map map)
+//                                                throws MapControlException{
+//        Location nothing = Pokémon.getCurrentGame();
+//        Location[][] locations = Pokémon.getCurrentGame().getMap().getLocations();
+//        
+//        
+//    }
     
     public static void assignPikachuToPlayer(){
       
